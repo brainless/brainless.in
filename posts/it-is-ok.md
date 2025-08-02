@@ -1,0 +1,14 @@
+---
+id: tag:blogger.com,1999:blog-27384460.post-4142365330061507653
+title: "It is OK"
+date: 2025-08-02
+author: brainless
+categories: ['journey']
+---
+
+2020 will be a year to remember. But I am not going to write about the perils of 2020. Rather I want to talk about what is important - to accept that is it OK. I have anxiety issues. I go into bursts of panic and until recently I was not even aware of them. I would wake up in the middle of the night because of anxiety almost at a predictable interval after going to bed. My ex was the first person who noticed this.  
+Living with anxiety is not easy. But it is OK. I am lucky that I have money to travel, friends who care about me, a family back home. I am a software engineer and can earn a living. My brain is not wired in a way to handle sudden conflicting pieces of information. I get defensive, I get angry and I start hurting others. I used to to have severe lack of social confidence. That has improved lately. But all these qualities play together in ways that make me feel both vulnerable as well as wanting to tear apart my enemy at the same time.  
+Anger is deep rooted in me. When I was growing up, anger was mostly suppressed so no one noticed. I used to conjure up thoughts of slaying social monsters, of being the hero to the wide world. Some of these stories even made their way to my family and they must have thought these are noble aspirations. But there is nothing noble about how they eat into a teenager. I was uncertain of myself and anger was my shelter. Rage was my staff in a world that I could neither comprehend not control.  
+I was a rebel for sure. And I am thankful that I chose to build businesses with the aim that I would help empower others around me. I had somehow learned how to channel the anger into creative ways. But there was still too much anger left and it showed its ugly face in my friendships, in conflicts and in my relationships. I was pretty clueless till about 28 years old. I became more aware of my conflict prone nature when I went to Germany. Two of my dearest friends (Roland & Debora) somehow led me to a path of acceptance and then counseling. And I started to see a trail of destruction behind me. My depression of about 8 years became apparent.  
+But, it is OK. We can learn to live a better life with whatever we have, if we want to. The intent has to be clear and strong. I lost another relationship to my personal battles but I started being more calm. I had to accept more of my issues and I was quite surprised how broken I really was/am. But acceptance is powerful. It is an enabler because it gives you the ability to move beyond the darkness of ignorance.  
+This is still a journey, and I have still much to learn. And many things are not right, but it will be OK.

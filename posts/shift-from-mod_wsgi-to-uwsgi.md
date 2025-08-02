@@ -1,0 +1,15 @@
+---
+id: tag:blogger.com,1999:blog-27384460.post-6759713973734480900
+title: "Shift from mod_wsgi to uwsgi"
+date: 2011-09-28
+author: brainless
+categories: ['server', 'python', 'apache', 'uwsgi', 'nginx']
+---
+
+The last couple weeks [we](http://mobstac.com/) have been thinking to shift from our current web serving platform which was powered by [nginx](http://wiki.nginx.org/) + [Apache](http://www.apache.org/) + [mod\_wsgi](http://code.google.com/p/modwsgi/) to nginx + [uwsgi](http://projects.unbit.it/uwsgi/). The reasons were that Apache was part of the plan for about a year and a half, but its main reason to be there was that Apache + mod\_wsgi was stable. We of course wanted to keep nginx, but right now we had no reason to run the Apache + uwsgi.  
+  
+I had the task to figure out what are people saying in general about nginx + uwsgi. So yesterday and day before I scouted the Internet for blogs or discussions regarding the same. And it turns out, as I hoped, that nginx + uwsgi is a leaner approach to the application serving platform. Also uwsgi seemed very well documented, managed and commercially supported as [some](http://www.quora.com/How-does-uWSGI-compare-to-mod_wsgi) folks mentioned. And there were quite a few articles detailing [benchmarks](http://nichol.as/benchmark-of-python-web-servers) comparing many platform choices for a Python based application. nginx + uwsgi fared better than the Apache alternative and almost everywhere I looked people mentioned nginx + uwsgi to be production grade. There are options which are [better](http://www.fapws.org/benchmarks), but we preferred one which seems to have a larger following or community.  
+  
+So we decided to take the plunge. Well the transition was smooth, or at least not troublesome at all. Most of the documentation is available [here](http://projects.unbit.it/uwsgi/wiki/Example), [here](http://projects.unbit.it/uwsgi/wiki/WikiStart#Getit) and [here](http://wiki.nginx.org/HttpUwsgiModule). Installation for us for very straightforward. We are on Ubuntu 10.04 LTS. We wanted to upgrade to the new 1.0 series. So we downloaded that, compiled and installed. Please remember you may need to change the config paths. We had to do some of that since our deploy + app reload scripts were dealing with the default Ubuntu install paths. After that just get uwsgi and again compile. That is it, you are done with the software part of it!  
+  
+After that just follow the examples and docs I pointed out above. For us, we just had to change the [proxy\_](http://wiki.nginx.org/HttpProxyModule) settings to corresponding uwsgi\_ settings. Other than that, we needed to create ini files for uwsgi to run the apps properly. I could not figure out how to run a single instance of uwsgi that will read all stanzas from an ini file and run them all. Well so we are running two uwsgi daemons. Good enough for now, we will come back to the issue later on. Thus we have an updated AMI and we are actually flipping our application servers today. We do not expect any noticeable downtime. Well now lets get back to work :)

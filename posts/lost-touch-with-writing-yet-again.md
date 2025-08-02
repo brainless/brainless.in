@@ -1,0 +1,19 @@
+---
+id: tag:blogger.com,1999:blog-27384460.post-2940203934032304481
+title: "Lost touch with writing, yet again!"
+date: 2025-08-02
+author: brainless
+categories: ['journey', 'startup', 'travel']
+---
+
+This happens a lot it seems. I am 36 years old now and it has been about 13 years from my [first blog post in 2006](http://blog.brainless.in/2006/05/apache-simple-config-tool-application.html). Also, in between I already blogged once about [losing touch with writing](http://blog.brainless.in/2014/11/its-been-while.html). But hey, at least I am consistent. So a lot has happened, as they always do. The world moves around.  
+When I moved back from Germany to India in 2017, I thought I would be engaging in a great startup experience with Carrybo. We had a nice small team in Bangalore but somehow the partnership with my Irish co-founders (were they?) did not work out. In retrospect we were different types of mindset that are not compatible.  
+I belong somewhere close to the MVP style products and startups. Build something small, launch, gather users and feedback. Focus more on getting genuine users and learn from their use cases. My partners are more traditional business people and they saw me as a software engineer who was simply leading a team in India to get a website filled with bells and whistles.  
+They neither understood the concept of rapid iteration nor were they interested in getting broken products launched. I was also dating someone at that moment and we broke apart in fairly violent ways. I lost track of things around mid-2018 but somehow got around to start working on [Travlyng](https://travlyng.com).  
+In retrospect this was a big mistake. I had not healed at all. Even when I returned from Germany, I was still on my way to get my mind settled, having recently gone through 6 or 8 sessions of counseling. So knowing that I was still emotionally vulnerable, I should have focused on simply traveling. I was in Nepal but when I came home for a break, I started working full time. And then started building a team for Travlyng.  
+We could not find a revenue model and gradually I started feeling stressed. There was the financial pressure of the company and the emotional pressure of not having dealt with my past issues. So finally in September 2019, I caved in under pressure. I felt I had burned through whatever emotional energy I had gathered in the past year. The team was rather awesome, but I was in no shape or form to guide anyone. I was not even in shape to work. Quitting on my own startups is not new to me but this time I was prepared to accept that I am not doing well.  
+So I packed my bags and after a brief trip to Bangalore, I headed to Vietnam on 1 November 2019. The next few months were the most beautiful solo life I have ever lived. Initially I had a lot of anxiety (startup, deep past and recent break up) but gradually I started gaining some form of mental control. Some sort of peace.  
+  
+I think the hardest part is to accept that I am not good at certain things. I accepted I have anger issues, that I am not good at juggling multiple things. I also accepted I am really bad with words, and I hurt people all the time. I went through a long enough period of digital detox, made some amazing travel buddies and bought a motorbike. By this time I had spent 3 months in Vietnam.  
+  
+I started a 2 months long solo bike trip across Cambodia and Laos on a shitty motorbike (which was all my fault to trust the hostel owner). I will keep my motorbike diaries for another post, but going through all that healed me gradually. I found more calm inside of me and eventually, before the Covid-19 lockdown in Laos, I settled myself at a nice hostel. I started working full time and laid some groundwork for my product. Finally I am here now, somehow content, still nomadic but happy and starting to write again. What will come next? I don't know but I am ready.
