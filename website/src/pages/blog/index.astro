@@ -32,7 +32,7 @@ const posts = (await getCollection('blog')).sort(
 						posts.map((post, index) => (
 							<li
 								class:list={[
-									"w-[calc(50%-1rem)] max-[720px]:w-full max-[720px]:text-center",
+									"w-[calc(50%-1rem)] max-[720px]:w-full max-[720px]:text-center p-4 border border-gray-200 shadow-sm rounded-lg mb-4",
 									{
 										"w-full mb-4 text-center max-[720px]:mb-0":
 											index === 0,
