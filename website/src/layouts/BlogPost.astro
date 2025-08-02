@@ -15,6 +15,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
+			@reference "tailwindcss";
 			.prose :global(h1) {
 				@apply mb-2 text-black leading-tight text-[3.052em];
 			}
