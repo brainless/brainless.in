@@ -1,0 +1,26 @@
+---
+id: tag:blogger.com,1999:blog-27384460.post-8116881482139329940
+title: "Movie: Letters to Juliet"
+pubDate: 2010-10-24
+author: Sumit Datta
+---
+
+I had a fine opportunity to catch two movies back to back today all by myself. The movies were "Letters to Juliet" and "The Other Guys". "The Other Guys" wasn't very good, just a decent watch. If you have other movies as choices you may miss this one and not regret.  
+
+Anyway heading to "Letters to Juliet". The movie opens with Sophie (played by [Amanda Seyfried](http://www.imdb.com/name/nm1086543/)) as a fact checker. She is verifying a picture of a kiss at NY Times Square taken just after the end of WWII. Trying to figure out whether it was spontaneous.  
+
+Sophie successfully figures out it was a spontaneous kiss and submits it to her Editor (I guess) and tells him about her pre-wedding honeymoon plan. She is engaged, and they are going to Italy before their wedding. Victor (Sophie's fiancé, played by [Gael García Bernal](http://www.imdb.com/name/nm0305558/)) is starting a new restaurant and is always busy with food. From the very beginning he seems to be more obsessed with food and wine and vineyards than anything else in the world. But off they go to Italy.  
+
+Italy is where almost all of the plot takes place. Victor is, as predicted, busy with some contact over the phone and discussing wine, and food, and wine auctions and tours to vineyards while Sophie misses out her romantic time. After getting bored with Victor and his wine they part ways, Victor continues his quest for fine wine and Sophie starts wandering about places. Suddenly she comes into the Verona courtyard of Juliet and finds out women leave letters to Juliet. She follows a young lady taking those letters and discovers the "secretaries of Juliet" who reply to all the letters that have return addresses.  
+
+Sophie is intrigued by the whole concept and wants to know more. The next day she herself finds a letter which was left untouched for 50 years. It was about a young girl, Claire who had fallen in love with a boy in the countryside but had to return to England to her parents. She had to leave her love behind in Italy. Sophie decides to reply. To her surprise, Claire, now a grand-mom (played by [Vanessa Redgrave](http://www.imdb.com/name/nm0000603/)) comes to Italy with her grandson Charlie (actor [Christopher Egan](http://www.imdb.com/name/nm0250659/)) to find her long lost love. Thus Sophie, Claire and Charlie (unwilling) start their journey to search true love that once was and still is.  
+
+Sophie uses her skills to narrow down the search for Lorenzo (Claire's love) from about 74 possibilities to 15 or so. Everyone they met was not a match but Sophie pushed on, and so did Claire. Charlie stood out as the one who does not believe in true love, and thought the effort was not worth anything; that Claire may end up hurting herself because they may not find Lorenzo or he may be dead.  
+
+Victor is still engrossed in his wine and its auctions. This gives Sophie the chance to be part of the journey initially but it also brings in the realization that the couple, soon to be wedded, did not mind not staying separate on their romantic holiday. Charlie on the other hand is now presented as a man involved in humanitarian activities. He expresses his concern for his grand-mom but at the same time is thankful to Sophie. He also likes to read Sophie's writing about this journey and tells her to publish it. There is this other side to him. Slowly he feels they like each other. The fact that Sophie is engaged gives Charlie reason not to express any feelings for her, but then it happens. In a garden below the starry night they have their first kiss. Charlie is sorry after all this but things have already changed now. And things have also changed in their quest for Lorenzo.  
+
+Claire is almost given up in her journey and wants to return back. While doing so they cross a vineyard where Claire sees a boy who reminds her of Lorenzo. They find out he is the grandson of the man that Claire has been searching for. Lorenzo comes riding a white horse as you would expect in a fairy tale and it seems like a happy ending. But Sophie has snapped already. She manages a quick return to New York, home, with Victor. But the feeling is already deep inside her by now. "We did not mind being without each other". This was not her love story. Charlie on the other hand tried to talk to Sophie for the last time, to convince her that he was her true love, but did not the chance.  
+
+Sophie's Editor agrees to publish her writing of this journey. but Victor did not have the time to read it. Sophie gets an invitation to Claire and Lorenzo's wedding and decides to leave Victor. At the wedding she meets Patricia, Charlie's girlfriend who had not been in his life for a year. Sophie understands she has nowhere to go and runs from the wedding, with Charlie behind her. Charlie catches up and explains this is not his girlfriend but his cousin who is also Patricia.  
+
+Well happy ending as you can imagine after this with Tailor Swift's song "Love Story" playing in the background.

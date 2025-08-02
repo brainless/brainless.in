@@ -58,25 +58,51 @@ def extract_post_data(entry):
     content_elem = entry.find('content')
     content = content_elem.text if content_elem else ""
     
-    # Extract published date
-    published_elem = entry.find('published')
-    if published_elem:
-        try:
-            published_date = datetime.strptime(
-                published_elem.text, '%Y-%m-%dT%H:%M:%SZ'
-            ).strftime('%Y-%m-%d')
-        except ValueError:
-            # Fallback for different date formats
-            published_date = datetime.now().strftime('%Y-%m-%d')
-    else:
-        published_date = datetime.now().strftime('%Y-%m-%d')
+    # Extract published date - try multiple date fields and formats
+    published_date = None
+    
+    # List of date fields to try, in order of preference
+    date_fields = ['published', 'updated', 'blogger:created']
+    
+    # List of date formats to try
+    date_formats = [
+        '%Y-%m-%dT%H:%M:%SZ',      # 2006-05-01T18:42:00Z
+        '%Y-%m-%dT%H:%M:%S.%fZ',   # 2007-02-18T07:33:54.634Z
+        '%Y-%m-%dT%H:%M:%S%z',     # with timezone
+        '%Y-%m-%d %H:%M:%S',       # simple format
+        '%Y-%m-%d'                 # date only
+    ]
+    
+    for field_name in date_fields:
+        # Handle blogger namespace fields differently
+        if field_name.startswith('blogger:'):
+            date_elem = entry.find(field_name, {'blogger': 'http://schemas.google.com/blogger/2018'})
+        else:
+            # Standard Atom fields don't need namespace
+            date_elem = entry.find(field_name)
+        
+        if date_elem and date_elem.text:
+            date_text = date_elem.text.strip()
+            for date_format in date_formats:
+                try:
+                    published_date = datetime.strptime(date_text, date_format).strftime('%Y-%m-%d')
+                    break
+                except ValueError:
+                    continue
+            if published_date:
+                break
+    
+    # If no valid date found, skip this entry or use a warning
+    if not published_date:
+        print(f"    WARNING: No valid date found for entry: {title_elem.text if title_elem else 'Unknown'}")
+        return None
     
     # Extract author
     author_elem = entry.find('author')
-    author = "brainless"  # Default author
+    author = "Anonymous"  # Default author for comments
     if author_elem:
         name_elem = author_elem.find('name')
-        if name_elem:
+        if name_elem and name_elem.text:
             author = name_elem.text
     
     # Extract parent post ID for comments
@@ -100,20 +126,23 @@ def extract_post_data(entry):
     }
 
 
-def create_markdown_file(post_data, output_dir):
+def create_markdown_file(post_data, output_dir, is_comment=False):
     """Create a Markdown file from post data."""
     filename = clean_filename(post_data['title'])
     if not filename:
-        filename = f"post-{post_data['date']}"
+        if is_comment:
+            filename = f"comment-{post_data['date']}"
+        else:
+            filename = f"post-{post_data['date']}"
     
     # Convert content to markdown
     markdown_content = convert_html_to_markdown(post_data['content'])
     
-    # Create frontmatter
+    # Create frontmatter - use pubDate for Astro compatibility
     frontmatter = f"""---
 id: {post_data['id']}
 title: "{post_data['title']}"
-date: {post_data['date']}
+pubDate: {post_data['date']}
 author: {post_data['author']}"""
     
     if post_data['categories']:
@@ -149,18 +178,23 @@ def main():
     script_dir = Path(__file__).parent
     project_dir = script_dir.parent
     feed_file = project_dir / 'Takeout' / 'Blogger' / 'Blogs' / 'Being brainless!' / 'feed.atom'
-    output_dir = project_dir / 'posts'
+    
+    # Define Astro output directories
+    blog_output_dir = project_dir / 'website' / 'src' / 'content' / 'blog'
+    comments_output_dir = project_dir / 'website' / 'src' / 'content' / 'comments'
     
     # Check if feed file exists
     if not feed_file.exists():
         print(f"Error: Feed file not found at {feed_file}")
         return
     
-    # Create output directory
-    output_dir.mkdir(exist_ok=True)
+    # Create output directories
+    blog_output_dir.mkdir(parents=True, exist_ok=True)
+    comments_output_dir.mkdir(parents=True, exist_ok=True)
     
     print(f"Reading Blogger feed from: {feed_file}")
-    print(f"Output directory: {output_dir}")
+    print(f"Blog posts output directory: {blog_output_dir}")
+    print(f"Comments output directory: {comments_output_dir}")
     
     # Read and parse the Atom feed
     try:
@@ -182,26 +216,43 @@ def main():
     print(f"Found {len(entries)} blog entries")
     
     # Convert each entry
-    converted_count = 0
+    posts_converted = 0
+    comments_converted = 0
+    
     for i, entry in enumerate(entries, 1):
         try:
-            # Check if this is a blog post (not a page or comment)
+            # Check entry type
             type_elem = entry.find('blogger:type', {'blogger': 'http://schemas.google.com/blogger/2018'})
-            if type_elem and type_elem.text != 'POST':
+            if type_elem and type_elem.text not in ['POST', 'COMMENT']:
                 continue
             
             post_data = extract_post_data(entry)
-            output_path = create_markdown_file(post_data, output_dir)
             
-            print(f"  {i:3d}. {post_data['title'][:50]}... -> {output_path.name}")
-            converted_count += 1
+            # Skip entry if no valid date was found
+            if post_data is None:
+                continue
+            
+            # Determine if this is a comment (has parent_id) or a post
+            if post_data['parent_id']:
+                # This is a comment
+                output_path = create_markdown_file(post_data, comments_output_dir, is_comment=True)
+                print(f"  {i:3d}. [COMMENT] {post_data['title'][:40]}... -> {output_path.name}")
+                comments_converted += 1
+            else:
+                # This is a blog post - set default author to Sumit Datta
+                if post_data['author'] == "Anonymous" or not post_data['author'] or post_data['author'] == "brainless":
+                    post_data['author'] = "Sumit Datta"
+                output_path = create_markdown_file(post_data, blog_output_dir, is_comment=False)
+                print(f"  {i:3d}. [POST] {post_data['title'][:40]}... -> {output_path.name}")
+                posts_converted += 1
             
         except Exception as e:
             print(f"  Error processing entry {i}: {e}")
             continue
     
-    print(f"\nConversion complete! {converted_count} blog posts converted to Markdown.")
-    print(f"Files saved in: {output_dir}")
+    print(f"\nConversion complete!")
+    print(f"  {posts_converted} blog posts converted to: {blog_output_dir}")
+    print(f"  {comments_converted} comments converted to: {comments_output_dir}")
 
 
 if __name__ == "__main__":
