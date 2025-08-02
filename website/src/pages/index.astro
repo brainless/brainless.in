@@ -7,25 +7,26 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    </head>
-    <body>
-        <Header />
-        <main>
-            <h1>🧑‍🚀 Hello, Stranger!</h1>
-            <p>
-                I am Sumit Datta, an extremely passionate software engineer with
-                16 years of experience, mostly at early, fast-paced startups.
-            </p>
-            <p>
-                I am entrepreneurial by nature, have built and failed at a few
-                startups. I am very hands-on when it comes to software/product
-                development. I am eager, curious and also a good listener. I
-                have been part of or built or lead teams in the US, Canada,
-                Germany and India. Although I have not been to the Americas.
-            </p>
-        </main>
-        <Footer />
-    </body>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body
+		class="font-sans text-gray-dark text-xl max-[720px]:text-lg leading-[1.7] bg-gradient-to-b from-gray-light/50 bg-no-repeat bg-[length:100%_600px]"
+	>
+		<Header />
+		<main class="w-[720px] max-w-[calc(100%-2em)] mx-auto py-[3em] px-[1em] max-[720px]:p-[1em]">
+			<h1 class="mb-2 text-black leading-tight text-[3.052em]">🧑‍🚀 Hello, Stranger!</h1>
+			<p class="mb-[1em]">
+				I am Sumit Datta, an extremely passionate software engineer with 16 years of experience,
+				mostly at early, fast-paced startups.
+			</p>
+			<p class="mb-[1em]">
+				I am entrepreneurial by nature, have built and failed at a few startups. I am very hands-on
+				when it comes to software/product development. I am eager, curious and also a good listener.
+				I have been part of or built or lead teams in the US, Canada, Germany and India. Although I
+				have not been to the Americas.
+			</p>
+		</main>
+		<Footer />
+	</body>
 </html>

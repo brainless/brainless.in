@@ -15,66 +15,106 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
+			.prose :global(h1) {
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 3.052em;
 			}
-			.hero-image {
-				width: 100%;
+			.prose :global(h2) {
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 2.441em;
 			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
+			.prose :global(h3) {
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 1.953em;
 			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
+			.prose :global(h4) {
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 1.563em;
 			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
+			.prose :global(h5) {
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 1.25em;
 			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
+			.prose :global(p) {
+				margin-bottom: 2em;
 			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+			.prose :global(a) {
+				color: var(--accent);
 			}
-			.last-updated-on {
-				font-style: italic;
+			.prose :global(strong) {
+				font-weight: 700;
+			}
+			.prose :global(code) {
+				padding: 2px 5px;
+				background-color: rgb(var(--gray-light));
+				border-radius: 2px;
+			}
+			.prose :global(pre) {
+				padding: 1.5em;
+				border-radius: 8px;
+			}
+			.prose :global(pre > code) {
+				all: unset;
+			}
+			.prose :global(blockquote) {
+				border-left: 4px solid var(--accent);
+				padding: 0 0 0 20px;
+				margin: 0px;
+				font-size: 1.333em;
+			}
+			.prose :global(hr) {
+				border: none;
+				border-top: 1px solid rgb(var(--gray-light));
 			}
 		</style>
 	</head>
 
-	<body>
+	<body
+		class="font-sans text-gray-dark text-xl max-[720px]:text-lg leading-[1.7] bg-gradient-to-b from-gray-light/50 bg-no-repeat bg-[length:100%_600px]"
+	>
 		<Header />
-		<main>
+		<main
+			class="w-full max-w-full m-0 py-[3em] px-[1em] max-[720px]:p-[1em] w-[calc(100%-2em)]"
+		>
 			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+				<div class="w-full">
+					{
+						heroImage && (
+							<Image
+								width={1020}
+								height={510}
+								src={heroImage}
+								alt=""
+								class="block mx-auto rounded-xl shadow"
+							/>
+						)
+					}
 				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
+				<div
+					class="prose w-[720px] max-w-[calc(100%-2em)] mx-auto p-4 text-gray-dark"
+				>
+					<div class="mb-4 py-4 text-center leading-none">
+						<div class="mb-2 text-gray">
 							<FormattedDate date={pubDate} />
 							{
 								updatedDate && (
-									<div class="last-updated-on">
+									<div class="italic">
 										Last updated on <FormattedDate date={updatedDate} />
 									</div>
 								)
 							}
 						</div>
-						<h1>{title}</h1>
+						<h1 class="mb-2">{title}</h1>
 						<hr />
 					</div>
 					<slot />
