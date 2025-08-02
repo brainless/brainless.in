@@ -1,0 +1,3 @@
+beautifulsoup4==4.12.2
+lxml>=5.0.0
+markdownify==0.11.6
