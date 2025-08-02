@@ -15,45 +15,66 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			@reference "../styles/global.css";
 			.prose :global(h1) {
-				@apply mb-2 text-black leading-tight text-[3.052em];
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 3.052em;
 			}
 			.prose :global(h2) {
-				@apply mb-2 text-black leading-tight text-[2.441em];
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 2.441em;
 			}
 			.prose :global(h3) {
-				@apply mb-2 text-black leading-tight text-[1.953em];
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 1.953em;
 			}
 			.prose :global(h4) {
-				@apply mb-2 text-black leading-tight text-[1.563em];
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 1.563em;
 			}
 			.prose :global(h5) {
-				@apply mb-2 text-black leading-tight text-[1.25em];
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+				font-size: 1.25em;
 			}
 			.prose :global(p) {
-				@apply mb-[2em];
+				margin-bottom: 2em;
 			}
 			.prose :global(a) {
-				@apply text-accent;
+				color: var(--accent);
 			}
 			.prose :global(strong) {
-				@apply font-bold;
+				font-weight: 700;
 			}
 			.prose :global(code) {
-				@apply px-1 py-0.5 bg-gray-light rounded-sm;
+				padding: 2px 5px;
+				background-color: rgb(var(--gray-light));
+				border-radius: 2px;
 			}
 			.prose :global(pre) {
-				@apply p-6 rounded-lg;
+				padding: 1.5em;
+				border-radius: 8px;
 			}
 			.prose :global(pre > code) {
 				all: unset;
 			}
 			.prose :global(blockquote) {
-				@apply border-l-4 border-accent pl-5 text-[1.333em] my-0;
+				border-left: 4px solid var(--accent);
+				padding: 0 0 0 20px;
+				margin: 0px;
+				font-size: 1.333em;
 			}
 			.prose :global(hr) {
-				@apply border-t border-gray-light;
+				border: none;
+				border-top: 1px solid rgb(var(--gray-light));
 			}
 		</style>
 	</head>
