@@ -1,3 +1,6 @@
+# Environment variables
+.env
+
 # Python
 __pycache__/
 *.py[cod]
@@ -61,3 +64,6 @@ blogger-backup.tgz
 
 # Personal CV
 CV.md
+
+# Crush app
+.crush/
