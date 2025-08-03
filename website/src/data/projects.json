@@ -1,0 +1,181 @@
+[
+  {
+    "name": "brainless.in",
+    "description": "My personal website",
+    "url": "https://github.com/brainless/brainless.in",
+    "stars": 0,
+    "languages": {
+      "Astro": 25005,
+      "Python": 15913,
+      "JavaScript": 1437,
+      "TypeScript": 1345,
+      "CSS": 380
+    },
+    "summary": "# brainless.in",
+    "last_updated": "2025-08-02T12:01:20+00:00"
+  },
+  {
+    "name": "letsorder",
+    "description": "Complete menu management, browsing and ordering app for restaurants and guests",
+    "url": "https://github.com/brainless/letsorder",
+    "stars": 0,
+    "languages": {
+      "TypeScript": 292117,
+      "Rust": 154060,
+      "Astro": 47891,
+      "JavaScript": 978,
+      "CSS": 531,
+      "HTML": 364,
+      "Shell": 335
+    },
+    "summary": "# letsorder",
+    "last_updated": "2025-08-02T12:28:03+00:00"
+  },
+  {
+    "name": "likeminded",
+    "description": "Find posts, subreddits and people who you may like. Local, desktop app. Use your Reddit API key, ",
+    "url": "https://github.com/brainless/likeminded",
+    "stars": 0,
+    "languages": {
+      "Rust": 257177,
+      "Shell": 1744
+    },
+    "summary": "",
+    "last_updated": "2025-07-31T05:25:15+00:00"
+  },
+  {
+    "name": "PubDataHub",
+    "description": null,
+    "url": "https://github.com/brainless/PubDataHub",
+    "stars": 0,
+    "languages": {
+      "Go": 553909,
+      "Makefile": 4482
+    },
+    "summary": "# PubDataHub - Interactive Data Hub",
+    "last_updated": "2025-08-02T17:32:12+00:00"
+  },
+  {
+    "name": "Surjo",
+    "description": "AI assisted task planner and calendar for daily life, finances, growth. Meant for individuals, families and teams. Self-host or start with us. Vibe coded.",
+    "url": "https://github.com/brainless/Surjo",
+    "stars": 0,
+    "languages": {
+      "TypeScript": 61426,
+      "Rust": 29610,
+      "CSS": 852,
+      "HTML": 734,
+      "JavaScript": 520
+    },
+    "summary": "",
+    "last_updated": "2025-07-04T17:06:55+00:00"
+  },
+  {
+    "name": "travlyng",
+    "description": "AI guided travel planner, vibe coded",
+    "url": "https://github.com/brainless/travlyng",
+    "stars": 0,
+    "languages": {
+      "Rust": 79439,
+      "TypeScript": 25324,
+      "HTML": 1721,
+      "CSS": 1541
+    },
+    "summary": "# travlyng - Your AI-Powered Travel Planning Companion",
+    "last_updated": "2025-06-21T14:03:49+00:00"
+  },
+  {
+    "name": "dwata",
+    "description": "AI enabled insights from emails, calendars, contacts, files, Slack, databases, web... Fast, private and local. Launching soon!",
+    "url": "https://github.com/pixlie/dwata",
+    "stars": 162,
+    "languages": {
+      "TypeScript": 285782,
+      "Rust": 281109,
+      "Astro": 34864,
+      "MDX": 14252,
+      "Shell": 2013,
+      "CSS": 1493,
+      "JavaScript": 1406,
+      "HTML": 513
+    },
+    "summary": "# dwata",
+    "last_updated": "2025-05-01T01:44:40+00:00"
+  },
+  {
+    "name": "nocodo",
+    "description": null,
+    "url": "https://github.com/pixlie/nocodo",
+    "stars": 0,
+    "languages": {
+      "Astro": 112359,
+      "JavaScript": 213,
+      "TypeScript": 149,
+      "CSS": 22
+    },
+    "summary": "",
+    "last_updated": "2025-07-25T12:02:20+00:00"
+  },
+  {
+    "name": "Pixlie",
+    "description": "AI enabled analysis app, no coding needed. Analyse data, like 44 million Hacker News posts, ask questions. On your computer, your API keys, or local LLMs.",
+    "url": "https://github.com/pixlie/Pixlie",
+    "stars": 22,
+    "languages": {
+      "Rust": 190387,
+      "Astro": 9255,
+      "JavaScript": 211,
+      "CSS": 22
+    },
+    "summary": "# Pixlie - LLM-Enabled TUI Data Analysis Tool",
+    "last_updated": "2025-07-28T13:06:50+00:00"
+  },
+  {
+    "name": "pixlie.com",
+    "description": "Website for pixlie.com",
+    "url": "https://github.com/pixlie/pixlie.com",
+    "stars": 2,
+    "languages": {
+      "Astro": 249550,
+      "TypeScript": 67134,
+      "MDX": 22502,
+      "CSS": 3351,
+      "JavaScript": 2764,
+      "HTML": 497
+    },
+    "summary": "# \ud83d\ude80 AstroWind",
+    "last_updated": "2025-04-30T11:41:48+00:00"
+  },
+  {
+    "name": "PixlieAI",
+    "description": "Please check our new project with similar targets: https://github.com/pixlie/Pixlie",
+    "url": "https://github.com/pixlie/PixlieAI",
+    "stars": 48,
+    "languages": {
+      "Rust": 351626,
+      "TypeScript": 259247,
+      "CSS": 6281,
+      "JavaScript": 938,
+      "Shell": 599,
+      "HTML": 548,
+      "RenderScript": 1
+    },
+    "summary": "> [!NOTE]",
+    "last_updated": "2025-07-15T03:39:14+00:00"
+  },
+  {
+    "name": "SmartCrawler",
+    "description": "A smart web crawler built in Rust that uses Claude AI to select the most relevant URLs from website sitemaps based on crawling objectives.",
+    "url": "https://github.com/pixlie/SmartCrawler",
+    "stars": 17,
+    "languages": {
+      "Rust": 96160,
+      "HTML": 12836,
+      "CSS": 11373,
+      "Shell": 6992,
+      "JavaScript": 2899
+    },
+    "summary": "# SmartCrawler",
+    "last_updated": "2025-07-09T17:00:04+00:00"
+  }
+]
