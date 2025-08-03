@@ -12,73 +12,56 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body
-		class="font-sans text-gray-dark text-xl max-[720px]:text-lg leading-[1.7] bg-gradient-to-b from-gray-light/50 bg-no-repeat bg-[length:100%_600px]"
-	>
-		<Header />
-		<main
-			class="w-[960px] max-w-[calc(100%-2em)] mx-auto py-[3em] px-[1em] max-[720px]:p-[1em]"
+<Page title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<section>
+		<ul
+			class="flex flex-wrap gap-8 p-0 m-0 list-none max-[720px]:gap-2 max-w-[calc(100%-2em)] mx-auto"
 		>
-			<div class="prose w-[720px] max-w-[calc(100%-2em)] mx-auto">
-				<h1>Blog Posts</h1>
-			</div>
-			<section>
-				<ul
-					class="flex flex-wrap gap-8 p-0 m-0 list-none max-[720px]:gap-2 max-w-[calc(100%-2em)] mx-auto"
-				>
-					{
-						posts.map((post, index) => (
-							<li
+			{
+				posts.map((post, index) => (
+					<li
+						class:list={[
+							"w-[calc(50%-1rem)] max-[720px]:w-full max-[720px]:text-center p-4 border border-gray-200 shadow-sm rounded-lg mb-4",
+							{
+								"w-full mb-4 text-center max-[720px]:mb-0":
+									index === 0,
+							},
+						]}
+					>
+						<a
+							href={`/blog/${post.id}/`}
+							class="block no-underline transition duration-200 ease-in-out group"
+						>
+							{post.data.heroImage && (
+								<Image
+									width={720}
+									height={360}
+									src={post.data.heroImage}
+									alt=""
+									class:list={[
+										"mb-2 rounded-xl group-hover:shadow",
+										{ "w-full": index === 0 },
+									]}
+								/>
+							)}
+							<h4
 								class:list={[
-									"w-[calc(50%-1rem)] max-[720px]:w-full max-[720px]:text-center p-4 border border-gray-200 shadow-sm rounded-lg mb-4",
+									"m-0 text-black leading-none group-hover:text-accent",
 									{
-										"w-full mb-4 text-center max-[720px]:mb-0":
+										"text-[2.369rem] max-[720px]:text-[1.563em]":
 											index === 0,
 									},
 								]}
 							>
-								<a
-									href={`/blog/${post.id}/`}
-									class="block no-underline transition duration-200 ease-in-out group"
-								>
-									{post.data.heroImage && (
-										<Image
-											width={720}
-											height={360}
-											src={post.data.heroImage}
-											alt=""
-											class:list={[
-												"mb-2 rounded-xl group-hover:shadow",
-												{ "w-full": index === 0 },
-											]}
-										/>
-									)}
-									<h4
-										class:list={[
-											"m-0 text-black leading-none group-hover:text-accent",
-											{
-												"text-[2.369rem] max-[720px]:text-[1.563em]":
-													index === 0,
-											},
-										]}
-									>
-										{post.data.title}
-									</h4>
-									<p class="m-0 text-gray group-hover:text-accent">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+								{post.data.title}
+							</h4>
+							<p class="m-0 text-gray group-hover:text-accent">
+								<FormattedDate date={post.data.pubDate} />
+							</p>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Page>

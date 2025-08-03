@@ -1,13 +1,10 @@
 ---
-import Layout from '../layouts/PageWithoutProse.astro';
+import Layout from '../layouts/Page.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import projects from '../data/projects.json';
 ---
 
 <Layout title="Projects" description="A list of my projects.">
-	<div class="prose w-[720px] max-w-[calc(100%-2em)] mx-auto">
-		<h1>Projects</h1>
-	</div>
 	<div class="max-w-3xl mx-auto">
 		{projects.map(project => (
 			<ProjectCard project={project} />
