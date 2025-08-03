@@ -12,7 +12,7 @@ const posts = (await getCollection('blog')).sort(
 
 <Page title="Blog Posts" description={SITE_DESCRIPTION}>
 	<section>
-		<ul class="p-0 m-0 list-none max-w-3xl mx-auto">
+		<ul class="p-0 m-0 list-none max-w-3xl mx-auto max-[720px]:max-w-[calc(100%-0.5rem)]">
 			{
 				posts.map((post, index) => (
 					<li class="border border-gray-700 rounded-lg p-4 mb-4 shadow-lg w-full">

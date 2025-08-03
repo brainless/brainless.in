@@ -5,7 +5,7 @@ import projects from '../data/projects.json';
 ---
 
 <Layout title="Projects" description="A list of my projects.">
-	<div class="max-w-3xl mx-auto">
+	<div class="max-w-3xl mx-auto max-[720px]:max-w-[calc(100%-0.5rem)]">
 		{projects.map(project => (
 			<ProjectCard project={project} />
 		))}
