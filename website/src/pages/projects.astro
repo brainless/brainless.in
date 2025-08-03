@@ -5,12 +5,12 @@ import projects from '../data/projects.json';
 ---
 
 <Layout title="Projects" description="A list of my projects.">
-	<div class="container mx-auto px-4 py-8">
-		<h1 class="text-4xl font-bold mb-8">Projects</h1>
-		<div class="max-w-3xl mx-auto">
-			{projects.map(project => (
-				<ProjectCard project={project} />
-			))}
-		</div>
+	<div class="prose w-[720px] max-w-[calc(100%-2em)] mx-auto">
+		<h1>Projects</h1>
+	</div>
+	<div class="max-w-3xl mx-auto">
+		{projects.map(project => (
+			<ProjectCard project={project} />
+		))}
 	</div>
 </Layout>

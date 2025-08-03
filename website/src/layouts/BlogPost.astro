@@ -113,7 +113,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				>
 					<div class="mb-4 py-4 text-center leading-none">
 						<div class="mb-2 text-gray">
-							<FormattedDate date={pubDate} />
+							{pubDate && <FormattedDate date={pubDate} />}
 							{
 								updatedDate && (
 									<div class="italic">
