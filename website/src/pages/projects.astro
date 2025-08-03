@@ -4,7 +4,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import projects from '../data/projects.json';
 ---
 
-<Layout title="Projects | Brainless">
+<Layout title="Projects | Brainless" description="A list of my projects." pubDate={new Date()}>
 	<div class="container mx-auto px-4 py-8">
 		<h1 class="text-4xl font-bold mb-8">Projects</h1>
 		<div class="max-w-3xl mx-auto">
