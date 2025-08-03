@@ -1,13 +1,11 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+
+import Layout from '../layouts/Page.astro';
 ---
 
 <Layout
 	title="About Me"
 	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
 >
 	<p class="mb-[1em]">
 		I am Sumit Datta, an extremely passionate software engineer with 15 years of experience, mostly at
@@ -19,7 +17,7 @@ import Layout from '../layouts/BlogPost.astro';
 		be a resourceful team member/leader to build delightful user experiences.
 	</p>
 
-	<h2 class="text-2xl font-bold my-4">My core values, guiding principles</h2>
+	<h3 class="text-xl font-bold my-4">My core values, guiding principles</h3>
 	<ul class="list-disc list-inside mb-[1em]">
 		<li>Build for the <strong>long term</strong></li>
 		<li><strong>Motivated team</strong> is greater than the sum of individuals</li>
@@ -32,8 +30,8 @@ import Layout from '../layouts/BlogPost.astro';
 		<li><strong>Accept failure</strong>, every day you can start a new attempt</li>
 	</ul>
 
-	<h2 class="text-2xl font-bold my-4">Degrees and certificates</h2>
-	<h3 class="text-xl font-bold">Bachelor of Science in Computer Science</h3>
+	<h3 class="text-xl font-bold my-4">Degrees and certificates</h3>
+	<h4 class="text-lg font-bold">Bachelor of Science in Computer Science</h4>
 	<p class="mb-[1em]">
 		From <a
 			href="https://en.wikipedia.org/wiki/University_of_Calcutta"
@@ -53,9 +51,9 @@ import Layout from '../layouts/BlogPost.astro';
 		>.
 	</p>
 
-	<h2 class="text-2xl font-bold my-4">Work experience</h2>
+	<h3 class="text-xl font-bold my-4">Work experience</h3>
 
-	<h3 class="text-xl font-bold mt-4">Leader of Software Engineering at Hearth Display Inc.</h3>
+	<h4 class="text-lg font-bold mt-4">Leader of Software Engineering at Hearth Display Inc.</h4>
 	<p class="mb-[1em]"><em>November 2021 - October 2022</em></p>
 	<p class="mb-[1em]">
 		I helped lay out the core software product with FastAPI, Python, PostgreSQL, React, Zustand,
@@ -66,7 +64,7 @@ import Layout from '../layouts/BlogPost.astro';
 		for regular work and hiring. I was working remotely from India.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Founder of dwata</h3>
+	<h4 class="text-lg font-bold mt-4">Founder of dwata</h4>
 	<p class="mb-[1em]"><em>November 2019 - September 2021</em></p>
 	<p class="mb-[1em]">
 		I have been traveling around SE Asia for some headspace, and building <a
@@ -80,7 +78,7 @@ import Layout from '../layouts/BlogPost.astro';
 		tools on the side.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Consultant & Founder of Travlyng</h3>
+	<h4 class="text-lg font-bold mt-4">Consultant & Founder of Travlyng</h4>
 	<p class="mb-[1em]"><em>August 2017 - November 2019</em></p>
 	<p class="mb-[1em]">
 		Primarily work as a consultant for a few startups (work remotely from India). Moonlight on my own
@@ -90,7 +88,7 @@ import Layout from '../layouts/BlogPost.astro';
 		travelers.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Lead Developer at Mylittlejob GmbH</h3>
+	<h4 class="text-lg font-bold mt-4">Lead Developer at Mylittlejob GmbH</h4>
 	<p class="mb-[1em]"><em>April 2015 - June 2017</em></p>
 	<p class="mb-[1em]">
 		Working with <a href="https://www.mylittlejob.com/" target="_blank" rel="noopener noreferrer"
@@ -100,7 +98,7 @@ import Layout from '../layouts/BlogPost.astro';
 		online work. Job creation, job management workflow, payment, payout, etc.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Python Developer at Smaato Inc.</h3>
+	<h4 class="text-lg font-bold mt-4">Python Developer at Smaato Inc.</h4>
 	<p class="mb-[1em]"><em>September 2014 - March 2015</em></p>
 	<p class="mb-[1em]">
 		Working for <a href="https://www.smaato.com/" target="_blank" rel="noopener noreferrer"
@@ -112,7 +110,7 @@ import Layout from '../layouts/BlogPost.astro';
 		RESTful APIs.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Software Engineer at Eco Market</h3>
+	<h4 class="text-lg font-bold mt-4">Software Engineer at Eco Market</h4>
 	<p class="mb-[1em]"><em>June 2013 - December 2013</em></p>
 	<p class="mb-[1em]">
 		Worked with Eco Market (London, UK - remote) as Software Engineer. It is a marketplace for
@@ -121,7 +119,7 @@ import Layout from '../layouts/BlogPost.astro';
 		analytics, reporting with Chartio (SQL based), implementing new design handed over by designer.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Software Engineer at Feastly</h3>
+	<h4 class="text-lg font-bold mt-4">Software Engineer at Feastly</h4>
 	<p class="mb-[1em]"><em>December 2012 - June 2013</em></p>
 	<p class="mb-[1em]">
 		Worked with <a href="https://eatfeastly.com/" target="_blank" rel="noopener noreferrer">Feastly</a
@@ -131,7 +129,7 @@ import Layout from '../layouts/BlogPost.astro';
 		new design, deployments, payment processing (Balanced Payments/PayPal), etc.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Senior Mentor</h3>
+	<h4 class="text-lg font-bold mt-4">Senior Mentor</h4>
 	<p class="mb-[1em]"><em>September 2012 - December 2012</em></p>
 	<p class="mb-[1em]">
 		Consulting for a Web Development company as a senior mentor, looking over development, sales,
@@ -140,7 +138,7 @@ import Layout from '../layouts/BlogPost.astro';
 		understand needs and win projects.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Personal Sabbatical</h3>
+	<h4 class="text-lg font-bold mt-4">Personal Sabbatical</h4>
 	<p class="mb-[1em]"><em>January 2012 - August 2012</em></p>
 	<p class="mb-[1em]">
 		Took a break from day jobs and tried working on some personal product concepts. Worked on an
@@ -149,7 +147,7 @@ import Layout from '../layouts/BlogPost.astro';
 		Python.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Framework Engineer at MobStac</h3>
+	<h4 class="text-lg font-bold mt-4">Framework Engineer at MobStac</h4>
 	<p class="mb-[1em]"><em>July 2011 - December 2011</em></p>
 	<p class="mb-[1em]">
 		Worked at <a href="https://www.beaconstac.com/" target="_blank" rel="noopener noreferrer"
@@ -161,14 +159,14 @@ import Layout from '../layouts/BlogPost.astro';
 		worked with a custom built JavaScript engine for rendering.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Tech Lead at forums.com</h3>
+	<h4 class="text-lg font-bold mt-4">Tech Lead at forums.com</h4>
 	<p class="mb-[1em]"><em>October 2009 - June 2011</em></p>
 	<p class="mb-[1em]">
 		forums.com (Kolkata, India) tech lead. LAMP stack with Redis, Tokyo Cabinet, Gearman, some
 		Python. I managed a team of 10, and looked into all aspects of operations and development.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Co-founder of Pixlie</h3>
+	<h4 class="text-lg font-bold mt-4">Co-founder of Pixlie</h4>
 	<p class="mb-[1em]"><em>December 2006 - December 2008</em></p>
 	<p class="mb-[1em]">
 		Worked at Pixlie, a startup that I co-founded. Built hispanito.com as a social network, LAMP
@@ -176,11 +174,11 @@ import Layout from '../layouts/BlogPost.astro';
 		usage. Started working on Amazon Web Services.
 	</p>
 
-	<h3 class="text-xl font-bold mt-4">Google Summer of Code</h3>
+	<h4 class="text-lg font-bold mt-4">Google Summer of Code</h4>
 	<p class="mb-[1em]"><em>March 2006 - August 2006</em></p>
 	<p class="mb-[1em]">Google Summer of Code for Drupal, GData module development.</p>
 
-	<h3 class="text-xl font-bold mt-4">Project Lead at Intrasoft Technologies</h3>
+	<h4 class="text-lg font-bold mt-4">Project Lead at Intrasoft Technologies</h4>
 	<p class="mb-[1em]"><em>2005 - December 2005</em></p>
 	<p class="mb-[1em]">
 		Worked at Intrasoft Technologies <a
