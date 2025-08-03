@@ -3,75 +3,116 @@ const today = new Date();
 ---
 
 <footer
-	class="py-8 px-4 pb-24 bg-gradient-to-b from-gray-light/50 bg-no-repeat text-gray text-center"
+    class="py-8 px-4 pb-24 bg-gradient-to-b from-gray-light/50 bg-no-repeat text-gray-100 text-center"
 >
-	&copy; {today.getFullYear()} Sumit Datta. All rights reserved.
-	<div class="flex justify-center gap-4 mt-4">
-		<a
-			href="https://www.youtube.com/playlist?list=PLYtYRIWhUTWVLWPzLmxwW8tQZw1VbPVAb"
-			target="_blank"
-			class="no-underline text-gray hover:text-gray-dark"
-		>
-			<span class="sr-only">Learn vibe coding on YouTube</span>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				aria-hidden="true"
-				width="32"
-				height="32"
-			>
-				<path
-					d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.45.029 5.758 0 8.757v6.486c.029 3.001.488 5.308 4.385 5.574 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.573 4.385-5.574V8.757c-.029-3-.488-5.308-4.385-5.573zM9.545 15.568V6.432l6.892 4.568-6.892 4.568z"
-				></path>
-			</svg>
-		</a>
-		<a
-			href="https://bsky.app/profile/brainless.in"
-			target="_blank"
-			class="no-underline text-gray hover:text-gray-dark"
-		>
-			<span class="sr-only">Follow me on Blue Sky</span>
-			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/twitter"
-				><path
-					fill="currentColor"
-					d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-				></path></svg
-			>
-		</a>
-		<a
-			href="https://www.linkedin.com/in/brainless"
-			target="_blank"
-			class="no-underline text-gray hover:text-gray-dark"
-		>
-			LinkedIn
-		</a>
-		<a
-			href="https://www.reddit.com/user/sumitdatta"
-			target="_blank"
-			class="no-underline text-gray hover:text-gray-dark"
-		>
-			Reddit
-		</a>
-		<a
-			href="https://www.instagram.com/nomadsome"
-			target="_blank"
-			class="no-underline text-gray hover:text-gray-dark"
-		>
-			Instagram
-		</a>
-		<a
-			href="https://github.com/brainless"
-			target="_blank"
-			class="no-underline text-gray hover:text-gray-dark"
-		>
-			<span class="sr-only">Go to my GitHub repo</span>
-			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github"
-				><path
-					fill="currentColor"
-					d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-				></path></svg
-			>
-		</a>
-	</div>
+    &copy; {today.getFullYear()} Sumit Datta. All rights reserved.
+    <div class="flex justify-center gap-4 mt-4">
+        <a
+            href="https://www.youtube.com/playlist?list=PLYtYRIWhUTWVLWPzLmxwW8tQZw1VbPVAb"
+            target="_blank"
+            class="no-underline text-gray-100 hover:text-gray-300"
+        >
+            <span class="sr-only">Learn vibe coding on YouTube</span>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                width="32"
+                height="32"
+            >
+                <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.45.029 5.758 0 8.757v6.486c.029 3.001.488 5.308 4.385 5.574 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.573 4.385-5.574V8.757c-.029-3-.488-5.308-4.385-5.573zM9.545 15.568V6.432l6.892 4.568-6.892 4.568z"
+                ></path>
+            </svg>
+        </a>
+        <a
+            href="https://bsky.app/profile/brainless.in"
+            target="_blank"
+            class="no-underline text-gray-100 hover:text-gray-300"
+        >
+            <span class="sr-only">Follow me on Blue Sky</span>
+            <svg
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+                width="32"
+                height="32"
+                astro-icon="social/twitter"
+                ><path
+                    fill="currentColor"
+                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                ></path></svg
+            >
+        </a>
+        <a
+            href="https://www.linkedin.com/in/brainless"
+            target="_blank"
+            class="no-underline text-gray-100 hover:text-gray-300 flex"
+        >
+            <span class="sr-only">Follow me on LinkedIn</span>
+            <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                width="32"
+                height="32"
+                fill="currentColor"
+            >
+                <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 6.879v6.232zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                ></path>
+            </svg>
+        </a>
+        <a
+            href="https://www.reddit.com/user/sumitdatta"
+            target="_blank"
+            class="no-underline text-gray-100 hover:text-gray-300 flex"
+        >
+            <span class="sr-only">Follow me on Reddit</span>
+            <svg
+                viewBox="0 0 800 800"
+                aria-hidden="true"
+                width="32"
+                height="32"
+                fill="currentColor"
+            >
+                <path d="M666.8 400c.08 5.48-.6 10.95-2.04 16.24s-3.62 10.36-6.48 15.04c-2.85 4.68-6.35 8.94-10.39 12.65s-8.58 6.83-13.49 9.27c.11 1.46.2 2.93.25 4.4a107.268 107.268 0 0 1 0 8.8c-.05 1.47-.14 2.94-.25 4.4 0 89.6-104.4 162.4-233.2 162.4S168 560.4 168 470.8c-.11-1.46-.2-2.93-.25-4.4a107.268 107.268 0 0 1 0-8.8c.05-1.47.14-2.94.25-4.4a58.438 58.438 0 0 1-31.85-37.28 58.41 58.41 0 0 1 7.8-48.42 58.354 58.354 0 0 1 41.93-25.4 58.4 58.4 0 0 1 46.52 15.5 286.795 286.795 0 0 1 35.89-20.71c12.45-6.02 25.32-11.14 38.51-15.3s26.67-7.35 40.32-9.56s27.45-3.42 41.28-3.63L418 169.6c.33-1.61.98-3.13 1.91-4.49.92-1.35 2.11-2.51 3.48-3.4 1.38-.89 2.92-1.5 4.54-1.8 1.61-.29 3.27-.26 4.87.09l98 19.6c9.89-16.99 30.65-24.27 48.98-17.19s28.81 26.43 24.71 45.65c-4.09 19.22-21.55 32.62-41.17 31.61-19.63-1.01-35.62-16.13-37.72-35.67L440 186l-26 124.8c13.66.29 27.29 1.57 40.77 3.82a284.358 284.358 0 0 1 77.8 24.86A284.412 284.412 0 0 1 568 360a58.345 58.345 0 0 1 29.4-15.21 58.361 58.361 0 0 1 32.95 3.21 58.384 58.384 0 0 1 25.91 20.61A58.384 58.384 0 0 1 666.8 400zm-396.96 55.31c2.02 4.85 4.96 9.26 8.68 12.97 3.71 3.72 8.12 6.66 12.97 8.68A40.049 40.049 0 0 0 306.8 480c16.18 0 30.76-9.75 36.96-24.69 6.19-14.95 2.76-32.15-8.68-43.59s-28.64-14.87-43.59-8.68c-14.94 6.2-24.69 20.78-24.69 36.96 0 5.25 1.03 10.45 3.04 15.31zm229.1 96.02c2.05-2 3.22-4.73 3.26-7.59.04-2.87-1.07-5.63-3.07-7.68s-4.73-3.22-7.59-3.26c-2.87-.04-5.63 1.07-7.94 2.8a131.06 131.06 0 0 1-19.04 11.35 131.53 131.53 0 0 1-20.68 7.99c-7.1 2.07-14.37 3.54-21.72 4.39-7.36.85-14.77 1.07-22.16.67-7.38.33-14.78.03-22.11-.89a129.01 129.01 0 0 1-21.64-4.6c-7.08-2.14-13.95-4.88-20.56-8.18s-12.93-7.16-18.89-11.53c-2.07-1.7-4.7-2.57-7.38-2.44s-5.21 1.26-7.11 3.15c-1.89 1.9-3.02 4.43-3.15 7.11s.74 5.31 2.44 7.38c7.03 5.3 14.5 9.98 22.33 14s16 7.35 24.4 9.97 17.01 4.51 25.74 5.66c8.73 1.14 17.54 1.53 26.33 1.17 8.79.36 17.6-.03 26.33-1.17A153.961 153.961 0 0 0 476.87 564c7.83-4.02 15.3-8.7 22.33-14zm-7.34-68.13c5.42.06 10.8-.99 15.81-3.07 5.01-2.09 9.54-5.17 13.32-9.06s6.72-8.51 8.66-13.58A39.882 39.882 0 0 0 532 441.6c0-16.18-9.75-30.76-24.69-36.96-14.95-6.19-32.15-2.76-43.59 8.68s-14.87 28.64-8.68 43.59c6.2 14.94 20.78 24.69 36.96 24.69z"/>
+            </svg>
+        </a>
+        <a
+            href="https://www.instagram.com/nomadsome"
+            target="_blank"
+            class="no-underline text-gray-100 hover:text-gray-300 flex"
+        >
+            <span class="sr-only">Follow me on Instagram</span>
+            <svg
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+                width="32"
+                height="32"
+                fill="currentColor"
+            >
+                <path d="M21.3,9.7c-0.6,0-1.2,0.5-1.2,1.2c0,0.7,0.5,1.2,1.2,1.2c0.7,0,1.2-0.5,1.2-1.2C22.4,10.2,21.9,9.7,21.3,9.7z"/>
+                <path d="M16,11.2c-2.7,0-4.9,2.2-4.9,4.9c0,2.7,2.2,4.9,4.9,4.9s4.9-2.2,4.9-4.9C21,13.4,18.8,11.2,16,11.2z M16,19.3   c-1.7,0-3.2-1.4-3.2-3.2c0-1.7,1.4-3.2,3.2-3.2c1.7,0,3.2,1.4,3.2,3.2C19.2,17.9,17.8,19.3,16,19.3z"/>
+                <path d="M20,6h-8c-3.3,0-6,2.7-6,6v8c0,3.3,2.7,6,6,6h8c3.3,0,6-2.7,6-6v-8C26,8.7,23.3,6,20,6z M24.1,20   c0,2.3-1.9,4.1-4.1,4.1h-8c-2.3,0-4.1-1.9-4.1-4.1v-8c0-2.3,1.9-4.1,4.1-4.1h8c2.3,0,4.1,1.9,4.1,4.1V20z"/>
+            </svg>
+        </a>
+        <a
+            href="https://github.com/brainless"
+            target="_blank"
+            class="no-underline text-gray-100 hover:text-gray-300"
+        >
+            <span class="sr-only">Go to my GitHub repo</span>
+            <svg
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+                width="32"
+                height="32"
+                astro-icon="social/github"
+                ><path
+                    fill="currentColor"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                ></path></svg
+            >
+        </a>
+    </div>
 </footer>
