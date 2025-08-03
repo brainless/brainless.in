@@ -76,6 +76,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				border: none;
 				border-top: 1px solid rgb(var(--gray-light));
 			}
+			.prose :global(ol) {
+				list-style: decimal;
+				margin-left: 1.5em;
+			}
+			.prose :global(ul) {
+				list-style: disc;
+				margin-left: 1.5em;
+			}
 		</style>
 	</head>
 
