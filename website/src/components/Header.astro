@@ -3,25 +3,25 @@ import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
-<header class="m-0 px-4 bg-white shadow-[0_2px_8px_rgba(15,18,25,5%)]">
+<header class="m-0 px-4 bg-gray-900 shadow-[0_2px_8px_rgba(15,18,25,5%)]">
 	<nav class="flex items-center justify-between">
 		<h2 class="m-0 text-base">
-			<a href="/" class="py-6 px-2 text-black border-b-4 border-transparent no-underline"
+			<a href="/" class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline"
 				>{SITE_TITLE}</a
 			>
 		</h2>
 		<div class="internal-links">
 			<HeaderLink
 				href="/blog"
-				class="py-6 px-2 text-black border-b-4 border-transparent no-underline">Blog</HeaderLink
+				class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline">Blog</HeaderLink
 			>
 			<HeaderLink
 				href="/projects"
-				class="py-6 px-2 text-black border-b-4 border-transparent no-underline">Projects</HeaderLink
+				class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline">Projects</HeaderLink
 			>
 			<HeaderLink
 				href="/about"
-				class="py-6 px-2 text-black border-b-4 border-transparent no-underline">About</HeaderLink
+				class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline">About</HeaderLink
 			>
 		</div>
 	</nav>

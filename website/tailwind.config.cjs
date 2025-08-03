@@ -8,13 +8,11 @@ module.exports = {
 			colors: {
 				accent: "#2337ff",
 				"accent-dark": "#000d8a",
-				black: "rgb(15, 18, 25)",
 				gray: "rgb(96, 115, 159)",
-				"gray-light": "rgb(229, 233, 240)",
-				"gray-dark": "rgb(34, 41, 57)",
 			},
 			fontFamily: {
-				sans: ["Atkinson", ...defaultTheme.fontFamily.sans],
+				sans: ["Funnel Sans", ...defaultTheme.fontFamily.sans],
+				serif: ["Barriecito", ...defaultTheme.fontFamily.serif],
 			},
 			boxShadow: {
 				DEFAULT:

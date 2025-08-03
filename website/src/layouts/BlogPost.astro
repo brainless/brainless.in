@@ -17,46 +17,51 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<style>
 			.prose :global(h1) {
 				margin: 0 0 0.5rem 0;
-				color: rgb(var(--black));
+				color: rgb(var(--gray-100));
 				line-height: 1.2;
 				font-size: 3.052em;
+				font-family: var(--font-serif);
 			}
 			.prose :global(h2) {
 				margin: 0 0 0.5rem 0;
-				color: rgb(var(--black));
+				color: rgb(var(--gray-100));
 				line-height: 1.2;
 				font-size: 2.441em;
+				font-family: var(--font-serif);
 			}
 			.prose :global(h3) {
 				margin: 0 0 0.5rem 0;
-				color: rgb(var(--black));
+				color: rgb(var(--gray-100));
 				line-height: 1.2;
 				font-size: 1.953em;
+				font-family: var(--font-serif);
 			}
 			.prose :global(h4) {
 				margin: 0 0 0.5rem 0;
-				color: rgb(var(--black));
+				color: rgb(var(--gray-100));
 				line-height: 1.2;
 				font-size: 1.563em;
+				font-family: var(--font-serif);
 			}
 			.prose :global(h5) {
 				margin: 0 0 0.5rem 0;
-				color: rgb(var(--black));
+				color: rgb(var(--gray-100));
 				line-height: 1.2;
 				font-size: 1.25em;
+				font-family: var(--font-serif);
 			}
 			.prose :global(p) {
 				margin-bottom: 2em;
 			}
 			.prose :global(a) {
-				color: var(--accent);
+				color: rgb(var(--accent-light));
 			}
 			.prose :global(strong) {
 				font-weight: 700;
 			}
 			.prose :global(code) {
 				padding: 2px 5px;
-				background-color: rgb(var(--gray-light));
+				background-color: rgb(var(--gray-100));
 				border-radius: 2px;
 			}
 			.prose :global(pre) {
@@ -88,7 +93,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</head>
 
 	<body
-		class="font-sans text-gray-dark text-xl max-[720px]:text-lg leading-[1.7] bg-gradient-to-b from-gray-light/50 bg-no-repeat bg-[length:100%_600px]"
+		class="font-sans text-gray-100 text-xl max-[720px]:text-lg leading-[1.7] bg-gray-900"
 	>
 		<Header />
 		<main
@@ -109,7 +114,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					}
 				</div>
 				<div
-					class="prose w-[720px] max-w-[calc(100%-2em)] mx-auto p-4 text-gray-dark"
+					class="prose font-sans w-[720px] max-w-[calc(100%-2em)] mx-auto p-4 text-gray-100"
 				>
 					<div class="mb-4 py-4 text-center leading-none">
 						<div class="mb-2 text-gray">

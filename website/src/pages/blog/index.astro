@@ -12,23 +12,13 @@ const posts = (await getCollection('blog')).sort(
 
 <Page title="Blog Posts" description={SITE_DESCRIPTION}>
 	<section>
-		<ul
-			class="flex flex-wrap gap-8 p-0 m-0 list-none max-[720px]:gap-2 max-w-[calc(100%-2em)] mx-auto"
-		>
+		<ul class="p-0 m-0 list-none max-w-3xl mx-auto">
 			{
 				posts.map((post, index) => (
-					<li
-						class:list={[
-							"w-[calc(50%-1rem)] max-[720px]:w-full max-[720px]:text-center p-4 border border-gray-200 shadow-sm rounded-lg mb-4",
-							{
-								"w-full mb-4 text-center max-[720px]:mb-0":
-									index === 0,
-							},
-						]}
-					>
+					<li class="border border-gray-700 rounded-lg p-4 mb-4 shadow-lg w-full">
 						<a
 							href={`/blog/${post.id}/`}
-							class="block no-underline transition duration-200 ease-in-out group"
+							class="block no-underline transition duration-200 ease-in-out group text-gray-light"
 						>
 							{post.data.heroImage && (
 								<Image
@@ -36,24 +26,13 @@ const posts = (await getCollection('blog')).sort(
 									height={360}
 									src={post.data.heroImage}
 									alt=""
-									class:list={[
-										"mb-2 rounded-xl group-hover:shadow",
-										{ "w-full": index === 0 },
-									]}
-								/>
+									class="mb-2 rounded-xl group-hover:shadow" />
 							)}
-							<h4
-								class:list={[
-									"m-0 text-black leading-none group-hover:text-accent",
-									{
-										"text-[2.369rem] max-[720px]:text-[1.563em]":
-											index === 0,
-									},
-								]}
-							>
+							<h4 class="text-xl font-bold mb-2 text-gray-100">
 								{post.data.title}
 							</h4>
-							<p class="m-0 text-gray group-hover:text-accent">
+							{post.data.description && <p class="text-gray-light text-sm mb-4">{post.data.description}</p>}
+							<class="m-0 text-gray-100 group-hover:text-accent">
 								<FormattedDate date={post.data.pubDate} />
 							</p>
 						</a>
