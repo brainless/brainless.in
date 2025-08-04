@@ -134,6 +134,37 @@ python import_projects.py
 
 **Dependencies:** `PyGithub`, `python-dotenv`
 
+### fetch_youtube_videos.py
+
+**Purpose:** Fetch videos from a YouTube playlist using YouTube API and save details to JSON for website display.
+
+**Usage:**
+```bash
+# Set up environment variables first (see Configuration below)
+python fetch_youtube_videos.py
+```
+
+**Features:**
+- Fetches video details from a specified YouTube playlist
+- Extracts title, description, YouTube link, thumbnail URL, and publish date
+- Handles API errors gracefully with detailed error messages
+- Sorts videos by upload date (most recent first)
+- Saves structured JSON data for website integration
+- Supports configurable maximum number of videos to fetch
+- Provides detailed progress feedback during execution
+
+**Configuration:**
+- Create `.env` file with YouTube API credentials:
+  ```
+  YOUTUBE_API_KEY=your_youtube_api_key_here
+  YOUTUBE_PLAYLIST_ID=your_playlist_id_here
+  ```
+- Modify `MAX_RESULTS` in script if you need more than 50 videos
+
+**Output:** `../website/src/data/videos.json`
+
+**Dependencies:** `google-api-python-client`, `python-dotenv`
+
 ### organize_comments.py
 
 **Purpose:** Move comment files (identified as "untitled" posts) to a separate comments folder.
@@ -222,6 +253,20 @@ Comment content...
     "languages": {"JavaScript": 12345, "Python": 6789},
     "summary": "First line from README",
     "last_updated": "2023-12-01T10:30:00Z"
+  }
+]
+```
+
+### Videos JSON Structure
+```json
+[
+  {
+    "title": "Video Title",
+    "description": "Video description from YouTube",
+    "link": "https://www.youtube.com/watch?v=VIDEO_ID",
+    "thumbnail": "https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg",
+    "publishDate": "2023-12-01T10:30:00Z",
+    "videoId": "VIDEO_ID"
   }
 ]
 ```
