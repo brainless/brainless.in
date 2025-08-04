@@ -1,1 +1,82 @@
-[]
+[
+  {
+    "title": "Vibe Coding Import Scripts from Blogger and GitHub to Astro",
+    "description": "",
+    "link": "https://www.youtube.com/watch?v=MrPC6wnfQYA",
+    "thumbnail": "https://i.ytimg.com/vi/MrPC6wnfQYA/hqdefault.jpg",
+    "publishDate": "2025-08-03T09:09:11Z",
+    "videoId": "MrPC6wnfQYA"
+  },
+  {
+    "title": "Vibe Coding TUI Based Full-Stack Software Development Approach",
+    "description": "",
+    "link": "https://www.youtube.com/watch?v=mupUsT06fE8",
+    "thumbnail": "https://i.ytimg.com/vi/mupUsT06fE8/hqdefault.jpg",
+    "publishDate": "2025-07-26T08:22:51Z",
+    "videoId": "mupUsT06fE8"
+  },
+  {
+    "title": "Vibe Coding: (Setup) GitHub Automation And Create/Manage Tickets With AI",
+    "description": "",
+    "link": "https://www.youtube.com/watch?v=Ni4MhkIl1wc",
+    "thumbnail": "https://i.ytimg.com/vi/Ni4MhkIl1wc/hqdefault.jpg",
+    "publishDate": "2025-07-26T06:33:47Z",
+    "videoId": "Ni4MhkIl1wc"
+  },
+  {
+    "title": "Vibe Coding: Create a Static Website with Astro, Tailwind and Markdown for Content",
+    "description": "In this video we are going to create https://nocodo.com using https://claude.ai and then Claude Code and GitHub based workflow. The website uses Astro (a framework that is great for static content websites), Tailwind CSS and Cloudflare Pages (hosting).\n\nAbout me and this series:\nI am Sumit and I am a senior software engineer and trying founder. I recently switched to vibe coding only. I do not read or write code daily as I used to. This has been immensely helpful to me as a founder since I get so much time to do things like market research, marketing, creating content like this video series.\n\nThis series is for anyone who wants to build production software - go live on web, phones, tackle errors, add/update features, etc. We will cover lots of topics that are needed to build and maintain such software. Everyone is welcome, do not worry if you do not know anything about software engineering. This series is for you!\n\n#vibecoding #aicoding #claudecode #staticwebsite #website",
+    "link": "https://www.youtube.com/watch?v=cOc1xrJhglA",
+    "thumbnail": "https://i.ytimg.com/vi/cOc1xrJhglA/hqdefault.jpg",
+    "publishDate": "2025-07-25T09:09:00Z",
+    "videoId": "cOc1xrJhglA"
+  },
+  {
+    "title": "Vibe Coding: Handle Frustrating Situations With AI",
+    "description": "About me and this series:\nI am Sumit and I am a senior software engineer and trying founder. I recently switched to vibe coding only. I do not read or write code daily as I used to. This has been immensely helpful to me as a founder since I get so much time to do things like market research, marketing, creating content like this video series.\n\nThis series is for anyone who wants to build production software - go live on web, phones, tackle errors, add/update features, etc. We will cover lots of topics that are needed to build and maintain such software. Everyone is welcome, do not worry if you do not know anything about software engineering. This series is for you!\n\n#vibecoding #founder #softwaredevelopment #aicoding #claudecode",
+    "link": "https://www.youtube.com/watch?v=sdg54msWyPI",
+    "thumbnail": "https://i.ytimg.com/vi/sdg54msWyPI/hqdefault.jpg",
+    "publishDate": "2025-07-24T11:42:59Z",
+    "videoId": "sdg54msWyPI"
+  },
+  {
+    "title": "Vibe Coding: Working with Claude Code and GitHub Issues",
+    "description": "",
+    "link": "https://www.youtube.com/watch?v=g2lqnsanz00",
+    "thumbnail": "https://i.ytimg.com/vi/g2lqnsanz00/hqdefault.jpg",
+    "publishDate": "2025-07-23T15:16:07Z",
+    "videoId": "g2lqnsanz00"
+  },
+  {
+    "title": "Vibe Coding: Generate Tickets with Claude Code",
+    "description": "",
+    "link": "https://www.youtube.com/watch?v=oUmQ0GHcO3U",
+    "thumbnail": "https://i.ytimg.com/vi/oUmQ0GHcO3U/hqdefault.jpg",
+    "publishDate": "2025-07-23T06:56:02Z",
+    "videoId": "oUmQ0GHcO3U"
+  },
+  {
+    "title": "Vibe Coding: Learning (Engineering) Mindset",
+    "description": "In this (third) video in my series about vibe coding, let's talk about why we need to learning some basic ideas about engineering and learning itself. I share an analogy that I like: house building. There is so much knowledge around house building and it needs some thinking, structuring, planning and knowing some terms. This will be needed when we vibe code. We need to know some of the basics of software development lifecycle to build a feature rich software. And we to know things in even more detail when bugs start appearing.\n\nAbout me and this series:\nI am Sumit and I am a senior software engineer and trying founder. I recently switched to vibe coding only. I do not read or write code daily as I used to. This has been immensely helpful to me as a founder since I get so much time to do things like market research, marketing, creating content like this video series.\n\nThis series is for anyone who wants to build production software - go live on web, phones, tackle errors, add/update features, etc. We will cover lots of topics that are needed to build and maintain such software. Everyone is welcome, do not worry if you do not know anything about software engineering. This series is for you!\n\n#vibecoding #founder #softwaredevelopment #aicoding #claudecode #geminicli",
+    "link": "https://www.youtube.com/watch?v=Y-BHIeOe7cE",
+    "thumbnail": "https://i.ytimg.com/vi/Y-BHIeOe7cE/hqdefault.jpg",
+    "publishDate": "2025-07-22T15:53:14Z",
+    "videoId": "Y-BHIeOe7cE"
+  },
+  {
+    "title": "Vibe Coding: Build with Gemini CLI and Claude Code with simple product description",
+    "description": "This is the second video in our series on vibe coding. In this video we will see how Gemini CLI creates a web application from a simple product description. We will see where it got stuck or where I feel the output is not good enough. We are building a downloader and viewer of Hacker News data which will work on our browser, storing the data on our computer. It should have a download status. Then we will try the same with Claude Code and see its output. We will also explain \"vibe coding\" while we are building this software.\n\nAbout me and this series:\nI am Sumit and I am a senior software engineer and trying founder. I recently switched to vibe coding only. I do not read or write code daily as I used to. This has been immensely helpful to me as a founder since I get so much time to do things like market research, marketing, creating content like this video series.\n\nThis series is for anyone who wants to build production software - go live on web, phones, tackle errors, add/update features, etc. We will cover lots of topics that are needed to build and maintain such software. Everyone is welcome, do not worry if you do not know anything about software engineering. This series is for you!\n\n#vibecoding #founder #softwaredevelopment #aicoding #claudecode #geminicli",
+    "link": "https://www.youtube.com/watch?v=1k2HUftnMbo",
+    "thumbnail": "https://i.ytimg.com/vi/1k2HUftnMbo/hqdefault.jpg",
+    "publishDate": "2025-07-21T04:08:06Z",
+    "videoId": "1k2HUftnMbo"
+  },
+  {
+    "title": "Vibe Coding: Introduction",
+    "description": "This is the first in a series of videos about vibe coding.\n\nI am Sumit and I am a senior software engineer and trying founder. I recently switched to vibe coding only. I do not read or write code daily as I used to. This has been immensely helpful to me as a founder since I get so much time to do things like market research, marketing, creating content like this video series.\n\nThis series is for anyone who wants to build production software - go live on web, phones, tackle errors, add/update features, etc. We will cover lots of topics that are needed to build and maintain such software. Everyone is welcome, do not worry if you do not know anything about software engineering. This series is for you!\n\n#vibecoding #founder #softwaredevelopment #aicoding #claudecode #geminicli",
+    "link": "https://www.youtube.com/watch?v=z-OyYjaFYoo",
+    "thumbnail": "https://i.ytimg.com/vi/z-OyYjaFYoo/hqdefault.jpg",
+    "publishDate": "2025-07-20T05:29:59Z",
+    "videoId": "z-OyYjaFYoo"
+  }
+]
