@@ -1,0 +1,25 @@
+title:	Further changes
+state:	OPEN
+author:	brainless
+labels:	
+comments:	0
+assignees:	
+projects:	
+milestone:	
+number:	16
+--
+I want these changes in the homepage:
+
+- Add an image in a circle on the left of the first paragraph, 72 x 72 pixels
+- Image at `website/src/assets/Sumit_Lachung_profile_picture.jpg`
+- After last paragraph, add call to action labeled "YouTube series on Vibe Coding" with link `https://www.youtube.com/playlist?list=PLYtYRIWhUTWVLWPzLmxwW8tQZw1VbPVAb`
+- Second call to action labeled "Software Projects" to '/projects'
+- Third call to action labeled "Want to discuss Vibe Coding and Products" to `https://calendly.com/sumitdatta/quick-chat`
+
+Call to actions should have button like styling, one per row in mobile otherwise float side by side when possible. Keep the dark color theme.
+
+
+I want these changes for the entire site:
+
+- A background image, `website/src/assets/Gemini_Generated_Image_swzj74swzj74swzj.png`
+- The content column should have the current background color, the image should be visible in the extra space left or right of page

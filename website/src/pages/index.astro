@@ -1,18 +1,61 @@
 ---
 import { SITE_DESCRIPTION } from "../consts";
 import Page from "../layouts/Page.astro";
+import profilePicture from "../assets/Sumit_Lachung_profile_picture.jpg";
 ---
 
 <Page title="Hello, Stranger!" description={SITE_DESCRIPTION}>
-    <p class="mb-[1em] text-gray-100">
-        I am Sumit Datta, an extremely passionate software engineer with 16
-        years of experience, mostly at early, fast-paced startups.
-    </p>
-    <p class="mb-[1em] text-gray-100">
-        I am entrepreneurial by nature, have built and failed at a few startups.
-        I am very hands-on when it comes to software/product development. I am
-        eager, curious and also a good listener. I have been part of or built or
-        lead teams in the US, Canada, Germany and India. Although I have not
-        been to the Americas.
-    </p>
+    <div class="mb-[1em]">
+        <img
+            src={profilePicture.src}
+            alt="Sumit Datta profile picture"
+            class="w-[72px] h-[72px] rounded-full object-cover float-left mr-4 mb-2"
+        />
+        <p class="text-gray-100">
+            I am Sumit Datta, an extremely passionate software engineer with 16
+            years of experience, mostly at early, fast-paced startups.
+        </p>
+        <p class="text-gray-100 mt-4">
+            I am entrepreneurial by nature, have built and failed at a few
+            startups. I am very hands-on when it comes to software/product
+            development. I am eager, curious and also a good listener. I have
+            been part of or built or lead teams in the US, Canada, Germany and
+            India. Although I have not been to the Americas.
+        </p>
+        <p class="text-gray-100 my-4">
+            I blog about mental issues, personal journey, software and product
+            development. This is my personal space and my views might seem
+            contradictory to yours. That is OK, my views are not set in stone.
+            This is a place where I share my learning as a human. Try not to
+            take anything I share as advice. They are just my logs as a I grow,
+            if they help you, great! Share yours too and I will be happy to
+            read. Cheers!
+        </p>
+    </div>
+
+    <!-- Call to Action Buttons -->
+    <div class="mt-8 space-y-4 md:space-y-0 md:space-x-4 md:flex md:flex-row">
+        <a
+            href="https://www.youtube.com/playlist?list=PLYtYRIWhUTWVLWPzLmxwW8tQZw1VbPVAb"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full md:w-auto bg-slate-600 hover:bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors duration-200"
+        >
+            YouTube series on Vibe Coding
+        </a>
+        <a
+            href="/projects"
+            class="block w-full md:w-auto bg-slate-600 hover:bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors duration-200"
+        >
+            Software Projects
+        </a>
+        <a
+            href="https://calendly.com/sumitdatta/quick-chat"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full md:w-auto bg-slate-600 hover:bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors duration-200"
+        >
+            Want to discuss Vibe Coding and Products
+        </a>
+    </div>
 </Page>
