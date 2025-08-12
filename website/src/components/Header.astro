@@ -1,6 +1,8 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import MobileMenuButton from './navigation/MobileMenuButton.astro';
+import MobileNavigation from './navigation/MobileNavigation.astro';
 ---
 
 <header class="m-0 px-4 bg-gray-900 shadow-[0_2px_8px_rgba(15,18,25,5%)] border-b border-gray-700">
@@ -10,7 +12,7 @@ import HeaderLink from './HeaderLink.astro';
 				>{SITE_TITLE}</a
 			>
 		</h2>
-		<div class="internal-links">
+		<div class="internal-links hidden md:flex">
 			<HeaderLink
 				href="/blog"
 				class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline">Blog</HeaderLink
@@ -24,5 +26,7 @@ import HeaderLink from './HeaderLink.astro';
 				class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline">About</HeaderLink
 			>
 		</div>
+		<MobileMenuButton />
 	</nav>
+	<MobileNavigation />
 </header>
