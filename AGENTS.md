@@ -34,10 +34,10 @@ All website commands run from the `website/` directory:
 
 ```bash
 cd website
-pnpm install        # Install dependencies
-pnpm dev            # Dev server at http://localhost:4321
-pnpm build          # Production build
-pnpm preview        # Preview production build
+npm install        # Install dependencies
+npm run dev        # Dev server at http://localhost:4321
+npm run build      # Production build
+npm run preview    # Preview production build
 ```
 
 ## Website Architecture (`website/`)

@@ -14,8 +14,8 @@ To get started, install the dependencies and run the development server:
 
 ```bash
 cd website
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
 This will start the development server at `http://localhost:4321`.

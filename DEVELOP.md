@@ -5,7 +5,7 @@ Practical development guide for working on brainless.in.
 ## Prerequisites
 
 - **Node.js** 18+
-- **pnpm** (package manager)
+- **npm** (package manager, included with Node.js)
 - **Python 3.10+** (for migration scripts only)
 
 ## Quick Start
@@ -13,8 +13,8 @@ Practical development guide for working on brainless.in.
 ```bash
 # Website
 cd website
-pnpm install
-pnpm dev          # http://localhost:4321
+npm install
+npm run dev       # http://localhost:4321
 
 # Scripts (optional, for content migration)
 cd scripts
@@ -107,7 +107,7 @@ To regenerate, run the corresponding script from `scripts/` with a venv and `.en
 1. Create `website/src/content/blog/my-post-slug.md` (or `.mdx`)
 2. Add required frontmatter (`title`, `pubDate`)
 3. Write content in Markdown
-4. Preview with `pnpm dev`
+4. Preview with `npm run dev`
 
 ### Add a new page
 
@@ -135,8 +135,8 @@ cp .env.example .env
 
 ```bash
 cd website
-pnpm build       # Output to website/dist/
-pnpm preview     # Serve the production build locally
+npm run build     # Output to website/dist/
+npm run preview   # Serve the production build locally
 ```
 
 The site is deployed at https://brainless.in.
@@ -144,6 +144,6 @@ The site is deployed at https://brainless.in.
 ## Troubleshooting
 
 - **Port conflict:** Astro defaults to 4321. Pass `--port 3000` to change it.
-- **Sharp errors:** Ensure native dependencies are installed (`pnpm install`).
+- **Sharp errors:** Ensure native dependencies are installed (`npm install`).
 - **Content schema errors:** Check frontmatter matches the schema in `content.config.ts`.
 - **Python script failures:** Verify venv is active and `.env` has the required tokens.
