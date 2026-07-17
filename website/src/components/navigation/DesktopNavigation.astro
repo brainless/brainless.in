@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import projects from '../../data/projects.json';
+import videos from '../../data/videos.json';
+
+// Get recent blog posts
+const blogPosts = await getCollection('blog');
+const recentBlogPosts = blogPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+// Get recent projects (already sorted by date in projects.json)
+const recentProjects = projects.slice(0, 3);
+
+// Get recent videos (already sorted by date in videos.json)
+const recentVideos = videos.slice(0, 3);
+---
+
+<div class="hidden md:block w-80 h-screen fixed right-0 top-0 bg-gray-900 border-l border-gray-700 p-6 overflow-y-auto">
+  <nav class="mb-8">
+    <ul class="space-y-4">
+      <li><a href="/blog" class="text-gray-100 hover:text-accent transition-colors">Blog</a></li>
+      <li><a href="/projects" class="text-gray-100 hover:text-accent transition-colors">Projects</a></li>
+      <li><a href="/about" class="text-gray-100 hover:text-accent transition-colors">About</a></li>
+    </ul>
+  </nav>
+  
+  <div class="mb-6">
+    <h3 class="text-sm font-semibold text-gray-400 mb-3">My recent posts or projects</h3>
+    
+    <!-- Recent blog posts -->
+    <div class="space-y-4 mb-6">
+      {recentBlogPosts.map((post) => (
+        <article class="border-b border-gray-700 pb-3">
+          <h4 class="font-medium text-gray-100 mb-1">
+            <a href={`/blog/${post.slug}`} class="hover:text-accent transition-colors">{post.data.title}</a>
+          </h4>
+          <p class="text-sm text-gray-300 line-clamp-2 mb-1">
+            {post.data.description || ''}
+          </p>
+          <time class="text-xs text-gray-500">
+            {post.data.pubDate.toLocaleDateString('en-us', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })}
+          </time>
+        </article>
+      ))}
+    </div>
+    
+    <!-- Recent projects -->
+    <div class="space-y-4 mb-6">
+      {recentProjects.map((project) => (
+        <article class="border-b border-gray-700 pb-3">
+          <h4 class="font-medium text-gray-100 mb-1">
+            <a href={project.url} target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">{project.name}</a>
+          </h4>
+          <p class="text-sm text-gray-300 line-clamp-2 mb-1">
+            {project.description || ''}
+          </p>
+        </article>
+      ))}
+    </div>
+    
+    <!-- Recent videos -->
+    <div class="space-y-4">
+      {recentVideos.map((video) => (
+        <article class="border-b border-gray-700 pb-3">
+          <h4 class="font-medium text-gray-100 mb-1">
+            <a href={video.link} target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">{video.title}</a>
+          </h4>
+          <time class="text-xs text-gray-500">
+            {new Date(video.publishDate).toLocaleDateString('en-us', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })}
+          </time>
+        </article>
+      ))}
+    </div>
+  </div>
+</div>

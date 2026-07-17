@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import DesktopNavigation from '../components/navigation/DesktopNavigation.astro';
 import backgroundImage from '../assets/Gemini_Generated_Image_swzj74swzj74swzj.png';
 
 export interface Props {
@@ -23,7 +24,7 @@ const { title, description } = Astro.props;
 	>
 		<Header />
 		<main
-			class="w-full max-w-full m-0 py-[3em] px-[1em] max-[720px]:py-[1em] max-[720px]:px-[0.25rem] w-[calc(100%-2em)]"
+			class="w-full max-w-full m-0 py-[3em] px-[1em] max-[720px]:py-[1em] max-[720px]:px-[0.25rem] w-[calc(100%-2em)] md:pr-[22rem]"
 		>
 			<article>
 				<div
@@ -36,6 +37,7 @@ const { title, description } = Astro.props;
 				</div>
 			</article>
 		</main>
+		<DesktopNavigation />
 		<Footer />
 	</body>
 </html>
