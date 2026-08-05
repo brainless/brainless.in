@@ -33,7 +33,7 @@ const recentVideos = videos.slice(0, 3);
       {recentBlogPosts.map((post) => (
         <article class="border-b border-gray-700 pb-3">
           <h4 class="font-medium text-gray-100 mb-1">
-            <a href={`/blog/${post.slug}`} class="hover:text-accent transition-colors">{post.data.title}</a>
+            <a href={`/blog/${post.id}/`} class="hover:text-accent transition-colors">{post.data.title}</a>
           </h4>
           <p class="text-sm text-gray-300 line-clamp-2 mb-1">
             {post.data.description || ''}
