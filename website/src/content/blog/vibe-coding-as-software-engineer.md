@@ -1,8 +1,9 @@
 ---
 title: "Vibe coding as a Software Engineer"
-pubDate: 2025-06-27
-author: Sumit Datta
-categories: ['vibe coding', 'founder', 'software']
+date: 2025-06-27
+author: "sumit-datta"
+tags: ['vibe coding', 'founder', 'software']
+category: "startups-business"
 ---
 
 I started vibe coding early June 2025 with the aim to write as little code myself as possible. My intent is to be a founder with a lot of time for marketing, sales and support. I have been using LLM  assisted coding since late last year. I started with GitHub Copilot, then Codeium (now Windsurf) and settled on Supermaven for a while.

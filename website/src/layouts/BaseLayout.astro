@@ -1,0 +1,94 @@
+---
+import "../styles.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE, imageSrc } from "../lib/blog-data.js";
+
+const {
+  title = `${SITE.name} - A quiet magazine on writing, design, and the slow web`,
+  description = SITE.description,
+  canonical,
+  ogType = "website",
+  ogImage,
+  jsonLd,
+  flushFooter = false,
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString() || SITE.url;
+const absoluteUrl = (value) => {
+  const src = imageSrc(value) || value;
+  if (!src) return undefined;
+
+  try {
+    return new URL(src, siteUrl).toString();
+  } catch {
+    return src;
+  }
+};
+const canonicalUrl = absoluteUrl(canonical || Astro.url.pathname);
+const ogImageUrl = absoluteUrl(ogImage);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE.name} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/fraunces-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
+    {
+      jsonLd && (
+        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+      )
+    }
+    <script is:inline>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          var dark = theme
+            ? theme === "dark"
+            : matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (error) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="flex min-h-dvh flex-col">
+      <Header />
+      <main id="main-content" class="flex-1">
+        <slot />
+      </main>
+      <Footer flush={flushFooter} />
+    </div>
+  </body>
+</html>

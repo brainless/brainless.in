@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-6659564839341112817
 title: "Price comparison of dedicated or VPS hosts"
-pubDate: 2012-01-16
-author: Sumit Datta
-categories: ['webhost', 'vps', 'dedicated server']
+date: 2012-01-16
+author: "sumit-datta"
+tags: ['webhost', 'vps', 'dedicated server']
+category: "tech-engineering"
 ---
 
 For the impatient: [link to spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AsLdRpQRPHgHdER6YlFIcTdkeG9VbV85Q202cDV6VkE&output=html).  

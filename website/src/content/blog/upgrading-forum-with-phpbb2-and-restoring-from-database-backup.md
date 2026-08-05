@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-116664946297517020
 title: "Upgrading forum with phpBB2 and restoring from database backup"
-pubDate: 2006-12-20
-author: Sumit Datta
-categories: ['php', 'open source', 'phpbb', 'hispanito']
+date: 2006-12-20
+author: "sumit-datta"
+tags: ['php', 'open source', 'phpbb', 'hispanito']
+category: "tech-engineering"
 ---
 
 Well I had to do some phpBB (phpBB2) issues for a client who runs [hispanito.com](http://hispanito.com/). He had a forum which ran on probably phpBB2 version 2.0.7 and with MySQL 4.x. Now I had to bring those data to a different server with MySQL 5.x

@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-862858116204608225
 title: "Google's Les Paul Doodle"
-pubDate: 2011-06-09
-author: Sumit Datta
+date: 2011-06-09
+author: "sumit-datta"
+tags: []
+category: "web-digital-culture"
 ---
 
 Today (June 9, 2011, India) Google's doodle on Les Paul is just a great time killer. Spent the whole morning interacting with it. I got interested to understand what was going on behind the scenes. Well here is what I see:

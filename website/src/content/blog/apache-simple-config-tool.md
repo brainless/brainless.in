@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114651179166786858
 title: "Apache Simple Config Tool"
-pubDate: 2006-05-04
-author: Sumit Datta
+date: 2006-05-04
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Simplifying Apache configuration :  

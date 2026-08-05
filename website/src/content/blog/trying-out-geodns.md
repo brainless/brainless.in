@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-1661372149187067498
 title: "Trying out GeoDNS"
-pubDate: 2012-01-23
-author: Sumit Datta
-categories: ['dns', 'amazon', 'zerigo', 'mag', 'hosting']
+date: 2012-01-23
+author: "sumit-datta"
+tags: ['dns', 'amazon', 'zerigo', 'mag', 'hosting']
+category: "startups-business"
 ---
 
 For the last 3 weeks that we have started working on [Mag](https://mag.io/), we have been talking to a few prospective clients or other knowledgeable folks out there. We want to understand how individuals, SMBs or larger organizations use Social Media or the Internet in general. Of course all of these initial meets are local to Bangalore and a few in other cities in India (over the phone).  

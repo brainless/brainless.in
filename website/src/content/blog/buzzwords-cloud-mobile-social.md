@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-1272746018083098147
 title: "Buzzwords: Cloud, Mobile, Social"
-pubDate: 2011-02-19
-author: Sumit Datta
-categories: ['mobile', 'technology', 'cloud computing', 'social web']
+date: 2011-02-19
+author: "sumit-datta"
+tags: ['mobile', 'technology', 'cloud computing', 'social web']
+category: "web-digital-culture"
 ---
 
 The list of the hottest buzzwords in the industry would certainly include **Cloud**, Mobile and Social. The impact they each of these have is immense, and when combined they practically are changing our lives. In early days of the web applications (even dynamic websites) the notion of cloud based computing was not as popular as it is now. People had to predict their infrastructure requirements and allocate large budgets upfront for hardware and networking. This meant considerable amounts of funding money (for startups) going into silicon chips and their families. In the last half a decade that has changed dramatically. **Scaling** applications **without budgeting upfront** is not just possible, but is being done everyday by so many.

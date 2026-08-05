@@ -42,24 +42,34 @@ npm run preview    # Preview production build
 
 ## Website Architecture (`website/`)
 
-- **Framework:** Astro 5.x with Vite
-- **Styling:** Tailwind CSS 4.x with custom config (`tailwind.config.cjs`)
+- **Framework:** Astro 7.x with Vite
+- **Theme:** Based on [QuietPages](https://github.com/andreialba/quietpages), adapted for a
+  single-author personal blog
+- **Styling:** Tailwind CSS 4.x, CSS-first config in `src/styles.css` (no `tailwind.config.cjs`)
 - **Content Collections:**
-  - `blog` — Blog posts with schema: title, description, pubDate, author, categories, optional heroImage
-  - `comments` — Blog comments with `parent_id` referencing their parent post
-- **Layouts:** `BlogPost.astro`, `Page.astro`, `PageWithoutProse.astro`
-- **Components:** Modular Astro components (Header, Footer, BaseHead, etc.)
-- **Integrations:** MDX, RSS (`/rss.xml`), sitemap
-- **Fonts:** Funnel Sans, Barriecito
-- **Theme:** Dark theme; accent `#2337ff`, accent-dark `#000d8a`
-- **Images:** Sharp for processing
+  - `blog` — flat `slug.md` files, or `slug/index.mdx` + local images. Schema: title, date,
+    optional excerpt/category/tags/author/thumbnail (see `content.config.ts`); missing fields
+    fall back to sensible defaults in `src/lib/blog-data.js` since most older posts predate them
+  - `comments` — legacy Blogger comments with `parent_id` referencing their parent post; not
+    currently rendered anywhere
+- **Layout:** `BaseLayout.astro` (shared page shell)
+- **Components:** Modular Astro components (Header, Footer, PostCard, Sidebar, etc.)
+- **Config:** `src/config/theme.config.ts` — site name/nav/contact, curated categories, author(s)
+- **Integrations:** MDX; RSS/sitemap/robots.txt are hand-rolled in `src/pages/` (no
+  `@astrojs/rss`/`@astrojs/sitemap`)
+- **Fonts:** Inter (sans), Fraunces (serif), JetBrains Mono (code) — self-hosted
+- **Theme:** Light/dark with system preference + manual toggle
+- **Images:** Sharp for processing; posts without a real photo fall back to a placeholder image
 
 ## Blog Posts
 
 - Location: `website/src/content/blog/`
-- Format: `.md` or `.mdx`
-- Required frontmatter: `title`, `pubDate`
-- Optional frontmatter: `id`, `description`, `updatedDate`, `author`, `categories`, `heroImage`
+- Format: `.md` (flat file) or `.mdx` inside a `slug/index.mdx` folder (for posts with local
+  images, alongside the image files)
+- Required frontmatter: `title`, `date`
+- Optional frontmatter: `excerpt`, `category` (must match a slug in `theme.config.ts`), `tags`
+  (freeform), `author`, `thumbnail`, `thumbnailAlt`, `featured`, `draft`, `updated`,
+  `seoTitle`, `seoDescription`, `canonical`, `imageCredit`
 
 ## Scripts (`scripts/`)
 

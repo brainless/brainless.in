@@ -1,13 +1,28 @@
 ---
-import Layout from '../layouts/Page.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import projects from '../data/projects.json';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { SITE } from "../lib/blog-data.js";
+import projects from "../data/projects.json";
 ---
 
-<Layout title="Software Projects - Open Source & Startup Work" description="Explore Sumit's software projects including open source contributions, startup MVPs, and development tools. Built with Python, React, Node.js and modern technologies.">
-	<div class="max-w-3xl mx-auto max-[720px]:max-w-[calc(100%-0.5rem)]">
-		{projects.map(project => (
-			<ProjectCard project={project} />
-		))}
-	</div>
-</Layout>
+<BaseLayout
+  title={`Projects - ${SITE.name}`}
+  description="Explore Sumit's software projects including open source contributions, startup MVPs, and development tools. Built with Python, React, Node.js and modern technologies."
+  canonical="/projects"
+>
+  <div class="mx-auto max-w-3xl px-5 py-12">
+    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Projects" }]} />
+    <header class="mt-6 border-b border-border pb-8">
+      <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Projects</div>
+      <h1 class="mt-2 font-serif text-4xl font-semibold sm:text-5xl">Software projects</h1>
+      <p class="mt-3 text-muted-foreground">
+        Open source contributions, startup MVPs, and development tools.
+      </p>
+    </header>
+
+    <div class="mt-10 grid gap-6">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</BaseLayout>

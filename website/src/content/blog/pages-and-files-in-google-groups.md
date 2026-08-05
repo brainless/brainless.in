@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-8345873041231536551
 title: "Pages and Files in Google Groups"
-pubDate: 2010-09-30
-author: Sumit Datta
-categories: ['groups', 'forums', 'google', 'forums.com']
+date: 2010-09-30
+author: "sumit-datta"
+tags: ['groups', 'forums', 'google', 'forums.com']
+category: "web-digital-culture"
 ---
 
 Recently read a notice on [Google Groups Announcements Page](http://groups-announcements.blogspot.com/2010/09/notice-about-pages-and-files.html) that Google Groups will no longer support pages and files. From November 1, 2010 Google Groups will no longer allow creation or edit of pages or files. And from February 2011, Google Groups will not even allow access to old files and pages.  

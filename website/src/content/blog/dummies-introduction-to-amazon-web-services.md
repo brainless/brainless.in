@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5070612901163842360
 title: "Dummies Introduction to Amazon Web Services"
-pubDate: 2009-05-13
-author: Sumit Datta
-categories: ['amazon', 's3', 'aws', 'ec2']
+date: 2009-05-13
+author: "sumit-datta"
+tags: ['amazon', 's3', 'aws', 'ec2']
+category: "tech-engineering"
 ---
 
 Lot of you may have heard of this. Well certainly you have heard of Amazon.com and if you are into software/IT/web there is a good chance someone in your company is thinking of that mumbo jambo called cloud computing. Well what the hell is all this and then this web services?

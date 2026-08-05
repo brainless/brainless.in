@@ -1,6 +1,6 @@
 # brainless.in
 
-My personal website and blog, built with [Astro](https://astro.build/) and styled with [Tailwind CSS](https://tailwindcss.com/).
+My personal website and blog, built with [Astro](https://astro.build/) and styled with [Tailwind CSS](https://tailwindcss.com/), using a theme based on [QuietPages](https://github.com/andreialba/quietpages).
 
 ## Tech Stack
 

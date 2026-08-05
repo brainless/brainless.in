@@ -1,24 +1,39 @@
 ---
-import Layout from '../layouts/Page.astro';
-import VideoCard from '../components/VideoCard.astro';
-import videos from '../data/videos.json';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import VideoCard from "../components/VideoCard.astro";
+import { SITE } from "../lib/blog-data.js";
+import videos from "../data/videos.json";
 ---
 
-<Layout title="Vibe Coding Videos - Software Development Tutorials & Insights" description="Watch Sumit's Vibe Coding tutorials and software development insights on YouTube. Practical coding tips, startup lessons, and developer experiences shared through engaging video content.">
-  <div class="max-w-3xl mx-auto max-[720px]:max-w-[calc(100%-0.5rem)]">
-    {videos.length === 0 ? (
-      <div class="text-center text-gray-100 py-8">
-        <p>No videos found. Please run the YouTube API script to fetch videos:</p>
-        <code class="block mt-2 text-sm bg-gray-800 p-2 rounded">
-          cd scripts && python fetch_youtube_videos.py
-        </code>
-      </div>
-    ) : (
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {videos.map((video: any) => (
-          <VideoCard video={video} />
-        ))}
-      </div>
-    )}
+<BaseLayout
+  title={`Videos - ${SITE.name}`}
+  description="Watch Sumit's vibe coding tutorials and software development insights on YouTube. Practical coding tips, startup lessons, and developer experiences shared through video."
+  canonical="/videos"
+>
+  <div class="mx-auto max-w-5xl px-5 py-12">
+    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Videos" }]} />
+    <header class="mt-6 border-b border-border pb-8">
+      <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Videos</div>
+      <h1 class="mt-2 font-serif text-4xl font-semibold sm:text-5xl">Vibe coding videos</h1>
+      <p class="mt-3 text-muted-foreground">
+        Tutorials and insights on software development, shared on YouTube.
+      </p>
+    </header>
+
+    {
+      videos.length === 0 ? (
+        <div class="mt-12 rounded-md border border-dashed border-border py-16 text-center">
+          <p class="text-muted-foreground">No videos found. Please run the YouTube API script to fetch videos:</p>
+          <code class="mt-3 inline-block rounded bg-muted px-3 py-2 text-sm">
+            cd scripts && python fetch_youtube_videos.py
+          </code>
+        </div>
+      ) : (
+        <div class="mt-10 grid gap-8 sm:grid-cols-2">
+          {videos.map((video) => <VideoCard video={video} />)}
+        </div>
+      )
+    }
   </div>
-</Layout>
+</BaseLayout>

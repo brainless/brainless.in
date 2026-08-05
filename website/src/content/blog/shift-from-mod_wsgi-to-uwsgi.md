@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-6759713973734480900
 title: "Shift from mod_wsgi to uwsgi"
-pubDate: 2011-09-28
-author: Sumit Datta
-categories: ['server', 'python', 'apache', 'uwsgi', 'nginx']
+date: 2011-09-28
+author: "sumit-datta"
+tags: ['server', 'python', 'apache', 'uwsgi', 'nginx']
+category: "tech-engineering"
 ---
 
 The last couple weeks [we](http://mobstac.com/) have been thinking to shift from our current web serving platform which was powered by [nginx](http://wiki.nginx.org/) + [Apache](http://www.apache.org/) + [mod\_wsgi](http://code.google.com/p/modwsgi/) to nginx + [uwsgi](http://projects.unbit.it/uwsgi/). The reasons were that Apache was part of the plan for about a year and a half, but its main reason to be there was that Apache + mod\_wsgi was stable. We of course wanted to keep nginx, but right now we had no reason to run the Apache + uwsgi.  

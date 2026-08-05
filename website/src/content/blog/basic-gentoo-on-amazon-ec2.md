@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-8122935386260418261
 title: "Basic Gentoo on Amazon EC2"
-pubDate: 2009-05-15
-author: Sumit Datta
-categories: ['amazon', 'gentoo', 'ec2', 'elasticfox']
+date: 2009-05-15
+author: "sumit-datta"
+tags: ['amazon', 'gentoo', 'ec2', 'elasticfox']
+category: "tech-engineering"
 ---
 
 Continued from [Introduction to Amazon EC2 (Continued...)](/2009/05/introduction-to-amazon-ec2-continued.html)...

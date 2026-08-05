@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114664248494104984
 title: "8085 Emulator"
-pubDate: 2006-05-03
-author: Sumit Datta
+date: 2006-05-03
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 The College project : An 8085 Microprocessor Kit Emulator  

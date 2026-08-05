@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5416775733766162506
 title: "My laptop: my local web server"
-pubDate: 2007-03-08
-author: Sumit Datta
-categories: ['compaq', 'fedora core', 'apache', 'web', 'php', 'laptop']
+date: 2007-03-08
+author: "sumit-datta"
+tags: ['compaq', 'fedora core', 'apache', 'web', 'php', 'laptop']
+category: "tech-engineering"
 ---
 
 Well two months back I bought my first laptop. A Compaq V3155AU with following configuration:  

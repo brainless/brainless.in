@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-6341312540372244214
 title: "Hackathon HH - 24 hours of awesomeness"
-pubDate: 2015-05-26
-author: Sumit Datta
-categories: ['hackathon', 'development', 'events']
+date: 2015-05-26
+author: "sumit-datta"
+tags: ['hackathon', 'development', 'events']
+category: "community-events"
 ---
 
 It has been three and a half months since I relocated to Hamburg, DE. Working at a medium sized company is a very different experience from the entrepreneurial life I had for many years. The work is fun and it comes with consistent salary at the end of every month so that I can enjoy personal life. But once a while I have the urge to keep on working through the weekend and hack something. The urgency of a very short deadline and the chaos of a project without good specs is still very attractive.  

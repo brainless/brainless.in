@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-1145334701965576421
 title: "The different worlds of Personal and Professional relations"
-pubDate: 2020-08-11
-author: Sumit Datta
+date: 2020-08-11
+author: "sumit-datta"
+tags: []
+category: "personal-reflections"
 ---
 
 I have somehow always mixed the worlds of Personal and Professional relations and paid huge price for that mix up. It is an aspect that I am still learning, but as I feel a little more confident in my handling of this aspect, I felt like writing out my thoughts. A lot of people including myself have raging debates about the definition or meaning of these two sides of our adult life and how they are (not?) connected.  

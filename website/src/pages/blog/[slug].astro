@@ -1,0 +1,360 @@
+---
+import { Image, getImage } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
+import PostCard from "../../components/PostCard.astro";
+import Newsletter from "../../components/Newsletter.astro";
+import Icon from "../../components/Icon.astro";
+import {
+  SITE,
+  getAuthor,
+  getCategory,
+  getTag,
+  formatDate,
+  relatedPosts,
+  adjacentPosts,
+  normalizePost,
+} from "../../lib/blog-data.js";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("blog", ({ data }) => !data.draft);
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const post = normalizePost(entry);
+const author = getAuthor(post.author);
+const category = getCategory(post.category);
+const { Content, headings } = await render(entry);
+const toc = headings
+  .filter((heading) => heading.depth === 2 || heading.depth === 3)
+  .map((heading) => ({
+    level: heading.depth,
+    id: heading.slug,
+    text: heading.text,
+  }));
+const related = await relatedPosts(post);
+const { prev, next } = await adjacentPosts(post);
+const canonical = post.canonical ?? `/blog/${post.slug}`;
+const canonicalUrl = new URL(canonical, SITE.url).toString();
+const socialImage = post.thumbnail
+  ? await getImage({
+      src: post.thumbnail,
+      width: 1200,
+      height: 630,
+      format: "webp",
+      quality: 78,
+    })
+  : undefined;
+const thumbnailUrl = socialImage ? new URL(socialImage.src, SITE.url).toString() : undefined;
+const shareUrl = canonicalUrl;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.excerpt,
+  datePublished: post.date,
+  dateModified: post.updated || post.date,
+  image: thumbnailUrl,
+  author: { "@type": "Person", name: author?.name },
+  mainEntityOfPage: canonicalUrl,
+};
+---
+
+<BaseLayout
+  title={post.seoTitle ?? `${post.title} - ${SITE.name}`}
+  description={post.seoDescription ?? post.excerpt}
+  canonical={canonical}
+  ogType="article"
+  ogImage={socialImage?.src}
+  jsonLd={jsonLd}
+  flushFooter
+>
+  <div class="fixed left-0 right-0 top-0 z-50 h-0.5 bg-transparent">
+    <div data-reading-progress class="h-full bg-primary transition-[width] duration-75" style="width: 0%"></div>
+  </div>
+
+  <article class="mx-auto max-w-6xl px-5 py-10">
+    <Breadcrumbs
+      items={[
+        { label: "Home", to: "/" },
+        { label: "Archive", to: "/blog" },
+        ...(category ? [{ label: category.name, to: `/categories/${category.slug}` }] : []),
+        { label: post.title },
+      ]}
+    />
+
+    <header class="mx-auto mt-8 max-w-3xl text-center">
+      {
+        category && (
+          <a href={`/categories/${category.slug}`} class="text-xs font-medium uppercase tracking-[0.2em] text-primary hover:underline">
+            {category.name}
+          </a>
+        )
+      }
+      <h1 class="mt-4 font-serif text-4xl font-semibold leading-[1.1] sm:text-5xl">
+        {post.title}
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">{post.excerpt}</p>
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+        {
+          author && (
+            <a href={`/authors/${author.slug}`} class="flex items-center gap-2 hover:text-foreground">
+              <img src={author.avatar} alt="" width="28" height="28" class="h-7 w-7 rounded-full" />
+              {author.name}
+            </a>
+          )
+        }
+        <span>&middot;</span>
+        <time datetime={post.date}>{formatDate(post.date)}</time>
+        {post.updated && <><span>&middot;</span><span class="italic">updated {formatDate(post.updated)}</span></>}
+        <span>&middot;</span>
+        <span>{post.readingTime} min read</span>
+      </div>
+    </header>
+
+    {
+      post.thumbnail && (
+        <figure class="mx-auto mt-10 max-w-4xl">
+          <div class="overflow-hidden rounded-md bg-muted">
+            <Image
+              src={post.thumbnail}
+              alt={post.thumbnailAlt || post.imageCredit?.caption || ""}
+              class="w-full"
+              widths={[640, 960, 1280, 1600]}
+              sizes="(min-width: 1024px) 896px, calc(100vw - 40px)"
+              format="webp"
+              quality={78}
+            />
+          </div>
+          {
+            post.imageCredit && (
+              <figcaption class="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-muted-foreground">
+                {post.imageCredit.caption && <span>{post.imageCredit.caption} </span>}
+                <span>
+                  Photo by{" "}
+                  <a
+                    href={post.imageCredit.authorUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-foreground/75 underline underline-offset-2 hover:text-primary"
+                  >
+                    {post.imageCredit.author}
+                  </a>{" "}
+                  on{" "}
+                  <a
+                    href={post.imageCredit.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-foreground/75 underline underline-offset-2 hover:text-primary"
+                  >
+                    {post.imageCredit.source}
+                  </a>
+                  .
+                </span>
+              </figcaption>
+            )
+          }
+        </figure>
+      )
+    }
+
+    <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_220px]">
+      <div class="mx-auto w-full min-w-0 max-w-2xl">
+        <div class="prose-article">
+          <Content />
+        </div>
+
+        <div class="mt-10 flex flex-wrap items-center gap-2">
+          <span class="text-xs uppercase tracking-wider text-muted-foreground">Tags</span>
+          {
+            post.tags.map((tag) => {
+              const item = getTag(tag);
+              return (
+                <a href={`/tags/${tag}`} class="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary">
+                  #{item?.name ?? tag}
+                </a>
+              );
+            })
+          }
+        </div>
+
+        <div class="mt-8 flex items-center gap-2 border-y border-border py-4">
+          <span class="text-xs uppercase tracking-wider text-muted-foreground">Share</span>
+          <a target="_blank" rel="noreferrer" aria-label="Share on Twitter" data-share-twitter data-share-title={post.title} href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`} class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary"><Icon name="twitter" class="h-3.5 w-3.5" /></a>
+          <a target="_blank" rel="noreferrer" aria-label="Share on LinkedIn" data-share-linkedin href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`} class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary"><Icon name="linkedin" class="h-3.5 w-3.5" /></a>
+          <button type="button" data-copy-link class="ml-auto inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground">
+            <span data-copy-ready class="inline-flex items-center gap-2"><Icon name="copy" class="h-3.5 w-3.5" /> Copy link</span>
+            <span data-copy-done class="inline-flex items-center gap-2" hidden><Icon name="check" class="h-3.5 w-3.5" /> Copied</span>
+          </button>
+        </div>
+
+        {
+          author && (
+            <div class="mt-10 flex items-start gap-4 rounded-md border border-border p-5">
+              <img src={author.avatar} alt="" width="56" height="56" class="h-14 w-14 rounded-full" />
+              <div>
+                <div class="text-xs uppercase tracking-wider text-muted-foreground">Written by</div>
+                <a href={`/authors/${author.slug}`} class="font-serif text-lg font-semibold hover:text-primary">
+                  {author.name}
+                </a>
+                <p class="mt-1 text-sm text-muted-foreground">{author.bio}</p>
+              </div>
+            </div>
+          )
+        }
+
+        <nav class="mt-12 grid gap-4 border-t border-border pt-8 sm:grid-cols-2">
+          {
+            prev ? (
+              <a href={`/blog/${prev.slug}`} class="group block">
+                <div class="flex items-center gap-1 text-xs text-muted-foreground"><Icon name="arrow-left" class="h-3 w-3" /> Previous</div>
+                <div class="mt-1 font-serif text-base font-semibold leading-snug group-hover:text-primary">{prev.title}</div>
+              </a>
+            ) : (
+              <div />
+            )
+          }
+          {
+            next ? (
+              <a href={`/blog/${next.slug}`} class="group block sm:text-right">
+                <div class="flex items-center gap-1 text-xs text-muted-foreground sm:justify-end">Next <Icon name="arrow-right" class="h-3 w-3" /></div>
+                <div class="mt-1 font-serif text-base font-semibold leading-snug group-hover:text-primary">{next.title}</div>
+              </a>
+            ) : (
+              <div />
+            )
+          }
+        </nav>
+
+        <div class="mt-12 rounded-md border border-dashed border-border p-8 text-center">
+          <Icon name="message" class="mx-auto h-5 w-5 text-muted-foreground" />
+          <div class="mt-2 font-serif text-lg">Comments</div>
+          <p class="mt-1 text-sm text-muted-foreground">Hook this up to your favourite commenting platform &mdash; Giscus, Disqus, or your own.</p>
+        </div>
+      </div>
+
+      <aside class="hidden lg:block">
+        <div class="sticky top-24">
+          <TableOfContents items={toc} />
+        </div>
+      </aside>
+    </div>
+
+    {
+      related.length > 0 && (
+        <section class="mt-20 border-t border-border pt-12">
+          <h2 class="font-serif text-2xl font-semibold">Continue reading</h2>
+          <div class="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {related.map((relatedPost) => <PostCard post={relatedPost} />)}
+          </div>
+        </section>
+      )
+    }
+  </article>
+
+  <Newsletter />
+</BaseLayout>
+
+<script>
+  const progress = document.querySelector("[data-reading-progress]");
+  const updateProgress = () => {
+    if (!progress) return;
+    const root = document.documentElement;
+    const total = root.scrollHeight - root.clientHeight;
+    progress.style.width = `${total > 0 ? (root.scrollTop / total) * 100 : 0}%`;
+  };
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+
+  const copyIcon = '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>';
+  const checkIcon = '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>';
+  const twitterShare = document.querySelector("[data-share-twitter]");
+  const linkedinShare = document.querySelector("[data-share-linkedin]");
+  const currentUrl = window.location.href;
+
+  if (twitterShare) {
+    const title = twitterShare.dataset.shareTitle || document.title;
+    twitterShare.setAttribute(
+      "href",
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(currentUrl)}`,
+    );
+  }
+
+  linkedinShare?.setAttribute(
+    "href",
+    `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`,
+  );
+
+  const writeClipboard = async (text) => {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.inset = "0 auto auto 0";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    textarea.remove();
+  };
+
+  const copyButton = document.querySelector("[data-copy-link]");
+  copyButton?.addEventListener("click", async () => {
+    try {
+      await writeClipboard(window.location.href);
+      const ready = copyButton.querySelector("[data-copy-ready]");
+      const done = copyButton.querySelector("[data-copy-done]");
+      if (ready && done) {
+        ready.hidden = true;
+        done.hidden = false;
+        window.setTimeout(() => {
+          ready.hidden = false;
+          done.hidden = true;
+        }, 2000);
+      }
+    } catch (error) {}
+  });
+
+  document.querySelectorAll(".prose-article pre").forEach((pre) => {
+    if (pre.parentElement?.classList.contains("code-block")) return;
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "code-block";
+    pre.parentNode?.insertBefore(wrapper, pre);
+    wrapper.appendChild(pre);
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "code-copy-button";
+    button.dataset.tooltip = "Copy code";
+    button.setAttribute("aria-label", "Copy code");
+    button.innerHTML = copyIcon;
+    wrapper.appendChild(button);
+
+    let resetTimer;
+    button.addEventListener("click", async () => {
+      try {
+        await writeClipboard(pre.textContent ?? "");
+        window.clearTimeout(resetTimer);
+        button.classList.add("is-copied");
+        button.dataset.tooltip = "Copied";
+        button.setAttribute("aria-label", "Copied");
+        button.innerHTML = checkIcon;
+        resetTimer = window.setTimeout(() => {
+          button.classList.remove("is-copied");
+          button.dataset.tooltip = "Copy code";
+          button.setAttribute("aria-label", "Copy code");
+          button.innerHTML = copyIcon;
+        }, 1800);
+      } catch (error) {}
+    });
+  });
+</script>

@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-115218475799928473
 title: "Making a Hello World PHP extension with VC++ Toolkit 2003"
-pubDate: 2006-07-06
-author: Sumit Datta
+date: 2006-07-06
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 I wanted to do some PHP Extension making and so started googling around for help. Most help is about using VC++ 6.0 or have project files for the full VC++ IDE. Since I have the Toolkit compiler I thought I would read the help available and do a compile from the Toolkit Command Prompt.  

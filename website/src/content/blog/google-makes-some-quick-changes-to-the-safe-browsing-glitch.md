@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-4361686684066409303
 title: "Google makes some quick changes to the safe browsing glitch"
-pubDate: 2009-01-31
-author: Sumit Datta
-categories: ['google', 'safe browsing', 'search']
+date: 2009-01-31
+author: "sumit-datta"
+tags: ['google', 'safe browsing', 'search']
+category: "web-digital-culture"
 ---
 
 Seems Google has made a quick fix. First the redirect URL now seems forbidden:

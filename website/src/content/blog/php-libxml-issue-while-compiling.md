@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5691130889835970261
 title: "PHP libxml issue while compiling"
-pubDate: 2012-02-28
-author: Sumit Datta
-categories: ['php', 'linux']
+date: 2012-02-28
+author: "sumit-datta"
+tags: ['php', 'linux']
+category: "tech-engineering"
 ---
 
 Today I had some trouble getting libxml to work in PHP. I was compiling PHP 5.3.10 for a client's Joomla site and it needs libxml. The issue seemed to be commonly happening to many people and I came across a number of forum threads on the topic.  

@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-4142365330061507653
 title: "It is OK"
-pubDate: 2020-06-14
-author: Sumit Datta
-categories: ['journey']
+date: 2020-06-14
+author: "sumit-datta"
+tags: ['journey']
+category: "personal-reflections"
 ---
 
 2020 will be a year to remember. But I am not going to write about the perils of 2020. Rather I want to talk about what is important - to accept that is it OK. I have anxiety issues. I go into bursts of panic and until recently I was not even aware of them. I would wake up in the middle of the night because of anxiety almost at a predictable interval after going to bed. My ex was the first person who noticed this.  

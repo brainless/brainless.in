@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114684837295855096
 title: "Roadmap for GData module work"
-pubDate: 2006-05-05
-author: Sumit Datta
+date: 2006-05-05
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 How to successfully complete this project ?  

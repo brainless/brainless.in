@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-543094932901261510
 title: "Schema Example on Amazon DynamoDB"
-pubDate: 2012-01-20
-author: Sumit Datta
-categories: ['amazon', 'aws', 'dynamodb']
+date: 2012-01-20
+author: "sumit-datta"
+tags: ['amazon', 'aws', 'dynamodb']
+category: "tech-engineering"
 ---
 
 First an apology to anyone who read my previous blog post. I had used wrong rates for throughput capacity. I noticed this since my calculations seemed a little costly :)  

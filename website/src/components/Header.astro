@@ -1,32 +1,193 @@
 ---
-import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
-import MobileMenuButton from './navigation/MobileMenuButton.astro';
-import MobileNavigation from './navigation/MobileNavigation.astro';
+import Icon from "./Icon.astro";
+import { SITE } from "../lib/blog-data.js";
+import { NAVIGATION } from "../config/theme.config.ts";
+
+const current = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isHome = current === "/";
+const activeClass = isHome ? "home-header-link is-active" : "text-foreground";
+const inactiveClass = isHome
+  ? "home-header-link"
+  : "text-muted-foreground transition-colors hover:text-foreground";
+const headerClass = isHome
+  ? "sticky top-0 z-40 border-b border-transparent bg-transparent text-white"
+  : "sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md";
+const iconClass = isHome
+  ? "home-header-action inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors"
+  : "inline-flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground";
 ---
 
-<header class="m-0 px-4 bg-gray-900 shadow-[0_2px_8px_rgba(15,18,25,5%)] border-b border-gray-700">
-	<nav class="flex items-center justify-between py-4">
-		<h2 class="m-0 text-base">
-			<a href="/" class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline"
-				>{SITE_TITLE}</a
-			>
-		</h2>
-		<div class="internal-links hidden md:flex">
-			<HeaderLink
-				href="/blog"
-				class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline">Blog</HeaderLink
-			>
-			<HeaderLink
-				href="/projects"
-				class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline">Projects</HeaderLink
-			>
-			<HeaderLink
-				href="/about"
-				class="py-6 px-2 text-gray-100 border-b-4 border-transparent no-underline">About</HeaderLink
-			>
-		</div>
-		<MobileMenuButton />
-	</nav>
-	<MobileNavigation />
+<header class={headerClass} data-home-header={isHome ? "true" : undefined} data-scrolled="false">
+  <div class="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+    <a href="/" class="flex items-center gap-2">
+      <span class={`font-serif text-xl font-semibold ${isHome ? "home-header-brand" : ""}`}>{SITE.name}</span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
+      {
+        NAVIGATION.map((item) => {
+          const exact = item.to === "/";
+          const active = exact ? current === "/" : current.startsWith(item.to);
+          return (
+            <a
+              href={item.to}
+              class={`text-sm ${active ? activeClass : inactiveClass}`}
+              aria-current={active ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+
+    <div class="flex items-center gap-1">
+      <button
+        type="button"
+        data-search-toggle
+        aria-label="Search"
+        aria-controls="site-search"
+        aria-expanded="false"
+        class={iconClass}
+      >
+        <Icon name="search" class="h-4 w-4" />
+      </button>
+      <a
+        href="/rss.xml"
+        aria-label="RSS feed"
+        class={`${iconClass} hidden sm:inline-flex`}
+      >
+        <Icon name="rss" class="h-4 w-4" />
+      </a>
+      <button
+        type="button"
+        data-theme-toggle
+        aria-label="Toggle dark mode"
+        class={iconClass}
+      >
+        <span data-theme-icon="moon"><Icon name="moon" class="h-4 w-4" /></span>
+        <span data-theme-icon="sun" hidden><Icon name="sun" class="h-4 w-4" /></span>
+      </button>
+      <button
+        type="button"
+        data-menu-toggle
+        aria-label="Menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        class={`${iconClass} md:hidden`}
+      >
+        <span data-menu-icon="menu"><Icon name="menu" class="h-4 w-4" /></span>
+        <span data-menu-icon="x" hidden><Icon name="x" class="h-4 w-4" /></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="site-search" data-search-panel class="border-t border-border/60 bg-background text-foreground" hidden>
+    <form action="/blog" method="get" class="mx-auto max-w-6xl px-5 py-3">
+      <input
+        data-search-input
+        name="q"
+        aria-label="Search essays, field notes, interviews"
+        placeholder="Search essays, field notes, interviews..."
+        class="w-full border-0 bg-transparent py-2 font-serif text-lg outline-none placeholder:text-muted-foreground"
+      />
+    </form>
+  </div>
+
+  <div id="mobile-menu" data-menu-panel class="border-t border-border/60 bg-background text-foreground md:hidden" hidden>
+    <nav class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3" aria-label="Mobile navigation">
+      {
+        NAVIGATION.map((item) => {
+          const exact = item.to === "/";
+          const active = exact ? current === "/" : current.startsWith(item.to);
+          return (
+            <a
+              href={item.to}
+              class={`rounded-md px-2 py-2 text-sm hover:bg-muted hover:text-foreground ${active ? "text-foreground" : "text-muted-foreground"}`}
+              aria-current={active ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+  </div>
 </header>
+
+<script>
+  const searchToggle = document.querySelector("[data-search-toggle]");
+  const searchPanel = document.querySelector("[data-search-panel]");
+  const searchInput = document.querySelector("[data-search-input]");
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const menuPanel = document.querySelector("[data-menu-panel]");
+  const menuIcon = document.querySelector('[data-menu-icon="menu"]');
+  const closeIcon = document.querySelector('[data-menu-icon="x"]');
+  const themeToggle = document.querySelector("[data-theme-toggle]");
+  const moonIcon = document.querySelector('[data-theme-icon="moon"]');
+  const sunIcon = document.querySelector('[data-theme-icon="sun"]');
+  const homeHeader = document.querySelector("[data-home-header]");
+
+  const setPanelOpen = () => {
+    if (!homeHeader) return;
+    const open = !searchPanel.hidden || !menuPanel.hidden;
+    homeHeader.dataset.panelOpen = String(open);
+  };
+
+  const setMenu = (open) => {
+    menuPanel.hidden = !open;
+    menuIcon.hidden = open;
+    closeIcon.hidden = !open;
+    menuToggle?.setAttribute("aria-expanded", String(open));
+    setPanelOpen();
+  };
+
+  const setSearch = (open) => {
+    searchPanel.hidden = !open;
+    searchToggle?.setAttribute("aria-expanded", String(open));
+    if (open) searchInput?.focus();
+    setPanelOpen();
+  };
+
+  const setThemeIcon = () => {
+    const dark = document.documentElement.classList.contains("dark");
+    moonIcon.hidden = dark;
+    sunIcon.hidden = !dark;
+  };
+
+  setThemeIcon();
+
+  const setHeaderScrolled = () => {
+    if (!homeHeader) return;
+    homeHeader.dataset.scrolled = window.scrollY > 8 ? "true" : "false";
+  };
+  setHeaderScrolled();
+  window.addEventListener("scroll", setHeaderScrolled, { passive: true });
+
+  searchToggle?.addEventListener("click", () => {
+    setSearch(searchPanel.hidden);
+  });
+
+  menuToggle?.addEventListener("click", () => setMenu(menuPanel.hidden));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    if (!searchPanel.hidden) {
+      setSearch(false);
+      searchToggle?.focus();
+    }
+
+    if (!menuPanel.hidden) {
+      setMenu(false);
+      menuToggle?.focus();
+    }
+  });
+
+  themeToggle?.addEventListener("click", () => {
+    const next = !document.documentElement.classList.contains("dark");
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+    setThemeIcon();
+  });
+</script>

@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-7380102558218236094
 title: "S3 storage for Django"
-pubDate: 2011-08-08
-author: Sumit Datta
+date: 2011-08-08
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Hi there!  

@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5430582065668541030
 title: "Import MySQL dump with PHP on webhosts"
-pubDate: 2009-06-20
-author: Sumit Datta
-categories: ['webhost', 'php', 'mysql', 'sql import', 'godaddy']
+date: 2009-06-20
+author: "sumit-datta"
+tags: ['webhost', 'php', 'mysql', 'sql import', 'godaddy']
+category: "tech-engineering"
 ---
 
 Webhosts like GoDaddy and other similar often limit how much you can import with the online control panel (phpMyAdmin in most cases). So here is a simple PHP script that does this for you. You have to take a mysql dump from your database. Upload it to you host.

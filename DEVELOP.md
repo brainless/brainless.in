@@ -27,42 +27,55 @@ pip install -r requirements.txt
 
 ```
 website/
-├── public/              # Static assets (images, fonts, favicon)
+├── public/                 # Static assets: fonts, favicon, author avatars
 ├── src/
-│   ├── assets/          # Processed images
-│   ├── components/      # Astro components (Header, Footer, BaseHead, etc.)
+│   ├── assets/              # Processed images (hero, placeholder thumbnail, profile photo)
+│   ├── components/          # Astro components (Header, Footer, PostCard, etc.)
+│   ├── config/
+│   │   └── theme.config.ts  # Site name/nav/contact, curated categories, author(s)
 │   ├── content/
-│   │   ├── blog/        # Blog posts (.md / .mdx)
-│   │   └── comments/    # Blog comments (.md)
-│   ├── data/            # JSON data files (projects, videos)
-│   ├── layouts/         # Page layouts (BlogPost, Page, PageWithoutProse)
-│   ├── pages/           # Route pages (index, about, blog/, projects, videos, rss)
-│   ├── styles/          # Global CSS
-│   ├── consts.ts        # Site-wide constants (title, description)
-│   └── content.config.ts  # Content collection schemas
-├── astro.config.mjs     # Astro + Vite config
-├── tailwind.config.cjs  # Tailwind theme (colors, fonts, shadows)
+│   │   ├── blog/            # Blog posts: flat `slug.md`, or `slug/index.mdx` + local images
+│   │   └── comments/        # Legacy blog comments (.md), not currently rendered
+│   ├── data/                 # JSON data files (projects, videos)
+│   ├── layouts/
+│   │   └── BaseLayout.astro  # Shared page shell (head, header, footer)
+│   ├── lib/
+│   │   └── blog-data.js      # Post queries, excerpt/thumbnail fallbacks, formatting
+│   ├── pages/                # Routes: index, about, blog/, categories/, tags/, authors/, projects, videos
+│   ├── styles.css            # Tailwind 4 CSS-first theme (fonts, colors, prose)
+│   └── content.config.ts     # Content collection schemas
+├── astro.config.mjs       # Astro + Vite config
 └── tsconfig.json
 ```
+
+The theme is based on [QuietPages](https://github.com/andreialba/quietpages), adapted for a
+single-author personal blog with legacy Blogger-era content.
 
 ## Content Collections
 
 ### Blog Posts
 
-Create `.md` or `.mdx` files in `website/src/content/blog/`:
+Create a `.md` file in `website/src/content/blog/`:
 
 ```markdown
 ---
 title: "Post Title"
-pubDate: 2024-01-15
-description: "Optional summary"
-author: Sumit Datta
-categories: ["tech", "web"]
-heroImage: ./image.png  # optional, relative to post
+date: 2024-01-15
+excerpt: "Optional one-line summary (falls back to a snippet of the body if omitted)"
+category: "tech-engineering"   # one of the curated slugs in src/config/theme.config.ts
+tags: ["aws", "php"]           # freeform, unlike category
+thumbnail: ./cover.jpg         # optional; falls back to a placeholder image if omitted
+thumbnailAlt: "Description of the photo"
 ---
 
 Post body in Markdown...
 ```
+
+If a post has a real photo, put it in its own folder instead so the image sits beside the
+content: `website/src/content/blog/my-post-slug/index.mdx` + `cover.jpg` in the same folder,
+with `thumbnail: ./cover.jpg` in frontmatter. Posts without a photo can stay as a flat
+`my-post-slug.md` file — only `title` and `date` are required; everything else (excerpt,
+category, author, thumbnail) has a fallback in `src/lib/blog-data.js`.
 
 ### Comments
 
@@ -82,12 +95,12 @@ Comment text...
 
 ## Styling
 
-- **Tailwind CSS 4.x** with Vite plugin
-- Config: `website/tailwind.config.cjs`
-- Custom colors: `accent` (#2337ff), `accent-dark` (#000d8a), `gray`
-- Fonts: `Funnel Sans` (sans), `Barriecito` (serif)
-- Typography plugin for prose styling in blog posts
-- Dark theme by default
+- **Tailwind CSS 4.x** with Vite plugin, CSS-first config (no `tailwind.config.cjs`)
+- Config: `website/src/styles.css` — color tokens (OKLCH), radii, and the hand-rolled
+  `.prose-article` typography used on post pages
+- Fonts: `Inter` (sans), `Fraunces` (serif), `JetBrains Mono` (code) — self-hosted in
+  `website/public/fonts/`
+- Light and dark modes, following system preference by default, with a manual toggle
 
 ## Data Files
 
@@ -104,24 +117,27 @@ To regenerate, run the corresponding script from `scripts/` with a venv and `.en
 
 ### Add a new blog post
 
-1. Create `website/src/content/blog/my-post-slug.md` (or `.mdx`)
-2. Add required frontmatter (`title`, `pubDate`)
+1. Create `website/src/content/blog/my-post-slug.md` (or a `my-post-slug/index.mdx` folder if
+   it has local images)
+2. Add required frontmatter (`title`, `date`); add `category`/`tags`/`thumbnail` when you have
+   them
 3. Write content in Markdown
 4. Preview with `npm run dev`
 
 ### Add a new page
 
 1. Create `website/src/pages/my-page.astro`
-2. Import a layout (`Page.astro` or `PageWithoutProse.astro`)
+2. Import `BaseLayout.astro`
 3. The filename determines the URL route
 
 ### Modify site metadata
 
-Edit `website/src/consts.ts` for `SITE_TITLE` and `SITE_DESCRIPTION`.
+Edit `website/src/config/theme.config.ts` for `SITE.name`, `SITE.description`, navigation,
+contact info, curated categories, and the author entry.
 
 ### Update theme/styling
 
-Edit `website/tailwind.config.cjs` for colors, fonts, shadows. Global CSS lives in `website/src/styles/`.
+Edit `website/src/styles.css` for colors, fonts, and prose styling.
 
 ## Environment Variables
 

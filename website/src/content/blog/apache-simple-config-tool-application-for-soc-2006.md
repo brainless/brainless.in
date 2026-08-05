@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114654714216668604
 title: "Apache Simple Config Tool Application for SoC 2006"
-pubDate: 2006-05-02
-author: Sumit Datta
+date: 2006-05-02
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Name :

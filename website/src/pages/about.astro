@@ -1,192 +1,224 @@
 ---
-
-import Layout from '../layouts/Page.astro';
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { SITE } from "../lib/blog-data.js";
+import profilePicture from "../assets/Sumit_Lachung_profile_picture.jpg";
 ---
 
-<Layout
-	title="About Sumit Datta - Software Engineer & Entrepreneur"
-	description="Learn about Sumit Datta's 16+ years of software engineering experience, entrepreneurial journey, core values, and work at startups across US, Canada, Germany, and India."
+<BaseLayout
+  title={`About - ${SITE.name}`}
+  description="Sumit Datta's 16+ years of software engineering experience, entrepreneurial journey, core values, and work at startups across the US, Canada, Germany, and India."
+  canonical="/about"
 >
-	<p class="mb-[1em]">
-		I am Sumit Datta, an extremely passionate software engineer with 15 years of experience, mostly at
-		fast-paced startups.
-	</p>
-	<p class="mb-[1em]">
-		I am entrepreneurial by nature, have built and failed at a few startups. I am very hands-on when
-		it comes to software/product development. I am eager, curious and also a good listener. I aim to
-		be a resourceful team member/leader to build delightful user experiences.
-	</p>
+  <div class="mx-auto max-w-3xl px-5 py-12">
+    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "About" }]} />
 
-	<h3 class="text-xl font-bold my-4">My core values, guiding principles</h3>
-	<ul class="list-disc list-inside mb-[1em]">
-		<li>Build for the <strong>long term</strong></li>
-		<li><strong>Motivated team</strong> is greater than the sum of individuals</li>
-		<li><strong>Ownership</strong> - people do more when they are working for themselves</li>
-		<li><strong>Refactor</strong> your product, <strong>iterate</strong> quickly - focus on user needs</li>
-		<li>
-			Build <strong>thin backends</strong> whenever possible, do more in frontend, close to the user
-		</li>
-		<li><strong>Processes</strong> are only as good as the people who practice it</li>
-		<li><strong>Accept failure</strong>, every day you can start a new attempt</li>
-	</ul>
+    <header class="mt-6 flex items-center gap-5">
+      <Image
+        src={profilePicture}
+        alt="Sumit Datta"
+        width={88}
+        height={88}
+        class="h-[88px] w-[88px] shrink-0 rounded-full object-cover"
+      />
+      <div>
+        <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">About</div>
+        <h1 class="mt-1 font-serif text-4xl font-semibold leading-[1.05] sm:text-5xl">
+          Sumit Datta
+        </h1>
+      </div>
+    </header>
 
-	<h3 class="text-xl font-bold my-4">Degrees and certificates</h3>
-	<h4 class="text-lg font-bold">Bachelor of Science in Computer Science</h4>
-	<p class="mb-[1em]">
-		From <a
-			href="https://en.wikipedia.org/wiki/University_of_Calcutta"
-			target="_blank"
-			rel="noopener noreferrer">University of Calcutta</a
-		> (2006).
-	</p>
-	<p class="mb-[1em]">
-		Successfully participated in <a
-			href="https://summerofcode.withgoogle.com/"
-			target="_blank"
-			rel="noopener noreferrer">Google Summer of Code</a
-		> 2006, for <a
-			href="https://www.drupal.org/forum/general/news-and-announcements/2006-08-16/summer-of-code-2006-test-the-results"
-			target="_blank"
-			rel="noopener noreferrer">Drupal</a
-		>.
-	</p>
+    <div class="prose-article mt-10">
+      <p>
+        I am Sumit Datta, an extremely passionate software engineer with 16 years of experience,
+        mostly at fast-paced startups.
+      </p>
+      <p>
+        I am entrepreneurial by nature, have built and failed at a few startups. I am very
+        hands-on when it comes to software/product development. I am eager, curious and also a
+        good listener. I have been part of, or built, or led teams in the US, Canada, Germany and
+        India &mdash; although I have not been to the Americas.
+      </p>
+      <p>
+        I blog about mental issues, personal journey, software and product development. This is
+        my personal space and my views might seem contradictory to yours. That is OK, my views
+        are not set in stone. This is a place where I share my learning as a human. Try not to
+        take anything I share as advice &mdash; they are just my logs as I grow. If they help you,
+        great! Share yours too and I will be happy to read. Cheers!
+      </p>
+    </div>
 
-	<h3 class="text-xl font-bold my-4">Work experience</h3>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href="/videos"
+        class="inline-flex items-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90"
+      >
+        My videos on vibe coding
+      </a>
+      <a
+        href="/projects"
+        class="inline-flex items-center rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted"
+      >
+        My software projects
+      </a>
+      <a
+        href="https://calendly.com/sumitdatta/quick-chat"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted"
+      >
+        Let's talk vibe coding (30m free!)
+      </a>
+    </div>
 
-	<h4 class="text-lg font-bold mt-4">Leader of Software Engineering at Hearth Display Inc.</h4>
-	<p class="mb-[1em]"><em>November 2021 - October 2022</em></p>
-	<p class="mb-[1em]">
-		I helped lay out the core software product with FastAPI, Python, PostgreSQL, React, Zustand,
-		TypeScript and React Native. The Hearth application runs on a 27” tablet (Android) with a React
-		Native application and there are web applications with React. We built a RESTful API with
-		FastAPI and Python, SQLAlchemy as ORM. I helped set up CI/CD with GitHub actions, Ansible. I
-		also helped mentor 2 younger engineers, worked with the Product Manager in setting up processes
-		for regular work and hiring. I was working remotely from India.
-	</p>
+    <div class="prose-article mt-12 border-t border-border pt-10">
+      <h2>My core values, guiding principles</h2>
+      <ul>
+        <li>Build for the <strong>long term</strong></li>
+        <li><strong>Motivated team</strong> is greater than the sum of individuals</li>
+        <li><strong>Ownership</strong> &mdash; people do more when they are working for themselves</li>
+        <li><strong>Refactor</strong> your product, <strong>iterate</strong> quickly &mdash; focus on user needs</li>
+        <li>Build <strong>thin backends</strong> whenever possible, do more in frontend, close to the user</li>
+        <li><strong>Processes</strong> are only as good as the people who practice them</li>
+        <li><strong>Accept failure</strong>, every day you can start a new attempt</li>
+      </ul>
 
-	<h4 class="text-lg font-bold mt-4">Founder of dwata</h4>
-	<p class="mb-[1em]"><em>November 2019 - September 2021</em></p>
-	<p class="mb-[1em]">
-		I have been traveling around SE Asia for some headspace, and building <a
-			href="https://dwata.com"
-			target="_blank"
-			rel="noopener noreferrer">dwata</a
-		>, a data exploration tool that does not need any SQL knowledge. I joined On Deck (a platform for
-		learning founders) in order to find like minded people and potential co-founder. I also
-		participated in Y Combinator Startup School in 2020. Since early 2021 I have been mainly
-		collaborating on MVPs for other On Deck founders and experimenting on data exploration, no-code
-		tools on the side.
-	</p>
+      <h2>Degrees and certificates</h2>
+      <h3>Bachelor of Science in Computer Science</h3>
+      <p>
+        From <a href="https://en.wikipedia.org/wiki/University_of_Calcutta" target="_blank" rel="noopener noreferrer">University of Calcutta</a> (2006).
+      </p>
+      <p>
+        Successfully participated in <a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Summer of Code</a> 2006, for <a href="https://www.drupal.org/forum/general/news-and-announcements/2006-08-16/summer-of-code-2006-test-the-results" target="_blank" rel="noopener noreferrer">Drupal</a>.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Consultant & Founder of Travlyng</h4>
-	<p class="mb-[1em]"><em>August 2017 - November 2019</em></p>
-	<p class="mb-[1em]">
-		Primarily work as a consultant for a few startups (work remotely from India). Moonlight on my own
-		product, <a href="https://twitter.com/travlyng" target="_blank" rel="noopener noreferrer"
-			>Travlyng</a
-		>, a network for avid travelers to sell their travel content as usable guides for other
-		travelers.
-	</p>
+      <h2>Work experience</h2>
 
-	<h4 class="text-lg font-bold mt-4">Lead Developer at Mylittlejob GmbH</h4>
-	<p class="mb-[1em]"><em>April 2015 - June 2017</em></p>
-	<p class="mb-[1em]">
-		Working with <a href="https://www.mylittlejob.com/" target="_blank" rel="noopener noreferrer"
-			>Mylittlejob GmbH</a
-		>, leading a very small development team to build a Python (Falcon, SQLAlchemy), PostgreSQL,
-		ReactJS (Redux, Router, FormatJS) based application. It is a marketplace for students to find
-		online work. Job creation, job management workflow, payment, payout, etc.
-	</p>
+      <h3>Leader of Software Engineering at Hearth Display Inc.</h3>
+      <p><em>November 2021 &ndash; October 2022</em></p>
+      <p>
+        I helped lay out the core software product with FastAPI, Python, PostgreSQL, React,
+        Zustand, TypeScript and React Native. The Hearth application runs on a 27&rdquo; tablet
+        (Android) with a React Native application and there are web applications with React. We
+        built a RESTful API with FastAPI and Python, SQLAlchemy as ORM. I helped set up CI/CD
+        with GitHub Actions, Ansible. I also helped mentor 2 younger engineers, worked with the
+        Product Manager in setting up processes for regular work and hiring. I was working
+        remotely from India.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Python Developer at Smaato Inc.</h4>
-	<p class="mb-[1em]"><em>September 2014 - March 2015</em></p>
-	<p class="mb-[1em]">
-		Working for <a href="https://www.smaato.com/" target="_blank" rel="noopener noreferrer"
-			>Smaato Inc</a
-		>. In September 2014 I started working as a consultant Python developer for Smaato, working
-		remotely from India. The project was built using Django, using MongoDB. In February 2015 I
-		joined the company as a full time employee in Hamburg, Germany. In Smaato I have used Django,
-		OAuth toolkit, DRF, Flask, Tornado for various projects. Most of my work is around building
-		RESTful APIs.
-	</p>
+      <h3>Founder of dwata</h3>
+      <p><em>November 2019 &ndash; September 2021</em></p>
+      <p>
+        I have been traveling around SE Asia for some headspace, and building <a href="https://dwata.com" target="_blank" rel="noopener noreferrer">dwata</a>, a data exploration tool that does not need any SQL knowledge. I joined On Deck (a platform for
+        learning founders) in order to find like minded people and a potential co-founder. I also
+        participated in Y Combinator Startup School in 2020. Since early 2021 I have been mainly
+        collaborating on MVPs for other On Deck founders and experimenting on data exploration,
+        no-code tools on the side.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Software Engineer at Eco Market</h4>
-	<p class="mb-[1em]"><em>June 2013 - December 2013</em></p>
-	<p class="mb-[1em]">
-		Worked with Eco Market (London, UK - remote) as Software Engineer. It is a marketplace for
-		environmentally friendly, eco and natural products. Being part of a very small team, I used to
-		look into all aspects of development. Most notably - integration with Sailthru, user tracking and
-		analytics, reporting with Chartio (SQL based), implementing new design handed over by designer.
-	</p>
+      <h3>Consultant &amp; Founder of Travlyng</h3>
+      <p><em>August 2017 &ndash; November 2019</em></p>
+      <p>
+        Primarily worked as a consultant for a few startups (remotely from India). Moonlighted on
+        my own product, <a href="https://twitter.com/travlyng" target="_blank" rel="noopener noreferrer">Travlyng</a>, a network for avid travelers to sell their travel content as usable guides for
+        other travelers.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Software Engineer at Feastly</h4>
-	<p class="mb-[1em]"><em>December 2012 - June 2013</em></p>
-	<p class="mb-[1em]">
-		Worked with <a href="https://eatfeastly.com/" target="_blank" rel="noopener noreferrer">Feastly</a
-		> (Washington DC - remote) as Software Engineer. It is a marketplace for cooks to host dinners at
-		their convenient location. I was the sole engineer and looked into every aspect of the product
-		development, from upgrading Django (1.3 - 1.5 with custom user), to new features, implementing
-		new design, deployments, payment processing (Balanced Payments/PayPal), etc.
-	</p>
+      <h3>Lead Developer at Mylittlejob GmbH</h3>
+      <p><em>April 2015 &ndash; June 2017</em></p>
+      <p>
+        Worked with <a href="https://www.mylittlejob.com/" target="_blank" rel="noopener noreferrer">Mylittlejob GmbH</a>, leading a very small development team to build a Python (Falcon, SQLAlchemy), PostgreSQL,
+        ReactJS (Redux, Router, FormatJS) based application. It is a marketplace for students to
+        find online work &mdash; job creation, job management workflow, payment, payout, etc.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Senior Mentor</h4>
-	<p class="mb-[1em]"><em>September 2012 - December 2012</em></p>
-	<p class="mb-[1em]">
-		Consulting for a Web Development company as a senior mentor, looking over development, sales,
-		technical support and internal processes. Introduced Yii (PHP), Git, Amazon Web Services,
-		memcached to the development team. Helped the sales teams to consult prospective customers,
-		understand needs and win projects.
-	</p>
+      <h3>Python Developer at Smaato Inc.</h3>
+      <p><em>September 2014 &ndash; March 2015</em></p>
+      <p>
+        Worked for <a href="https://www.smaato.com/" target="_blank" rel="noopener noreferrer">Smaato Inc</a>. In September 2014 I started working as a consultant Python developer for Smaato, working
+        remotely from India. The project was built using Django, using MongoDB. In February 2015
+        I joined the company as a full time employee in Hamburg, Germany. At Smaato I used
+        Django, OAuth toolkit, DRF, Flask, Tornado for various projects &mdash; mostly building
+        RESTful APIs.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Personal Sabbatical</h4>
-	<p class="mb-[1em]"><em>January 2012 - August 2012</em></p>
-	<p class="mb-[1em]">
-		Took a break from day jobs and tried working on some personal product concepts. Worked on an
-		Email/Social based communication platform. It was planned as an Inbox for Twitter, Email,
-		Facebook, Feeds and other streaming content. Built with Node.js, Celery, RabbitMQ, MySQL,
-		Python.
-	</p>
+      <h3>Software Engineer at Eco Market</h3>
+      <p><em>June 2013 &ndash; December 2013</em></p>
+      <p>
+        Worked with Eco Market (London, UK &mdash; remote) as Software Engineer. It is a
+        marketplace for environmentally friendly, eco and natural products. Being part of a very
+        small team, I looked into all aspects of development &mdash; most notably integration
+        with Sailthru, user tracking and analytics, reporting with Chartio (SQL based), and
+        implementing new designs handed over by a designer.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Framework Engineer at MobStac</h4>
-	<p class="mb-[1em]"><em>July 2011 - December 2011</em></p>
-	<p class="mb-[1em]">
-		Worked at <a href="https://www.beaconstac.com/" target="_blank" rel="noopener noreferrer"
-			>MobStac</a
-		> (Bangalore, India) as a Framework Engineer. This was the first company where I started working
-		with Django. I worked on multiple aspects, from new features, to bug fixing, a new Debian (.deb
-		packaging) based deployment system, iPad based simulated-native application in JavaScript
-		(gestures recognized) for their TechCrunch Disrupt launch. The app had native look and feel, and
-		worked with a custom built JavaScript engine for rendering.
-	</p>
+      <h3>Software Engineer at Feastly</h3>
+      <p><em>December 2012 &ndash; June 2013</em></p>
+      <p>
+        Worked with <a href="https://eatfeastly.com/" target="_blank" rel="noopener noreferrer">Feastly</a> (Washington DC &mdash; remote) as Software Engineer. It is a marketplace for cooks to host
+        dinners at their convenient location. I was the sole engineer and looked into every
+        aspect of the product development, from upgrading Django (1.3 to 1.5 with a custom user
+        model), to new features, implementing new design, deployments, and payment processing
+        (Balanced Payments/PayPal).
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Tech Lead at forums.com</h4>
-	<p class="mb-[1em]"><em>October 2009 - June 2011</em></p>
-	<p class="mb-[1em]">
-		forums.com (Kolkata, India) tech lead. LAMP stack with Redis, Tokyo Cabinet, Gearman, some
-		Python. I managed a team of 10, and looked into all aspects of operations and development.
-	</p>
+      <h3>Senior Mentor</h3>
+      <p><em>September 2012 &ndash; December 2012</em></p>
+      <p>
+        Consulted for a web development company as a senior mentor, looking over development,
+        sales, technical support and internal processes. Introduced Yii (PHP), Git, Amazon Web
+        Services, and memcached to the development team. Helped the sales teams consult
+        prospective customers, understand needs and win projects.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Co-founder of Pixlie</h4>
-	<p class="mb-[1em]"><em>December 2006 - December 2008</em></p>
-	<p class="mb-[1em]">
-		Worked at Pixlie, a startup that I co-founded. Built hispanito.com as a social network, LAMP
-		stack, reached 12 Million Page Views / month, with 100K+ monthly active users. Heavy memcached
-		usage. Started working on Amazon Web Services.
-	</p>
+      <h3>Personal Sabbatical</h3>
+      <p><em>January 2012 &ndash; August 2012</em></p>
+      <p>
+        Took a break from day jobs and tried working on some personal product concepts. Worked on
+        an email/social based communication platform &mdash; planned as an inbox for Twitter,
+        Email, Facebook, Feeds and other streaming content. Built with Node.js, Celery, RabbitMQ,
+        MySQL, Python.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Google Summer of Code</h4>
-	<p class="mb-[1em]"><em>March 2006 - August 2006</em></p>
-	<p class="mb-[1em]">Google Summer of Code for Drupal, GData module development.</p>
+      <h3>Framework Engineer at MobStac</h3>
+      <p><em>July 2011 &ndash; December 2011</em></p>
+      <p>
+        Worked at <a href="https://www.beaconstac.com/" target="_blank" rel="noopener noreferrer">MobStac</a> (Bangalore, India) as a Framework Engineer. This was the first company where I started
+        working with Django. I worked on multiple aspects, from new features to bug fixing, a new
+        Debian (.deb packaging) based deployment system, and an iPad-based simulated-native
+        application in JavaScript (gesture recognition) for their TechCrunch Disrupt launch. The
+        app had a native look and feel, powered by a custom built JavaScript rendering engine.
+      </p>
 
-	<h4 class="text-lg font-bold mt-4">Project Lead at Intrasoft Technologies</h4>
-	<p class="mb-[1em]"><em>2005 - December 2005</em></p>
-	<p class="mb-[1em]">
-		Worked at Intrasoft Technologies <a
-			href="http://www.123greetings.com/"
-			target="_blank"
-			rel="noopener noreferrer">123greetings.com</a
-		>, conceptualized and lead their internal work/project management application - this was a task
-		management software for a 90 people company in an era when task management was still on
-		pen/paper and the “Intranet” was still a word.
-	</p>
-</Layout>
+      <h3>Tech Lead at forums.com</h3>
+      <p><em>October 2009 &ndash; June 2011</em></p>
+      <p>
+        forums.com (Kolkata, India) tech lead. LAMP stack with Redis, Tokyo Cabinet, Gearman, some
+        Python. I managed a team of 10, and looked into all aspects of operations and
+        development.
+      </p>
+
+      <h3>Co-founder of Pixlie</h3>
+      <p><em>December 2006 &ndash; December 2008</em></p>
+      <p>
+        Worked at Pixlie, a startup that I co-founded. Built hispanito.com as a social network on
+        a LAMP stack, reaching 12 million page views/month with 100K+ monthly active users. Heavy
+        memcached usage. Started working on Amazon Web Services.
+      </p>
+
+      <h3>Google Summer of Code</h3>
+      <p><em>March 2006 &ndash; August 2006</em></p>
+      <p>Google Summer of Code for Drupal, GData module development.</p>
+
+      <h3>Project Lead at Intrasoft Technologies</h3>
+      <p><em>2005 &ndash; December 2005</em></p>
+      <p>
+        Worked at Intrasoft Technologies <a href="http://www.123greetings.com/" target="_blank" rel="noopener noreferrer">123greetings.com</a>, conceptualized and led their internal work/project management application
+        &mdash; a task management tool for a 90-person company in an era when task management was
+        still on pen and paper and the &ldquo;Intranet&rdquo; was still a word.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

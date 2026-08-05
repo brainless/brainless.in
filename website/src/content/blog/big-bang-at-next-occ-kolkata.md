@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-7988097139114589856
 title: "Big Bang at next OCC Kolkata"
-pubDate: 2009-10-10
-author: Sumit Datta
-categories: ['entrepreneurship', 'kolkata', 'business plan', 'occ']
+date: 2009-10-10
+author: "sumit-datta"
+tags: ['entrepreneurship', 'kolkata', 'business plan', 'occ']
+category: "startups-business"
 ---
 
 Hi all,  

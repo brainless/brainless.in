@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5418881547670053332
 title: "Some points on code and stuff"
-pubDate: 2007-09-22
-author: Sumit Datta
+date: 2007-09-22
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 I have learnt a lot in past 4 years of PHP and here are some tips I want to share:

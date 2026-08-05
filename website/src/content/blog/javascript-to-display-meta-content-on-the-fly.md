@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-4007791347865324566
 title: "JavaScript to display meta content on the fly"
-pubDate: 2010-05-14
-author: Sumit Datta
-categories: ['json', 'javascript', 'jquery']
+date: 2010-05-14
+author: "sumit-datta"
+tags: ['json', 'javascript', 'jquery']
+category: "tech-engineering"
 ---
 
 At forums.com we are trying to look at something similar to what Facebook and other sites do when it comes to displaying external content.  

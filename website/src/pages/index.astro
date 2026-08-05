@@ -1,59 +1,227 @@
 ---
-import { SITE_DESCRIPTION } from "../consts";
-import Page from "../layouts/Page.astro";
-import profilePicture from "../assets/Sumit_Lachung_profile_picture.jpg";
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Icon from "../components/Icon.astro";
+import heroImage from "../assets/Gemini_Generated_Image_swzj74swzj74swzj.png";
+import {
+  SITE,
+  categories,
+  featuredPost,
+  sortedPosts,
+  getAuthor,
+  getCategory,
+  formatDate,
+} from "../lib/blog-data.js";
+
+const featured = await featuredPost();
+const featuredAuthor = getAuthor(featured.author);
+const featuredCategory = getCategory(featured.category);
+const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slug);
 ---
 
-<Page title="Sumit Datta - Passionate Software Engineer & Startup Builder" description="Experienced software engineer with 16 years at fast-paced startups. Passionate about vibe coding, product development, and building delightful user experiences. Entrepreneur and tech leader.">
-    <div class="mb-[1em]">
-        <img
-            src={profilePicture.src}
-            alt="Sumit Datta profile picture"
-            class="w-[72px] h-[72px] rounded-full object-cover float-left mr-4 mb-2"
-        />
-        <p class="text-gray-100">
-            I am Sumit Datta, an extremely passionate software engineer with 16
-            years of experience, mostly at early, fast-paced startups.
+<BaseLayout
+  title={`${SITE.name} - Software engineer & entrepreneur`}
+  description={SITE.description}
+  canonical="/"
+  flushFooter
+>
+  <section class="relative -mt-[calc(4rem+2px)] min-h-[calc(100svh-2rem)] overflow-hidden border-b border-border/60 pt-[calc(4rem+2px)] sm:min-h-[760px]">
+    <Image
+      src={heroImage}
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover object-center"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      width={1600}
+      widths={[640, 960, 1280, 1600]}
+      sizes="100vw"
+      format="webp"
+      quality={50}
+    />
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 bg-[linear-gradient(90deg,oklch(0.1_0.02_70_/_0.68),oklch(0.16_0.02_80_/_0.38)_46%,oklch(0.98_0.01_90_/_0.1))] dark:bg-[linear-gradient(90deg,oklch(0.08_0.01_70_/_0.78),oklch(0.08_0.01_70_/_0.52)_48%,oklch(0.08_0.01_70_/_0.18))]"
+    />
+    <div
+      aria-hidden="true"
+      class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/45 via-black/18 to-transparent"
+    />
+    <div
+      aria-hidden="true"
+      class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background via-background/72 to-transparent"
+    />
+    <div class="relative mx-auto flex min-h-[calc(100svh-6rem)] max-w-6xl items-center px-5 py-20 sm:min-h-[680px] sm:py-24">
+      <div class="max-w-4xl text-white drop-shadow-[0_1px_18px_rgba(0,0,0,0.28)]">
+        <h1 class="font-serif text-[2.5rem] font-medium leading-[1.02] sm:text-6xl lg:text-7xl">
+          Software engineer,
+          <span class="italic text-white"> founder</span>,
+          <span class="italic text-white"> storyteller</span>.
+        </h1>
+        <p class="mt-8 max-w-xl text-lg leading-relaxed text-white/86">
+          I'm Sumit Datta. I write about software, startups, and the personal journey in
+          between &mdash; published occasionally, edited carefully.
         </p>
-        <p class="text-gray-100 mt-4">
-            I am entrepreneurial by nature, have built and failed at a few
-            startups. I am very hands-on when it comes to software/product
-            development. I am eager, curious and also a good listener. I have
-            been part of or built or lead teams in the US, Canada, Germany and
-            India. Although I have not been to the Americas.
-        </p>
-        <p class="text-gray-100 my-4">
-            I blog about mental issues, personal journey, software and product
-            development. This is my personal space and my views might seem
-            contradictory to yours. That is OK, my views are not set in stone.
-            This is a place where I share my learning as a human. Try not to
-            take anything I share as advice. They are just my logs as a I grow,
-            if they help you, great! Share yours too and I will be happy to
-            read. Cheers!
-        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a
+            href={`/blog/${featured.slug}`}
+            class="group inline-flex items-center gap-2 border-b border-white pb-1 text-sm font-medium text-white hover:border-white/70 hover:text-white/82"
+          >
+            Start with the latest post
+            <Icon name="arrow-right" class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+          </a>
+          <a href="/blog" class="text-sm text-white/76 hover:text-white">
+            Or browse the archive
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-border/60">
+    <div class="mx-auto max-w-6xl px-5 py-16">
+      <div class="mb-6 flex items-center justify-between">
+        <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Featured</div>
+        <a href="/blog" class="text-xs text-muted-foreground hover:text-foreground">All posts &rarr;</a>
+      </div>
+      <article class="grid gap-10 lg:grid-cols-2">
+        <a href={`/blog/${featured.slug}`} class="group block" aria-label={`Read ${featured.title}`}>
+          <div class="aspect-[4/3] overflow-hidden rounded-md bg-muted">
+            {
+              featured.thumbnail && (
+                <Image
+                  src={featured.thumbnail}
+                  alt=""
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  width={720}
+                  widths={[372, 560, 720]}
+                  sizes="(min-width: 1024px) 560px, calc(100vw - 40px)"
+                  format="webp"
+                  quality={64}
+                />
+              )
+            }
+          </div>
+        </a>
+        <div class="flex flex-col justify-center">
+          <div class="flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
+            {
+              featuredCategory && (
+                <a href={`/categories/${featuredCategory.slug}`} class="inline-flex min-h-9 items-center text-primary hover:underline">
+                  {featuredCategory.name}
+                </a>
+              )
+            }
+            <span>&middot;</span>
+            <time datetime={featured.date}>{formatDate(featured.date)}</time>
+          </div>
+          <a href={`/blog/${featured.slug}`} class="mt-2 block py-1">
+            <h2 class="font-serif text-3xl font-semibold leading-tight hover:text-primary sm:text-4xl">
+              {featured.title}
+            </h2>
+          </a>
+          <p class="mt-4 text-lg text-muted-foreground">{featured.excerpt}</p>
+          <div class="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
+            {
+              featuredAuthor && (
+                <>
+                  <img
+                    src={featuredAuthor.avatar}
+                    alt=""
+                    width="28"
+                    height="28"
+                    class="h-7 w-7 rounded-full"
+                  />
+                  <a href={`/authors/${featuredAuthor.slug}`} class="hover:text-foreground">{featuredAuthor.name}</a>
+                  <span>&middot;</span>
+                </>
+              )
+            }
+            <span>{featured.readingTime} min read</span>
+          </div>
+          <a href={`/blog/${featured.slug}`} class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+            Read the post <Icon name="arrow-right" class="h-3.5 w-3.5" />
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-16" data-home-latest>
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <h2 class="font-serif text-2xl font-semibold">Latest</h2>
+      <div class="flex flex-wrap gap-2">
+        <button
+          type="button"
+          data-home-filter=""
+          class="rounded-full border px-3 py-1 text-xs transition-colors border-foreground bg-foreground text-background"
+        >
+          All
+        </button>
+        {
+          categories.map((category) => (
+            <button
+              type="button"
+              data-home-filter={category.slug}
+              class="rounded-full border px-3 py-1 text-xs transition-colors border-border text-muted-foreground hover:text-foreground"
+            >
+              {category.name}
+            </button>
+          ))
+        }
+      </div>
     </div>
 
-    <!-- Call to Action Buttons -->
-    <div class="mt-8 space-y-4 md:space-y-0 md:space-x-4 md:flex md:flex-row">
-        <a
-            href="/videos"
-            class="block w-full md:w-auto bg-slate-600 hover:bg-slate-700 text-white py-3 px-6 rounded-lg text-center transition-colors duration-200"
-        >
-            My Videos on Vibe Coding
-        </a>
-        <a
-            href="/projects"
-            class="block w-full md:w-auto bg-slate-600 hover:bg-slate-700 text-white py-3 px-6 rounded-lg text-center transition-colors duration-200"
-        >
-            My Software Projects
-        </a>
-        <a
-            href="https://calendly.com/sumitdatta/quick-chat"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block w-full md:w-auto bg-slate-600 hover:bg-slate-700 text-white py-3 px-6 rounded-lg text-center transition-colors duration-200"
-        >
-            Lets Talk Vibe Coding (30m free!)
-        </a>
+    <div data-home-empty class="mt-12 rounded-md border border-dashed border-border py-16 text-center text-muted-foreground" hidden>
+      Nothing here yet in this section.
     </div>
-</Page>
+
+    <div class="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {latest.map((post, index) => <PostCard post={post} hidden={index >= 6} />)}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/blog" class="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted">
+        Browse the archive <Icon name="arrow-right" class="h-3.5 w-3.5" />
+      </a>
+    </div>
+  </section>
+
+  <Newsletter />
+</BaseLayout>
+
+<script>
+  const latest = document.querySelector("[data-home-latest]");
+  if (latest) {
+    const buttons = [...latest.querySelectorAll("[data-home-filter]")];
+    const cards = [...latest.querySelectorAll("[data-post-card]")];
+    const empty = latest.querySelector("[data-home-empty]");
+    const activeClasses = ["border-foreground", "bg-foreground", "text-background"];
+    const inactiveClasses = ["border-border", "text-muted-foreground", "hover:text-foreground"];
+
+    const setActive = (button, active) => {
+      button.classList.toggle(activeClasses[0], active);
+      button.classList.toggle(activeClasses[1], active);
+      button.classList.toggle(activeClasses[2], active);
+      inactiveClasses.forEach((className) => button.classList.toggle(className, !active));
+    };
+
+    const filterCards = (category) => {
+      let visible = 0;
+      cards.forEach((card) => {
+        const match = !category || card.dataset.category === category;
+        const show = match && visible < 6;
+        card.hidden = !show;
+        if (match) visible += 1;
+      });
+      if (empty) empty.hidden = visible > 0;
+      buttons.forEach((button) => setActive(button, button.dataset.homeFilter === category));
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => filterCards(button.dataset.homeFilter || ""));
+    });
+  }
+</script>

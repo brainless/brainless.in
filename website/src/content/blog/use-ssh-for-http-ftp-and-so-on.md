@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-116137262806648675
 title: "Use ssh for http ftp and so on"
-pubDate: 2006-10-20
-author: Sumit Datta
+date: 2006-10-20
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 My ISP has a little fault that I use to my advantage. The software that they use works kinda in the following way:  

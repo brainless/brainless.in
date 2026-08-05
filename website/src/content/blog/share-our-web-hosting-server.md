@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-116131767791101222
 title: "Share our web hosting server"
-pubDate: 2006-10-20
-author: Sumit Datta
+date: 2006-10-20
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Recently me and some friends changed from our web hosts to a full dedicated server. We took a nice server from Layered Technologies (http://www.layeredtech.com/) and put in Xen in it. Now each of us are running their own OS on the Xen. We had thought of dividing the server 4-way, but we are only using 2 slots. So if anyone is interested in taking a piece do tell us. We are mostly available on IRC : Freenode : Lookout for the following nicks :  

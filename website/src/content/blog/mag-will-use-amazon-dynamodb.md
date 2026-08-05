@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-9091016189194743025
 title: "Mag will use Amazon DynamoDB"
-pubDate: 2012-01-19
-author: Sumit Datta
-categories: ['amazon', 'development', 'mag', 'aws', 'dynamodb']
+date: 2012-01-19
+author: "sumit-datta"
+tags: ['amazon', 'development', 'mag', 'aws', 'dynamodb']
+category: "startups-business"
 ---
 
 Amazon's latest announcement (and offering) could not have come at a better time for [Mag](https://mag.io/). I am talking about Amazon DynamoDB here and I feel it is a good fit for Mag.  

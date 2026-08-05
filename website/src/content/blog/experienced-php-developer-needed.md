@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-6642611391942137906
 title: "Experienced PHP Developer Needed"
-pubDate: 2009-08-31
-author: Sumit Datta
-categories: ['php', 'aws', 'job']
+date: 2009-08-31
+author: "sumit-datta"
+tags: ['php', 'aws', 'job']
+category: "startups-business"
 ---
 
 We need a very experienced PHP developer willing to work full time on a contract basis. This is telecommute work so you can work from anywhere. You will be working on new products mostly on Amazon Web Services platform. Required:  

@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-2782202118618089632
 title: "First look at Airtel DTH HD (High Definition)"
-pubDate: 2010-07-06
-author: Sumit Datta
-categories: ['dth', 'airtel', 'hd', 'review']
+date: 2010-07-06
+author: "sumit-datta"
+tags: ['dth', 'airtel', 'hd', 'review']
+category: "web-digital-culture"
 ---
 
 After a [long battle](http://blog.brainless.in/2010/07/poor-customer-support-from-airtel.html) I finally got my first look at ESPN HD on our newly installed Airtel DTH HD. We have a Samsung Series 5 40" LCD ([LA40C550](http://www.samsung.com/in/consumer/tv-audio-video/television/lcd-tv/LA40C550J1RLXL/index.idx?pagetype=prd_detail&returnurl=)) which is a full HD capable one. I have already played HD content like Avatar trailer, "Waka Waka" and so on. Of course I was not expecting Avatar picture quality on ESPN HD. But it seemed more compressed than I expected. The obvious things you will notice once you switch to ESPN HD is the aspect ratio. If you have an HD TV and are stretching the Standard 4:3 feed into 16:9, you get used to the stretching. But once you watch full HD resolution (1920x1080) you realize all of a sudden that humans are not that fat.
