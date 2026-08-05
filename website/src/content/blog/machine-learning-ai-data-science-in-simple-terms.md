@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-419179101647382405
 title: "Machine Learning, AI, Data Science in simple terms"
-pubDate: 2018-01-23
-author: Sumit Datta
+date: 2018-01-23
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Hey folks, it has been a while since I posted. I was in a peer group discussing some of these terms recently and then a friend, who was writing a post to demystify these terms, asked me to explain these in plain English.  

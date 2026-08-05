@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5343629631765889252
 title: "Requirements for Software.com"
-pubDate: 2010-07-12
-author: Sumit Datta
-categories: ['software.com', 'developer', 'magento']
+date: 2010-07-12
+author: "sumit-datta"
+tags: ['software.com', 'developer', 'magento']
+category: "startups-business"
 ---
 
 Software.com needs developers again (work from Salt Lake, Kolkata office):  

@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5237790735289114758
 title: "The 9 to 5 work at MobStac"
-pubDate: 2011-08-27
-author: Sumit Datta
+date: 2011-08-27
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 We are preparing for our new product's launch at [TechCrunch Disrupt SF2011](http://disrupt.techcrunch.com/SF2011/) (Startup Alley) and to be honest we are fighting with all our might. The last 3 weeks have been really tough. Our product is a full HTML5 app, for a particular platform. What we are working on is honestly a bit of a challenge. The way we are doing stuff is not absolutely new, but at the same time its not easy.  

@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114753832212899050
 title: "Human Language Learning System"
-pubDate: 2006-05-13
-author: Sumit Datta
+date: 2006-05-13
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Its Exam time going on now... so cant think much :P But for few days two different ideas have been making rounds in my brain(ahh brainless has a brain o.O). The first one involves a different approach to UI of information kiosk type sites. I will discuss this one later with some examples.  

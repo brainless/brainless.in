@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-3116406954583120462
 title: "The reality of failures"
-pubDate: 2016-08-14
-author: Sumit Datta
+date: 2016-08-14
+author: "sumit-datta"
+tags: []
+category: "personal-reflections"
 ---
 
 Look around your office desk for a moment (you can imagine an office if you are not at office). What do you see? People focusing on the daily tasks, glued to their screens or notepads, crunching numbers, making phone calls, typing text, doing whatever they have to in order to achieve some daily target that is either self established or was handed down by a manager. If you are in your mid twenties to mid thirties, have a career, have a dream that you are chasing, devoting way more time to what we consider "success" then you might have come across my friend called **failure**.  

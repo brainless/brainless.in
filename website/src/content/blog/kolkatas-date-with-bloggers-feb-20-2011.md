@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-6083919354031341075
 title: "Kolkata's date with Bloggers, Feb 20, 2011"
-pubDate: 2011-02-21
-author: Sumit Datta
-categories: ['blog', 'meetup']
+date: 2011-02-21
+author: "sumit-datta"
+tags: ['blog', 'meetup']
+category: "community-events"
 ---
 
 **Feb 20, 2011** was a fun filled day for many bloggers of Kolkata. Probably for the first time here we had two back to back blogging events organized separately in two separate venues. The day for us started at about 12AM with the [IndiBlogger](http://www.indiblogger.in/)'s meet, which was carrying the [Akshaya Patra Foundation](http://www.akshayapatra.org/)'s message across to bloggers in Kolkata and around.

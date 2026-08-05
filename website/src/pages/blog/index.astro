@@ -1,44 +1,197 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import Page from '../../layouts/Page.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PostCard from "../../components/PostCard.astro";
+import Icon from "../../components/Icon.astro";
+import { SITE, categories, sortedPosts } from "../../lib/blog-data.js";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = await sortedPosts();
 ---
 
-<Page title="Blog - Software Development, Mental Health & Personal Journey" description="Read Sumit's thoughts on software development, mental health, personal growth, and lessons learned from building startups. A space for sharing experiences and learning.">
-	<section>
-		<ul class="p-0 m-0 list-none max-w-3xl mx-auto max-[720px]:max-w-[calc(100%-0.5rem)]">
-			{
-				posts.map((post, index) => (
-					<li class="border border-gray-700 rounded-lg p-4 mb-4 shadow-lg w-full">
-						<a
-							href={`/blog/${post.id}/`}
-							class="block no-underline transition duration-200 ease-in-out group text-gray-light"
-						>
-							{post.data.heroImage && (
-								<Image
-									width={720}
-									height={360}
-									src={post.data.heroImage}
-									alt=""
-									class="mb-2 rounded-xl group-hover:shadow" />
-							)}
-							<h4 class="text-xl font-bold mb-2 text-gray-100">
-								{post.data.title}
-							</h4>
-							{post.data.description && <p class="text-gray-light text-sm mb-4">{post.data.description}</p>}
-							<p class="m-0 text-gray-100 group-hover:text-accent">
-								<FormattedDate date={post.data.pubDate} />
-							</p>
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</section>
-</Page>
+<BaseLayout
+  title={`Archive - ${SITE.name}`}
+  description="Every essay, field note, and interview we've published. Search and filter by category or tag."
+  canonical="/blog"
+>
+  <div class="mx-auto max-w-4xl px-5 py-12" data-archive>
+    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Archive" }]} />
+    <h1 class="mt-4 font-serif text-4xl font-semibold sm:text-5xl">The archive</h1>
+    <p class="mt-3 max-w-xl text-muted-foreground">
+      Every piece we've published. {posts.length} essays, field notes, and interviews.
+    </p>
+
+    <form data-archive-search class="mt-8 flex items-center gap-2 border-b border-border pb-2">
+      <Icon name="search" class="h-4 w-4 text-muted-foreground" />
+      <input
+        data-archive-query
+        name="q"
+        aria-label="Search the archive"
+        placeholder="Search the archive..."
+        class="w-full border-0 bg-transparent py-2 outline-none placeholder:text-muted-foreground"
+      />
+      <button
+        data-archive-clear
+        type="button"
+        class="text-xs text-muted-foreground hover:text-foreground"
+        hidden
+      >
+        Clear
+      </button>
+    </form>
+
+    <div class="mt-6 space-y-4 text-sm">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs uppercase tracking-wider text-muted-foreground">Categories</span>
+        <a data-category-filter="" href="/blog" class="rounded-full border px-3 py-1 text-xs">All</a>
+        {
+          categories.map((category) => (
+            <a data-category-filter={category.slug} href={`/categories/${category.slug}`} class="rounded-full border px-3 py-1 text-xs">
+              {category.name}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div data-archive-count class="mt-6 text-sm text-muted-foreground"></div>
+
+    <div data-archive-empty class="mt-12 rounded-md border border-dashed border-border py-20 text-center" hidden>
+      <div class="font-serif text-lg">No matches</div>
+      <p class="mt-2 text-sm text-muted-foreground">Try a different word, or clear the filters.</p>
+    </div>
+
+    <div data-archive-list>
+      {posts.map((post) => <PostCard post={post} variant="list" />)}
+    </div>
+
+    <div data-archive-more-wrap class="mt-10 text-center" hidden>
+      <button
+        type="button"
+        data-archive-more
+        class="rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted"
+      ></button>
+      <div data-archive-page class="mt-3 text-xs text-muted-foreground"></div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const archive = document.querySelector("[data-archive]");
+  if (archive) {
+    const pageSize = 5;
+    const input = archive.querySelector("[data-archive-query]");
+    const clear = archive.querySelector("[data-archive-clear]");
+    const form = archive.querySelector("[data-archive-search]");
+    const count = archive.querySelector("[data-archive-count]");
+    const empty = archive.querySelector("[data-archive-empty]");
+    const cards = [...archive.querySelectorAll("[data-post-card]")];
+    const moreWrap = archive.querySelector("[data-archive-more-wrap]");
+    const more = archive.querySelector("[data-archive-more]");
+    const pageText = archive.querySelector("[data-archive-page]");
+    const categoryLinks = [...archive.querySelectorAll("[data-category-filter]")];
+    const tagLinks = [...archive.querySelectorAll("[data-tag-filter]")];
+    const activeCategory = ["border-foreground", "bg-foreground", "text-background"];
+    const inactiveCategory = ["border-border", "text-muted-foreground", "hover:text-foreground"];
+    const activeTag = ["border-primary", "text-primary"];
+    const inactiveTag = ["border-border", "text-muted-foreground", "hover:text-foreground"];
+
+    const stateFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        q: params.get("q") || "",
+        cat: params.get("cat") || "",
+        tag: params.get("tag") || "",
+        page: Math.max(1, Number.parseInt(params.get("page") || "1", 10) || 1),
+      };
+    };
+
+    const writeUrl = (state) => {
+      const params = new URLSearchParams();
+      if (state.q) params.set("q", state.q);
+      if (state.cat) params.set("cat", state.cat);
+      if (state.tag) params.set("tag", state.tag);
+      if (state.page > 1) params.set("page", String(state.page));
+      const query = params.toString();
+      history.pushState(state, "", query ? `/blog?${query}` : "/blog");
+    };
+
+    const applyLinkState = (links, activeValue, active, inactive, attr) => {
+      links.forEach((link) => {
+        const isActive = (link.getAttribute(attr) || "") === activeValue;
+        active.forEach((className) => link.classList.toggle(className, isActive));
+        inactive.forEach((className) => link.classList.toggle(className, !isActive));
+      });
+    };
+
+    const render = (state, updateInput = true) => {
+      if (updateInput) input.value = state.q;
+      clear.hidden = !state.q;
+
+      const q = state.q.toLowerCase();
+      const matches = cards.filter((card) => {
+        if (state.cat && card.dataset.category !== state.cat) return false;
+        if (state.tag && !(card.dataset.tags || "").split(" ").includes(state.tag)) return false;
+        if (q && !(card.dataset.search || "").includes(q)) return false;
+        return true;
+      });
+
+      const visibleCount = Math.min(matches.length, state.page * pageSize);
+      cards.forEach((card) => (card.hidden = true));
+      matches.slice(0, visibleCount).forEach((card) => (card.hidden = false));
+
+      count.textContent = `${matches.length} ${matches.length === 1 ? "result" : "results"}${state.q ? ` for "${state.q}"` : ""}`;
+      empty.hidden = matches.length > 0;
+
+      const totalPages = Math.max(1, Math.ceil(matches.length / pageSize));
+      moreWrap.hidden = visibleCount >= matches.length;
+      more.textContent = `Load more (${matches.length - visibleCount} remaining)`;
+      pageText.textContent = `Page ${state.page} of ${totalPages}`;
+
+      applyLinkState(categoryLinks, state.cat, activeCategory, inactiveCategory, "data-category-filter");
+      applyLinkState(tagLinks, state.tag, activeTag, inactiveTag, "data-tag-filter");
+    };
+
+    let state = stateFromUrl();
+    render(state);
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      state = { ...state, q: input.value.trim(), page: 1 };
+      writeUrl(state);
+      render(state, false);
+    });
+
+    clear.addEventListener("click", () => {
+      state = { ...state, q: "", page: 1 };
+      writeUrl(state);
+      render(state);
+    });
+
+    [...categoryLinks, ...tagLinks].forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const cat = link.getAttribute("data-category-filter");
+        const tag = link.getAttribute("data-tag-filter");
+        state = {
+          ...state,
+          cat: cat === null ? state.cat : cat,
+          tag: tag === null ? state.tag : state.tag === tag ? "" : tag,
+          page: 1,
+        };
+        writeUrl(state);
+        render(state);
+      });
+    });
+
+    more.addEventListener("click", () => {
+      state = { ...state, page: state.page + 1 };
+      writeUrl(state);
+      render(state, false);
+    });
+
+    window.addEventListener("popstate", () => {
+      state = stateFromUrl();
+      render(state);
+    });
+  }
+</script>

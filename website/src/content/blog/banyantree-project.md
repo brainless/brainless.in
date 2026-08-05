@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114867996440098058
 title: "banyanTree project"
-pubDate: 2006-05-26
-author: Sumit Datta
+date: 2006-05-26
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 The banyanTree Project  

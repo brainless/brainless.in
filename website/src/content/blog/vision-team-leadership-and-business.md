@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5564808031031624862
 title: "Vision, Team, Leadership and Business"
-pubDate: 2011-02-24
-author: Sumit Datta
-categories: ['business']
+date: 2011-02-24
+author: "sumit-datta"
+tags: ['business']
+category: "startups-business"
 ---
 
 For the last few days Nitesh and myself were discussing team building, work, processes, leadership, business and everything in between. As a full time team leader and an entrepreneur at heart these topics play in my mind every once a while. What does it take to deliver a quality product? How do you ask people to buy your vision? Do you keep everyone monitored or let them be free and come up with solutions for the problems?

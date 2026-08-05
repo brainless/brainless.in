@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-4876490448974513599
 title: "Senior developer for software.com (PHP)"
-pubDate: 2010-07-28
-author: Sumit Datta
-categories: ['software.com', 'php', 'developer']
+date: 2010-07-28
+author: "sumit-datta"
+tags: ['software.com', 'php', 'developer']
+category: "startups-business"
 ---
 
 We are looking for a senior developer for software.com. Here are the details:  

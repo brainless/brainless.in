@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114655149650436055
 title: "Sample Settings Form for Apache Simple Conf Tool"
-pubDate: 2006-05-02
-author: Sumit Datta
+date: 2006-05-02
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 A Sample Settings Form:

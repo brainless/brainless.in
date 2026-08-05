@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Icon from "../components/Icon.astro";
+import { SITE } from "../lib/blog-data.js";
+import { CONTACT } from "../config/theme.config.ts";
+---
+
+<BaseLayout
+  title={`Contact - ${SITE.name}`}
+  description={`Get in touch with ${SITE.name}.`}
+  canonical="/contact"
+>
+  <div class="mx-auto max-w-2xl px-5 py-12">
+    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Contact" }]} />
+
+    <header class="mt-6">
+      <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Contact</div>
+      <h1 class="mt-2 font-serif text-5xl font-semibold">Say hello.</h1>
+      <p class="mt-4 max-w-xl text-muted-foreground">
+        Notes, corrections, or just a thought &mdash; I read everything and reply to most of it.
+      </p>
+    </header>
+
+    <ul class="mt-10 space-y-4 text-sm">
+      <li>
+        <a href={`mailto:${CONTACT.email}`} class="flex items-center gap-2 hover:text-primary">
+          <Icon name="mail" class="h-4 w-4" /> {CONTACT.email}
+        </a>
+      </li>
+      <li>
+        <a href={CONTACT.socialUrl} class="flex items-center gap-2 hover:text-primary">
+          <Icon name="twitter" class="h-4 w-4" /> {CONTACT.socialHandle}
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://calendly.com/sumitdatta/quick-chat"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 hover:text-primary"
+        >
+          <Icon name="arrow-right" class="h-4 w-4" /> Book a 30-minute chat
+        </a>
+      </li>
+    </ul>
+  </div>
+</BaseLayout>

@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5653214013060187062
 title: "Templates with Mustache in JavaScript and PHP"
-pubDate: 2011-02-15
-author: Sumit Datta
-categories: ['php', 'javascript', 'programming', 'mustache']
+date: 2011-02-15
+author: "sumit-datta"
+tags: ['php', 'javascript', 'programming', 'mustache']
+category: "tech-engineering"
 ---
 
 For a long time I have used PHP as the template language with nothing else on top of it. No template engines ever. This was all fine till the point that we wanted a **full AJAX UI** in [forums.com](http://forums.com) and also support basic view in non JavaScript mode. We also wanted to also change to a template structure which is more graphic designer or HTML developer friendly where only knowledge of HTML/CSS is needed. Thus we needed a **logic-less** no-frills template engine which has **support in JavaScript and PHP** at the minimum.

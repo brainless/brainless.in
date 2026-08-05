@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5103344692691723860
 title: "Trying out non AWS options"
-pubDate: 2012-02-04
-author: Sumit Datta
-categories: ['vps', 'webhost', 'dedicated server', 'aws', 'hosting']
+date: 2012-02-04
+author: "sumit-datta"
+tags: ['vps', 'webhost', 'dedicated server', 'aws', 'hosting']
+category: "tech-engineering"
 ---
 
 I have been using Amazon Web Services for all of my (or companies' I work with) compute or storage needs for the last 4 years. That include AWS S3, EC2, SimpleDB and even RDS (at MobStac). For the last few weeks I have been planning the platform choices for Mag. It does include AWS DynamoDB, S3 and EC2, but the picture is a bit different.  

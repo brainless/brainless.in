@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-8921073563232310246
 title: "Problems with installing Yum on Fedora Core 4"
-pubDate: 2007-03-07
-author: Sumit Datta
-categories: ['yum', 'fedora core', 'open source', 'python', 'rpm']
+date: 2007-03-07
+author: "sumit-datta"
+tags: ['yum', 'fedora core', 'open source', 'python', 'rpm']
+category: "tech-engineering"
 ---
 
 "There is a problem importing one of the Python modules" : ever faced this error after installing an running yum. Well I faced that. And searched on Google for it. But in vain. Most results suggested the usual missing packages:

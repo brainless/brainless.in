@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-1074236801380500314
 title: "Users! Where are they?"
-pubDate: 2010-12-12
-author: Sumit Datta
-categories: ['developer', 'forums.com', 'user']
+date: 2010-12-12
+author: "sumit-datta"
+tags: ['developer', 'forums.com', 'user']
+category: "startups-business"
 ---
 
 In our effort to build [forums.com](http://forums.com) there are a lot of things that we must learn, one of them being the art/science of getting users. First of all I must tell you that we are in Kolkata, India, where the traditional software business is mostly small to medium projects for clients. Very few companies build or work on projects spanning multiple years where they are involved in every aspect of the product they build. Although technically we build forums.com for a client, but it's an independent venture. So it's **constant learning** for us as to how we can build a **product for the masses** to appreciate.

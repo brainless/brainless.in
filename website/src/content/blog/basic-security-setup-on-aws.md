@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-961443921870221179
 title: "Basic security setup on AWS"
-pubDate: 2011-08-08
-author: Sumit Datta
+date: 2011-08-08
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Recently at [MobStac](http://mobstac.com/) we restructured our layout of [EC2](http://aws.amazon.com/ec2/) on [Amazon Web Services](http://aws.amazon.com/) so that we are more secure than earlier. We wanted a scheme that would not be painful for our current deployment scheme but would still be as strict when it comes to inward access as possible.  

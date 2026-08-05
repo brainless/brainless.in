@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-949886914621198992
 title: "I am not a terrorist"
-pubDate: 2010-02-18
-author: Sumit Datta
-categories: ['movie', 'non-tech', 'life']
+date: 2010-02-18
+author: "sumit-datta"
+tags: ['movie', 'non-tech', 'life']
+category: "personal-reflections"
 ---
 
 Its been a while since I have written anything. Well I have been very busy with work lately (forums.com to be precise, which will launch soon). More on that in later blog posts; today I want to talk about something else. "My Name is Khan". I am sure most people who follow my posts will know this is the name of the latest movie by Karan Johar starring Shah Rukh Khan and Kajol. And almost anyone who knows me, knows I do not watch many movies, neither do I do celebrity worship. Then why am I writing on a film?  

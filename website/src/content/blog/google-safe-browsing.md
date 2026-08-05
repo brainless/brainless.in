@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-7577979767550710105
 title: "Google Safe Browsing..."
-pubDate: 2009-01-31
-author: Sumit Datta
-categories: ['google', 'safe browsing', 'search']
+date: 2009-01-31
+author: "sumit-datta"
+tags: ['google', 'safe browsing', 'search']
+category: "web-digital-culture"
 ---
 
 Writing after a really long time. Just doing my usual work stuff when I suddenly found search on Google has changed. Almost every other site on the web is now unsafe to browse. Even Google itself.

@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114689851702831407
 title: "Me in a Drupal project"
-pubDate: 2006-05-05
-author: Sumit Datta
+date: 2006-05-05
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Me in a Drupal project :  

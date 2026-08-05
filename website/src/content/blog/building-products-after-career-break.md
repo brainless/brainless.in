@@ -1,9 +1,10 @@
 ---
 id: building-products-after-career-break
 title: "Building products after a career break"
-pubDate: 2024-03-09
-author: Sumit Datta
-categories: ['engineer', 'founder', 'growth']
+date: 2024-03-09
+author: "sumit-datta"
+tags: ['engineer', 'founder', 'growth']
+category: "startups-business"
 ---
 
 Hello everyone, Sumit here from the Himalayas. I have been on a career break since November 2022. I was working with Hearth Display as their software engineering lead before they cancelled the contract. I  needed lots of personal time and it was not working out well with them. I really enjoyed doing nothing much for the next many months.

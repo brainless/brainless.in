@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-4315696470357375657
 title: "Odd error with Redis, PHPRedis, Gearman, PHP"
-pubDate: 2010-08-13
-author: Sumit Datta
-categories: ['php', 'gearman', 'redis']
+date: 2010-08-13
+author: "sumit-datta"
+tags: ['php', 'gearman', 'redis']
+category: "tech-engineering"
 ---
 
 We have a setup for background jobs for all the websites we manage like forums.com, files.com, payments.com, etc. The background jobs play around with lists of data which are stored in [Redis](http://code.google.com/p/redis/). We use [Tokyo Cabinet](http://1978th.net/tokyocabinet/) for our main data store though.  

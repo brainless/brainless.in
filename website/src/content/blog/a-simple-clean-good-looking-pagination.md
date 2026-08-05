@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-5495888009342530651
 title: "A simple clean good looking pagination"
-pubDate: 2011-02-14
-author: Sumit Datta
-categories: ['forums.com', 'programming']
+date: 2011-02-14
+author: "sumit-datta"
+tags: ['forums.com', 'programming']
+category: "tech-engineering"
 ---
 
 We are re-writing few base codes in [forums.com](http://forums.com) and one of things re-written is the pagination logic. We needed something very simple, good looking, yet works.

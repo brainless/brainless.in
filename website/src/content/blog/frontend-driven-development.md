@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-6879276716082535347
 title: "Frontend Driven Development"
-pubDate: 2017-02-17
-author: Sumit Datta
-categories: ['react.js', 'python', 'development', 'frontend', 'javascript']
+date: 2017-02-17
+author: "sumit-datta"
+tags: ['react.js', 'python', 'development', 'frontend', 'javascript']
+category: "tech-engineering"
 ---
 
 I have primarily been a backend web developer, started out with PHP around 2005 and then moving to Python in 2011. I have worked with a lot of JavaScript, mostly using jQuery and friends till 2013. One of the major JavaScript based projects I worked on in this time was an iOS (iPad in particular) based magazine product with native features like swipe, and columnar display of content. That was in 2011 and getting these done without the big JS libraries of today (2017) was a fair challenge. But since then I have focused more and more on the user side of the application but the real change came after the modern single page app frameworks went mainstream. I started out with Backbone.js, tried a bit of Angular.js for a while and finally settled with React.js in 2015.  

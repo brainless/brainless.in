@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-2632282161239120337
 title: "Building a Yii app: The Data Model"
-pubDate: 2012-02-17
-author: Sumit Datta
-categories: ['yii', 's3', 'php', 'development']
+date: 2012-02-17
+author: "sumit-datta"
+tags: ['yii', 's3', 'php', 'development']
+category: "tech-engineering"
 ---
 
 A friend of mine needs a web application to be revamped. I had originally created it about 2 years back using a custom PHP mini-framework that I had built for many projects at that time. The development had stopped for different reasons and parts of his web application were incomplete. For example images were not upload to [Amazon S3](http://aws.amazon.com/s3/), which was originally planned. Some Model edits were not working in many parts and there were some data validation issue. He has been doing the groundwork for his business and now has decided to finally complete the application.  

@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-6196170363913153253
 title: "Oh! So we have started up"
-pubDate: 2012-01-06
-author: Sumit Datta
-categories: ['startup', 'entrepreneurship']
+date: 2012-01-06
+author: "sumit-datta"
+tags: ['startup', 'entrepreneurship']
+category: "startups-business"
 ---
 
 Today is Friday, January 6, 2012 (Indian Time). Last week I was at [MobStac](http://mobstac.com/) at this time. That was my last day at MobStac. 2012 started with fun, food, a short drive to a nearby spot, drinks and everything in-between. But the fun is gradually getting over and the feeling has started to change. I have done this a couple times earlier. I have heard the rules of the game repeated so many times by others. I have seen successful entrepreneurs, and seen teams grow. I am not new to this world. But that guarantees nothing.  

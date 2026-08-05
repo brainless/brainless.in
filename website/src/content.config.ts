@@ -2,20 +2,45 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
-	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
-	// Type-check frontmatter using a schema
+	// Load flat `slug.md` posts and, for posts with local images, `slug/index.mdx` folders.
+	loader: glob({
+		base: './src/content/blog',
+		pattern: ['**/*.md', '**/*.mdx', '**/index.mdx'],
+		generateId: ({ entry }) =>
+			entry
+				.replace(/[\\/]index\.mdx$/, '')
+				.replace(/\.mdx?$/, '')
+				.replace(/\\/g, '/'),
+	}),
+	// Type-check frontmatter using a schema. Most fields are optional with fallbacks
+	// applied in src/lib/blog-data.js, since older posts predate this schema.
 	schema: ({ image }) =>
 		z.object({
-			id: z.string().optional(),
 			title: z.string(),
+			excerpt: z.string().optional(),
 			description: z.string().optional(),
-			// Transform string to Date object
-			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-			author: z.string().optional(),
-			categories: z.array(z.string()).optional(),
-			heroImage: image().optional(),
+			seoTitle: z.string().optional(),
+			seoDescription: z.string().optional(),
+			canonical: z.string().url().optional(),
+			date: z.coerce.date(),
+			updated: z.coerce.date().optional(),
+			readingTime: z.number().int().positive().optional(),
+			category: z.string().optional(),
+			tags: z.array(z.string()).default([]),
+			author: z.string().default('sumit-datta'),
+			thumbnail: image().optional(),
+			thumbnailAlt: z.string().default(''),
+			imageCredit: z
+				.object({
+					caption: z.string().optional(),
+					author: z.string(),
+					authorUrl: z.string().url(),
+					source: z.string().default('Unsplash'),
+					sourceUrl: z.string().url(),
+				})
+				.optional(),
+			featured: z.boolean().default(false),
+			draft: z.boolean().default(false),
 		}),
 });
 

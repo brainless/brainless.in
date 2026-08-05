@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-8337521012079986512
 title: "During the 2020 Pandemic: starting a new product from Laos"
-pubDate: 2020-08-11
-author: Sumit Datta
-categories: ['development', 'entrepreneurship', 'travel', 'products']
+date: 2020-08-11
+author: "sumit-datta"
+tags: ['development', 'entrepreneurship', 'travel', 'products']
+category: "startups-business"
 ---
 
 I have been traveling all across SE Asia since November 2019. This was part of my long term digital nomad lifestyle which would have otherwise taken me to live for about 6 months each in Japan, Canada, Denmark (or another Scandinavian nation) and New Zealand. That, mixed with bakpacking through South America, Africa and Eastern Europe was my dream for the next 3-5 years.

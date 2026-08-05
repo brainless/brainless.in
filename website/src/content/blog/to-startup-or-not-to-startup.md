@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-3518660849611712521
 title: "To startup or not to startup"
-pubDate: 2010-10-28
-author: Sumit Datta
-categories: ['business', 'startup']
+date: 2010-10-28
+author: "sumit-datta"
+tags: ['business', 'startup']
+category: "startups-business"
 ---
 
 Just yesterday and day before a friend came up to me and said he was confused. He was building iPhone apps and was earning very well. But he was not sure if he wanted to start a company as such. He is young and can easily continue to be a one-man army and build applications and sell them. But he is not sure if he will feel good about building a team, managing it and so on. One thing he feels though is that he wishes to stay a product developer and not handle marketing or even team building.

@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-3252735446157185760
 title: "Open Coffee Club Kolkata"
-pubDate: 2009-08-25
-author: Sumit Datta
-categories: ['occ', 'kolkata']
+date: 2009-08-25
+author: "sumit-datta"
+tags: ['occ', 'kolkata']
+category: "community-events"
 ---
 
 Hello fellow Kolkatans,  

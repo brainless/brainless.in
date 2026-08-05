@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-6037936862430515647
 title: "Introduction to Amazon EC2 (Continued...)"
-pubDate: 2009-05-14
-author: Sumit Datta
-categories: ['amazon', 'ec2', 'elasticfox']
+date: 2009-05-14
+author: "sumit-datta"
+tags: ['amazon', 'ec2', 'elasticfox']
+category: "tech-engineering"
 ---
 
 Continued from [Introduction to Amazon Elastic Compute Cloud (Amazon EC2)](/2009/05/introduction-to-amazon-elastic-compute.html)...

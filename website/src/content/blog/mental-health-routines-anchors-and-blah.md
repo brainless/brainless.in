@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-6709694888106698876
 title: "Mental health, Routines, Anchors and Blah"
-pubDate: 2020-06-16
-author: Sumit Datta
-categories: ['mental health']
+date: 2020-06-16
+author: "sumit-datta"
+tags: ['mental health']
+category: "personal-reflections"
 ---
 
 I started talking freely about mental health a couple years back. Initially I used to have enough lack of confidence that I was not even able to share that I have issues. Gradually, after seeing people around me and finding others who share, I started sharing. It has been quite a few years since I went through multiple sessions of counseling, which have helped immensely.  

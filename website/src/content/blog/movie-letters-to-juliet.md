@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-8116881482139329940
 title: "Movie: Letters to Juliet"
-pubDate: 2010-10-24
-author: Sumit Datta
+date: 2010-10-24
+author: "sumit-datta"
+tags: []
+category: "personal-reflections"
 ---
 
 I had a fine opportunity to catch two movies back to back today all by myself. The movies were "Letters to Juliet" and "The Other Guys". "The Other Guys" wasn't very good, just a decent watch. If you have other movies as choices you may miss this one and not regret.  

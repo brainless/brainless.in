@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-2810889589170603036
 title: "Good code, great code"
-pubDate: 2011-02-17
-author: Sumit Datta
-categories: ['programming', 'products', 'design']
+date: 2011-02-17
+author: "sumit-datta"
+tags: ['programming', 'products', 'design']
+category: "startups-business"
 ---
 
 When you do software development (or any other work for that matter), getting to the first 60% is comparatively easier than the rest 40%. The **initial 60% work** usual **is bulk work**, broad plans, overviews from 3000 feet high and all. But the more you cross that mark of broad planning and go **into the details**, **work becomes art**. The first lot is almost always science. The last part is true craftsmanship. This is something that any team must consider when they work on projects of any size where quality matters. Of course if you can pass your project with just coarse details then do not even bother to read this blog.

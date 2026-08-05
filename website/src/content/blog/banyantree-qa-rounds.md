@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114872444845285426
 title: "banyanTree QA Rounds"
-pubDate: 2006-05-13
-author: Sumit Datta
+date: 2006-05-13
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Discussion on #banyanTree (freenode):  

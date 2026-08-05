@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114650922761236052
 title: "About Me"
-pubDate: 2006-05-01
-author: Sumit Datta
+date: 2006-05-01
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Oh hello,  

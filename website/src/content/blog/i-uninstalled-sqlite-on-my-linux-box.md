@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-7004580911712442727
 title: "I uninstalled sqlite on my Linux box !!!"
-pubDate: 2007-04-04
-author: Sumit Datta
-categories: ['yum', 'server', 'apache', 'sqlite', 'linux']
+date: 2007-04-04
+author: "sumit-datta"
+tags: ['yum', 'server', 'apache', 'sqlite', 'linux']
+category: "tech-engineering"
 ---
 
 Well I somehow felt I could yum erase sqlite since I do not need it. Well I did not see the dependencies that would be removed too! The result:

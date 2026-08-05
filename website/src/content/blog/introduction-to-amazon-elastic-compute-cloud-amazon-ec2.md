@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-1883397290885334261
 title: "Introduction to Amazon Elastic Compute Cloud (Amazon EC2)"
-pubDate: 2009-05-13
-author: Sumit Datta
-categories: ['amazon', 'aws', 'ec2']
+date: 2009-05-13
+author: "sumit-datta"
+tags: ['amazon', 'aws', 'ec2']
+category: "tech-engineering"
 ---
 
 Continued from [Dummies Introduction to Amazon Web Services](http://brainlessphp.blogspot.com/2009/05/dummys-introduction-to-amazon-web.html)...

@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-2963261602094726047
 title: "Free web hosting with Amazon Web Services (AWS)"
-pubDate: 2011-02-16
-author: Sumit Datta
-categories: ['amazon', 'aws', 'hosting']
+date: 2011-02-16
+author: "sumit-datta"
+tags: ['amazon', 'aws', 'hosting']
+category: "tech-engineering"
 ---
 
 I have deliberately titled this blog post such that it gets more hits when people search one of the most common issues related to hosting: **free web hosting** :D. Of course Amazon does not provide just free hosting, its much more that than. But the general blogger, community leader, shop owner or similar is still more interested in hosting a WordPress, Drupal, Joomla or some e-commerce application. Let me explain a bit what Amazon Web Services is all about and what this free deal means.

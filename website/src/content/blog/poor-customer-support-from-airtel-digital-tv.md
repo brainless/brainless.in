@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-876757952884460764
 title: "Poor customer support from Airtel Digital TV"
-pubDate: 2010-07-02
-author: Sumit Datta
-categories: ['fail', 'airtel', 'customer']
+date: 2010-07-02
+author: "sumit-datta"
+tags: ['fail', 'airtel', 'customer']
+category: "web-digital-culture"
 ---
 
 We recently bought a new Airtel Digital TV DTH service for our Salt Lake office. All was fine until I noticed an upgrade to Airtel DTH HD (High Definition) at a price of Rs. 2250 /- one time. It included ESPN HD till July 12, 2010, as I remember from my phone conversation with the customer support. I ordered for the upgrade (paid on IVR) and two days back (30 June 2010) we received our brand new HD box. But ESPN HD was not pre-activated. Strange as it may seem, I was to pay an extra Rs. 100/- for ESPN HD which was supposed to be included in the package. The reason given was a change in plans suddenly. Well of course to the customer, a price of Rs. 100 seems OK to be able to watch World Cup in full HD. So we paid the 100 bucks, sent the request and waited.  

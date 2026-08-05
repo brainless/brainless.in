@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-7921552726455540962
 title: "Day One of Amazon DynamoDB"
-pubDate: 2012-01-20
-author: Sumit Datta
-categories: ['amazon', 'development', 'aws', 'pricing', 'dynamodb']
+date: 2012-01-20
+author: "sumit-datta"
+tags: ['amazon', 'development', 'aws', 'pricing', 'dynamodb']
+category: "tech-engineering"
 ---
 
 Its been just about a day that I have been going through the documentation of the newly released [Amazon DynamoDB](https://aws.amazon.com/dynamodb/). Using the PHP SDK and getting a basic Table up was simple. Right now I am planning the data organization. DynamoDB is a schema less data store. There is a primary key per table which is your main query column, so as to say. I am trying to use existing MongoDB [based](https://github.com/jamm/DataMapper) [data mappers](http://fatfree.sourceforge.net/page/data-mappers) and modify them for DynamoDB.  

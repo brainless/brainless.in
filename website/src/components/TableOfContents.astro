@@ -1,0 +1,63 @@
+---
+const { items = [] } = Astro.props;
+---
+
+{
+  items.length > 0 && (
+    <div data-toc>
+      <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">On this page</div>
+      <ul class="mt-3 space-y-2 border-l border-border">
+        {items.map((item) => (
+          <li data-toc-item class="relative" style={`padding-left: ${item.level === 3 ? 24 : 12}px`}>
+            <a
+              href={`#${item.id}`}
+              data-toc-link={item.id}
+              class="block py-0.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+<style>
+  [data-toc-item].is-active::before {
+    background: var(--color-primary);
+    bottom: 0.125rem;
+    content: "";
+    left: -1px;
+    position: absolute;
+    top: 0.125rem;
+    width: 1px;
+  }
+</style>
+
+<script>
+  const toc = document.querySelector("[data-toc]");
+  if (toc) {
+    const links = [...toc.querySelectorAll("[data-toc-link]")];
+    const setActive = (id) => {
+      links.forEach((link) => {
+        const active = link.getAttribute("data-toc-link") === id;
+        link.classList.toggle("text-primary", active);
+        link.classList.toggle("text-muted-foreground", !active);
+        link.closest("[data-toc-item]")?.classList.toggle("is-active", active);
+      });
+    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-80px 0px -70% 0px" },
+    );
+    links.forEach((link) => {
+      const id = link.getAttribute("data-toc-link");
+      const heading = id ? document.getElementById(id) : null;
+      if (heading) observer.observe(heading);
+    });
+  }
+</script>

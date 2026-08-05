@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-114684565620940642
 title: "GData module for Drupal"
-pubDate: 2006-05-05
-author: Sumit Datta
+date: 2006-05-05
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Introduction :  

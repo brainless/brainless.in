@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-8484343765150482443
 title: "Continuous Improvement for teams"
-pubDate: 2017-05-27
-author: Sumit Datta
+date: 2017-05-27
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 #### 

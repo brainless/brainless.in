@@ -1,8 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-115777450494399864
 title: "Apache 2.2 on Fedora Core 5"
-pubDate: 2006-09-09
-author: Sumit Datta
+date: 2006-09-09
+author: "sumit-datta"
+tags: []
+category: "tech-engineering"
 ---
 
 Me an some friends took a new server two days back. We threw in Xen and made four guests. I being in one of the guests which runs Fedora Core 5. I had to install Apache, which was pretty easy with yum. Just   

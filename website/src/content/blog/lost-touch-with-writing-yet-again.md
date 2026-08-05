@@ -1,9 +1,10 @@
 ---
 id: tag:blogger.com,1999:blog-27384460.post-2940203934032304481
 title: "Lost touch with writing, yet again!"
-pubDate: 2020-06-14
-author: Sumit Datta
-categories: ['journey', 'startup', 'travel']
+date: 2020-06-14
+author: "sumit-datta"
+tags: ['journey', 'startup', 'travel']
+category: "personal-reflections"
 ---
 
 This happens a lot it seems. I am 36 years old now and it has been about 13 years from my [first blog post in 2006](http://blog.brainless.in/2006/05/apache-simple-config-tool-application.html). Also, in between I already blogged once about [losing touch with writing](http://blog.brainless.in/2014/11/its-been-while.html). But hey, at least I am consistent. So a lot has happened, as they always do. The world moves around.  
