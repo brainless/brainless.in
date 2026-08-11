@@ -76,91 +76,116 @@ const jsonLd = {
     <div data-reading-progress class="h-full bg-primary transition-[width] duration-75" style="width: 0%"></div>
   </div>
 
-  <article class="mx-auto max-w-6xl px-5 py-10">
-    <Breadcrumbs
-      items={[
-        { label: "Home", to: "/" },
-        { label: "Archive", to: "/blog" },
-        ...(category ? [{ label: category.name, to: `/categories/${category.slug}` }] : []),
-        { label: post.title },
-      ]}
-    />
-
-    <header class="mx-auto mt-8 max-w-3xl text-center">
-      {
-        category && (
-          <a href={`/categories/${category.slug}`} class="text-xs font-medium uppercase tracking-[0.2em] text-primary hover:underline">
-            {category.name}
-          </a>
-        )
-      }
-      <h1 class="mt-4 font-serif text-4xl font-semibold leading-[1.1] sm:text-5xl">
-        {post.title}
-      </h1>
-      <p class="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">{post.excerpt}</p>
-      <div class="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
-        {
-          author && (
-            <a href={`/authors/${author.slug}`} class="flex items-center gap-2 hover:text-foreground">
-              <img src={author.avatar} alt="" width="28" height="28" class="h-7 w-7 rounded-full" />
-              {author.name}
-            </a>
-          )
-        }
-        <span>&middot;</span>
-        <time datetime={post.date}>{formatDate(post.date)}</time>
-        {post.updated && <><span>&middot;</span><span class="italic">updated {formatDate(post.updated)}</span></>}
-        <span>&middot;</span>
-        <span>{post.readingTime} min read</span>
-      </div>
-    </header>
+  <article class="pb-10">
+    <div class="mx-auto max-w-6xl px-5 pt-10">
+      <Breadcrumbs
+        items={[
+          { label: "Home", to: "/" },
+          { label: "Archive", to: "/blog" },
+          ...(category ? [{ label: category.name, to: `/categories/${category.slug}` }] : []),
+          { label: post.title },
+        ]}
+      />
+    </div>
 
     {
-      post.thumbnail && (
-        <figure class="mx-auto mt-10 max-w-4xl">
-          <div class="overflow-hidden rounded-md bg-muted">
-            <Image
-              src={post.thumbnail}
-              alt={post.thumbnailAlt || post.imageCredit?.caption || ""}
-              class="w-full"
-              widths={[640, 960, 1280, 1600]}
-              sizes="(min-width: 1024px) 896px, calc(100vw - 40px)"
-              format="webp"
-              quality={78}
-            />
+      post.thumbnail ? (
+        <section class="relative mt-8 min-h-[70vh] overflow-hidden sm:min-h-[620px]">
+          <Image
+            src={post.thumbnail}
+            alt={post.thumbnailAlt}
+            class="absolute inset-0 h-full w-full object-cover object-center"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width={1600}
+            widths={[640, 960, 1280, 1600]}
+            sizes="100vw"
+            format="webp"
+            quality={72}
+          />
+          <div
+            aria-hidden="true"
+            class="absolute inset-0 bg-[linear-gradient(90deg,oklch(0.1_0.02_70_/_0.68),oklch(0.16_0.02_80_/_0.38)_46%,oklch(0.98_0.01_90_/_0.1))] dark:bg-[linear-gradient(90deg,oklch(0.08_0.01_70_/_0.78),oklch(0.08_0.01_70_/_0.52)_48%,oklch(0.08_0.01_70_/_0.18))]"
+          />
+          <div
+            aria-hidden="true"
+            class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/40 via-black/14 to-transparent"
+          />
+          <div
+            aria-hidden="true"
+            class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/55 via-black/10 to-transparent"
+          />
+          <div class="relative flex min-h-[70vh] items-end sm:min-h-[620px]">
+            <div class="mx-auto w-full max-w-3xl px-5 pb-12 pt-24 text-center text-white drop-shadow-[0_1px_18px_rgba(0,0,0,0.28)]">
+              {category && (
+                <a href={`/categories/${category.slug}`} class="text-xs font-medium uppercase tracking-[0.2em] text-white/90 hover:underline">
+                  {category.name}
+                </a>
+              )}
+              <h1 class="mt-4 font-serif text-4xl font-semibold leading-[1.1] sm:text-5xl">
+                {post.title}
+              </h1>
+              <p class="mx-auto mt-5 max-w-2xl text-lg text-white/86">{post.excerpt}</p>
+              <div class="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-white/80">
+                {
+                  author && (
+                    <a href={`/authors/${author.slug}`} class="flex items-center gap-2 hover:text-white">
+                      <img src={author.avatar} alt="" width="28" height="28" class="h-7 w-7 rounded-full" />
+                      {author.name}
+                    </a>
+                  )
+                }
+                <span>&middot;</span>
+                <time datetime={post.date}>{formatDate(post.date)}</time>
+                {post.updated && <><span>&middot;</span><span class="italic">updated {formatDate(post.updated)}</span></>}
+                <span>&middot;</span>
+                <span>{post.readingTime} min read</span>
+              </div>
+            </div>
           </div>
+        </section>
+      ) : (
+        <header class="mx-auto mt-8 max-w-3xl px-5 text-center">
           {
-            post.imageCredit && (
-              <figcaption class="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-muted-foreground">
-                {post.imageCredit.caption && <span>{post.imageCredit.caption} </span>}
-                <span>
-                  Photo by{" "}
-                  <a
-                    href={post.imageCredit.authorUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    class="text-foreground/75 underline underline-offset-2 hover:text-primary"
-                  >
-                    {post.imageCredit.author}
-                  </a>{" "}
-                  on{" "}
-                  <a
-                    href={post.imageCredit.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    class="text-foreground/75 underline underline-offset-2 hover:text-primary"
-                  >
-                    {post.imageCredit.source}
-                  </a>
-                  .
-                </span>
-              </figcaption>
+            category && (
+              <a href={`/categories/${category.slug}`} class="text-xs font-medium uppercase tracking-[0.2em] text-primary hover:underline">
+                {category.name}
+              </a>
             )
           }
-        </figure>
+          <h1 class="mt-4 font-serif text-4xl font-semibold leading-[1.1] sm:text-5xl">
+            {post.title}
+          </h1>
+          <p class="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">{post.excerpt}</p>
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+            {
+              author && (
+                <a href={`/authors/${author.slug}`} class="flex items-center gap-2 hover:text-foreground">
+                  <img src={author.avatar} alt="" width="28" height="28" class="h-7 w-7 rounded-full" />
+                  {author.name}
+                </a>
+              )
+            }
+            <span>&middot;</span>
+            <time datetime={post.date}>{formatDate(post.date)}</time>
+            {post.updated && <><span>&middot;</span><span class="italic">updated {formatDate(post.updated)}</span></>}
+            <span>&middot;</span>
+            <span>{post.readingTime} min read</span>
+          </div>
+        </header>
       )
     }
 
+    {
+      post.thumbnail && post.thumbnailAlt && (
+        <p class="mx-auto mt-4 max-w-xl px-5 text-center font-serif text-sm italic text-muted-foreground">
+          {post.thumbnailAlt}
+        </p>
+      )
+    }
+
+    <div class="mx-auto max-w-6xl px-5">
     <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_220px]">
       <div class="mx-auto w-full min-w-0 max-w-2xl">
         <div class="prose-article">
@@ -253,6 +278,7 @@ const jsonLd = {
         </section>
       )
     }
+    </div>
   </article>
 
   <Newsletter />

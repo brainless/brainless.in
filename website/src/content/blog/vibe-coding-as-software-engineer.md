@@ -1,6 +1,8 @@
 ---
 title: "Vibe coding as a Software Engineer"
 date: 2025-06-27
+thumbnail: ../../assets/photos/PXL_20260802_111714488.jpg
+thumbnailAlt: "Photo from my farm life: Carrying Cardamom seedlings to our farm."
 author: "sumit-datta"
 tags: ['vibe coding', 'founder', 'software']
 category: "startups-business"
